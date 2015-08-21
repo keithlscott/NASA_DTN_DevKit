@@ -1,0 +1,113 @@
+1 5
+s
+@ +0
+
+# RANGES AND CONTACTS:
+
+# Node 1 to 2
+a range    +0   +4000000      1     2   1
+a range    +0   +4000000      2     1   1
+a contact  +0   +4000000      1     2   500000
+a contact  +0   +4000000      2     1   500000
+
+# Node 2 to 3
+a range    +0   +4000000      2     3   1
+a range    +0   +4000000      3     2   1
+a contact  +0   +4000000      2     3   500000
+a contact  +0   +4000000      3     2   500000
+
+# Node 1 to 4
+a range    +0   +4000000      1     4   1
+a range    +0   +4000000      4     1   1
+a contact  +0   +4000000      1     4   500000
+a contact  +0   +4000000      4     1   500000
+
+# Node 2 to 5
+a range    +0   +4000000      2     5   1
+a range    +0   +4000000      5     2   1
+a contact  +0   +4000000      2     5   500000
+a contact  +0   +4000000      5     2   500000
+
+# Node 3 to 6
+a range    +0   +4000000      3     6   1
+a range    +0   +4000000      6     3   1
+a contact  +0   +4000000      3     6   500000
+a contact  +0   +4000000      6     3   500000
+
+# Node 4 to 5
+a range    +0   +4000000      4     5   1
+a range    +0   +4000000      5     4   1
+a contact  +0   +4000000      4     5   500000
+a contact  +0   +4000000      5     4   500000
+
+# Node 5 to 6
+a range    +0   +4000000      5     6   1
+a range    +0   +4000000      6     5   1
+a contact  +0   +4000000      5     6   500000
+a contact  +0   +4000000      6     5   500000
+
+# Node 4 to 7
+a range    +0   +4000000      4     7   1
+a range    +0   +4000000      7     4   1
+a contact  +0   +4000000      4     7   500000
+a contact  +0   +4000000      7     4   500000
+
+# Node 5 to 8
+a range    +0   +4000000      8     5   1
+a range    +0   +4000000      5     8   1
+a contact  +0   +4000000      8     5   500000
+a contact  +0   +4000000      5     8   500000
+
+# Node 6 to 9
+a range    +0   +4000000      9     6   1
+a range    +0   +4000000      6     9   1
+a contact  +0   +4000000      9     6   500000
+a contact  +0   +4000000      6     9   500000
+
+# Node 7 to 8
+a range    +0   +4000000      8     7   1
+a range    +0   +4000000      7     8   1
+a contact  +0   +4000000      8     7   500000
+a contact  +0   +4000000      7     8   500000
+
+# Node 8 to 9
+a range    +0   +4000000      9     8   1
+a range    +0   +4000000      8     9   1
+a contact  +0   +4000000      9     8   500000
+a contact  +0   +4000000      8     9   500000
+
+# Node 1 to 1 (loopback)
+a range    +0   +4000000      1     1   1
+a contact  +0   +4000000      1     1   500000
+
+# Node 2 to 2 (loopback)
+a range    +0   +4000000      2     2   1
+a contact  +0   +4000000      2     2   500000
+
+# Node 3 to 3 (loopback)
+a range    +0   +4000000      3     3   1
+a contact  +0   +4000000      3     3   500000
+
+# Node 4 to 4 (loopback)
+a range    +0   +4000000      4     4   1
+a contact  +0   +4000000      4     4   500000
+
+# Node 5 to 5 (loopback)
+a range    +0   +4000000      5     5   1
+a contact  +0   +4000000      5     5   500000
+
+# Node 6 to 6 (loopback)
+a range    +0   +4000000      6     6   1
+a contact  +0   +4000000      6     6   500000
+
+# Node 7 to 7 (loopback)
+a range    +0   +4000000      7     7   1
+a contact  +0   +4000000      7     7   500000
+
+# Node 8 to 8 (loopback)
+a range    +0   +4000000      8     8   1
+a contact  +0   +4000000      8     8   500000
+
+# Node 9 to 9 (loopback)
+a range    +0   +4000000      9     9   1
+a contact  +0   +4000000      9     9   500000

@@ -1,0 +1,20 @@
+#!/bin/bash
+# shell script to take node down
+echo "Shutting down ION node ipn:4 on `uname -n` "
+acsadmin        .
+sleep 1
+cfdpadmin       .
+sleep 1
+bpadmin         .
+sleep 1
+ltpadmin        .
+sleep 1
+ionadmin        .
+sleep 1
+for Q in `ipcs -q | grep $USER | awk '{ print $2 }'`; do ipcrm -q $Q; done
+for M in `ipcs -m | grep $USER | awk '{ print $2 }'`; do ipcrm -m $M; done
+for S in `ipcs -s | grep $USER | awk '{ print $2 }'`; do ipcrm -s $S; done
+if [[ -e "/var/lib/ion/DTN/config/SDR/ion.sdr" ]] ; then
+   rm -f "/var/lib/ion/DTN/config/SDR/ion.sdr"
+fi	
+echo "Shutdown of ION node ipn:4 on `uname -n` is complete!"

@@ -1,0 +1,237 @@
+node n2 {
+    type router
+    model mdr
+    network-config {
+	hostname n2
+	!
+	interface eth1
+	 ipv6 address 2001:5::1/128
+	 ip address 10.0.5.1/24
+	!
+    }
+    canvas c1
+    iconcoords {551.0 313.0}
+    labelcoords {551.0 345.0}
+    interface-peer {eth1 n7}
+    custom-config {
+	custom-config-id service:zebra
+	custom-command zebra
+	config {
+	files=('/usr/local/etc/quagga/Quagga.conf', 'quaggaboot.sh', '/usr/local/etc/quagga/vtysh.conf', )
+	}
+    }
+    custom-config {
+	custom-config-id service:zebra:/usr/local/etc/quagga/Quagga.conf
+	custom-command /usr/local/etc/quagga/Quagga.conf
+	config {
+	interface eth0
+	  ip address 10.0.1.1/24
+	  ipv6 address 2001:1::1/64
+	  ipv6 ospf6 instance-id 65
+	!
+	router ospf6
+	  router-id 10.0.1.1
+	  interface eth0 area 0.0.0.0
+	!
+	
+	}
+    }
+    custom-config {
+	custom-config-id service:UserDefined
+	custom-command UserDefined
+	config {
+	dirs=('/var/ion', )
+	files=('setup.sh', )
+	cmdup=('sh ./setup.sh', )
+	}
+    }
+    custom-config {
+	custom-config-id service:UserDefined:setup.sh
+	custom-command setup.sh
+	config {
+	foo=`dirname $SESSION_FILENAME`
+	sh $foo/generalSetup.sh
+	}
+    }
+    services {zebra OSPFv3MDR vtysh IPForward UserDefined}
+}
+
+node n6 {
+    type router
+    model mdr
+    network-config {
+	hostname n6
+	!
+	interface eth1
+	 ipv6 address 2001:5::5/128
+	 ip address 10.0.5.5/24
+	!
+    }
+    canvas c1
+    iconcoords {255.0 312.0}
+    labelcoords {255.0 344.0}
+    interface-peer {eth1 n7}
+    custom-config {
+	custom-config-id service:zebra
+	custom-command zebra
+	config {
+	files=('/usr/local/etc/quagga/Quagga.conf', 'quaggaboot.sh', '/usr/local/etc/quagga/vtysh.conf', )
+	}
+    }
+    custom-config {
+	custom-config-id service:zebra:/usr/local/etc/quagga/Quagga.conf
+	custom-command /usr/local/etc/quagga/Quagga.conf
+	config {
+	interface eth0
+	  ip address 10.0.0.1/24
+	  ipv6 address 2001::1/64
+	  ipv6 ospf6 instance-id 65
+	!
+	router ospf6
+	  router-id 10.0.0.1
+	  interface eth0 area 0.0.0.0
+	!
+	
+	}
+    }
+    custom-config {
+	custom-config-id service:UserDefined
+	custom-command UserDefined
+	config {
+	dirs=('/var/ion', )
+	files=('setup.sh', )
+	cmdup=('sh ./setup.sh', )
+	}
+    }
+    custom-config {
+	custom-config-id service:UserDefined:setup.sh
+	custom-command setup.sh
+	config {
+	foo=`dirname $SESSION_FILENAME`
+	sh $foo/generalSetup.sh
+	}
+    }
+    services {zebra OSPFv3MDR vtysh IPForward UserDefined}
+}
+
+node n7 {
+    type wlan
+    network-config {
+	hostname wlan7
+	!
+	interface wireless
+	 ipv6 address 2001:5::0/128
+	 ip address 10.0.5.0/24
+	!
+	mobmodel
+	coreapi
+	basic_range
+	ns2script
+	!
+    }
+    custom-config {
+	custom-config-id basic_range
+	custom-command {3 3 9 9 9}
+	config {
+	range=200
+	bandwidth=1000000
+	jitter=0
+	delay=20000
+	error=0
+	}
+    }
+    custom-config {
+	custom-config-id ns2script
+	custom-command {10 3 11 10 10 10 10 10}
+	config {
+	file=/home/core/.core/configs/small/120.scen
+	refresh_ms=50
+	loop=1
+	autostart=0.0
+	map=
+	script_start=/home/core/.core/configs/small/mobility.sh
+	script_pause=
+	script_stop=
+	}
+    }
+    canvas c1
+    iconcoords {411.0 70.0}
+    labelcoords {411.0 102.0}
+    interface-peer {e0 n2}
+    interface-peer {e4 n6}
+    interface-peer {e5 n8}
+}
+
+node n8 {
+    type router
+    model mdr
+    network-config {
+	hostname n8
+	!
+	interface eth0
+	 ipv6 address 2001:5::6/128
+	 ip address 10.0.5.6/24
+	!
+    }
+    canvas c1
+    iconcoords {406.0 215.0}
+    labelcoords {406.0 247.0}
+    interface-peer {eth0 n7}
+    services {IPForward UserDefined}
+    custom-config {
+	custom-config-id service:UserDefined
+	custom-command UserDefined
+	config {
+	dirs=('/var/ion', )
+	files=('setup.sh', )
+	cmdup=('sh ./setup.sh', )
+	}
+    }
+    custom-config {
+	custom-config-id service:UserDefined:setup.sh
+	custom-command setup.sh
+	config {
+	foo=`dirname $SESSION_FILENAME`
+	sh $foo/generalSetup.sh
+	}
+    }
+}
+
+link l6 {
+    nodes {n7 n2}
+}
+
+link l10 {
+    nodes {n7 n6}
+}
+
+link l11 {
+    nodes {n7 n8}
+}
+
+canvas c1 {
+    name {Canvas1}
+}
+
+option global {
+    interface_names yes
+    ip_addresses yes
+    ipv6_addresses no
+    node_labels yes
+    link_labels yes
+    show_api no
+    background_images no
+    annotations yes
+    grid yes
+    traffic_start 0
+}
+
+option session {
+    controlnet=192.168.0.2/24
+    controlnet_updown_script=
+    enablerj45=1
+    enablesdt=0
+    preservedir=0
+    sdturl=tcp://127.0.0.1:50000/
+}
+

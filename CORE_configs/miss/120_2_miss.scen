@@ -1,0 +1,30 @@
+# Five-node Planet sim
+# 120 seconds total
+
+$node_(8) set X_ 443.0
+$node_(8) set Y_ 133.0
+$node_(8) set Z_ 0.00
+#$ns_ at 000.00 "$node_(8) setdest 443.0 133.0 15.0"
+$ns_ at 000.00 "$node_(8) setdest 640.0 163.0 17.0"
+$ns_ at 012.00 "$node_(8) setdest 672.0 278.0 11.0"
+$ns_ at 024.00 "$node_(8) setdest 702.0 419.0 13.0"
+$ns_ at 036.00 "$node_(8) setdest 578.0 478.0 13.0"
+$ns_ at 048.00 "$node_(8) setdest 433.0 555.0 14.0"
+$ns_ at 060.00 "$node_(8) setdest 310.0 550.0 10.0"
+$ns_ at 093.00 "$node_(8) setdest 166.0 145.0 10000.0"
+$ns_ at 096.00 "$node_(8) setdest 245.0 124.0 12.0"
+$ns_ at 108.00 "$node_(8) setdest 443.0 133.0 15.0"
+$ns_ at 120.00 "$node_(8) setdest 443.0 133.0 200.0"
+$ns_ at 120.00 "$node_(8) setdest 640.0 163.0 17.0"
+$ns_ at 132.00 "$node_(8) setdest 672.0 278.0 11.0"
+$ns_ at 144.00 "$node_(8) setdest 702.0 419.0 13.0"
+$ns_ at 156.00 "$node_(8) setdest 578.0 478.0 13.0"
+$ns_ at 168.00 "$node_(8) setdest 433.0 555.0 14.0"
+$ns_ at 180.00 "$node_(8) setdest 310.0 550.0 10.0"
+$ns_ at 213.00 "$node_(8) setdest 166.0 145.0 10000.0"
+$ns_ at 216.00 "$node_(8) setdest 245.0 124.0 12.0"
+$ns_ at 228.00 "$node_(8) setdest 443.0 133.0 15.0"
+$ns_ at 240.00 "$node_(8) setdest 443.0 133.0 200.0"
+
+
+

@@ -1,0 +1,340 @@
+node n1 {
+    type router
+    model router
+    network-config {
+	hostname n1
+	!
+	interface eth1
+	 ip address 10.0.2.1/24
+	 ipv6 address 2001:2::1/64
+	!
+	interface eth0
+	 ip address 10.0.0.1/24
+	 ipv6 address 2001:0::1/64
+	!
+    }
+    canvas c1
+    iconcoords {195.0 337.0}
+    labelcoords {195.0 369.0}
+    interface-peer {eth0 n2}
+    custom-config {
+	custom-config-id service:UserDefined
+	custom-command UserDefined
+	config {
+	dirs=('/var/ion', )
+	files=('setup.sh', )
+	cmdup=('sh ./setup.sh', )
+	}
+    }
+    custom-config {
+	custom-config-id service:UserDefined:setup.sh
+	custom-command setup.sh
+	config {
+	foo=`dirname $SESSION_FILENAME`
+	sh $foo/generalSetup.sh
+	}
+    }
+    services {zebra OSPFv2 OSPFv3 vtysh IPForward SSH UserDefined}
+    interface-peer {eth1 n3}
+}
+
+node n2 {
+    type router
+    model router
+    network-config {
+	hostname n2
+	!
+	interface eth0
+	 ip address 10.0.0.2/24
+	 ipv6 address 2001:0::2/64
+	!
+    }
+    canvas c1
+    iconcoords {78.0 106.0}
+    labelcoords {78.0 138.0}
+    interface-peer {eth0 n1}
+    custom-config {
+	custom-config-id service:UserDefined
+	custom-command UserDefined
+	config {
+	dirs=('/var/ion', )
+	files=('setup.sh', )
+	cmdup=('sh ./setup.sh', )
+	}
+    }
+    custom-config {
+	custom-config-id service:UserDefined:setup.sh
+	custom-command setup.sh
+	config {
+	foo=`dirname $SESSION_FILENAME`
+	sh $foo/generalSetup.sh
+	}
+    }
+    services {zebra OSPFv2 OSPFv3 vtysh IPForward SSH UserDefined}
+}
+
+node n3 {
+    type router
+    model mdr
+    network-config {
+	hostname n3
+	!
+	interface eth2
+	 ipv6 address 2001:3::2/128
+	 ip address 10.3.3.2/24
+	!
+	interface eth1
+	 ip address 10.0.2.2/24
+	 ipv6 address 2001:2::2/64
+	!
+    }
+    canvas c1
+    iconcoords {360.0 162.0}
+    labelcoords {360.0 194.0}
+    interface-peer {eth1 n1}
+    interface-peer {eth2 n5}
+    services {zebra OSPFv3MDR vtysh IPForward UserDefined}
+    custom-config {
+	custom-config-id service:UserDefined
+	custom-command UserDefined
+	config {
+	dirs=('/var/ion', )
+	files=('setup.sh', )
+	cmdup=('sh ./setup.sh', )
+	}
+    }
+    custom-config {
+	custom-config-id service:UserDefined:setup.sh
+	custom-command setup.sh
+	config {
+	foo=`dirname $SESSION_FILENAME`
+	sh $foo/generalSetup.sh
+	}
+    }
+}
+
+node n4 {
+    type router
+    model mdr
+    network-config {
+	hostname n4
+	!
+	interface eth0
+	 ipv6 address 2001:3::1/128
+	 ip address 10.3.3.1/24
+	!
+    }
+    canvas c1
+    iconcoords {600.0 159.0}
+    labelcoords {600.0 191.0}
+    interface-peer {eth0 n5}
+    custom-config {
+	custom-config-id service:UserDefined
+	custom-command UserDefined
+	config {
+	dirs=('/var/ion', )
+	files=('setup.sh', )
+	cmdup=('sh ./setup.sh', )
+	}
+    }
+    custom-config {
+	custom-config-id service:UserDefined:setup.sh
+	custom-command setup.sh
+	config {
+	foo=`dirname $SESSION_FILENAME`
+	sh $foo/generalSetup.sh
+	}
+    }
+    services {zebra OSPFv3MDR vtysh IPForward SSH UserDefined}
+}
+
+node n5 {
+    type wlan
+    network-config {
+	hostname wlan5
+	!
+	interface wireless
+	 ipv6 address 2001:3::0/128
+	 ip address 10.3.3.0/24
+	!
+	mobmodel
+	coreapi
+	basic_range
+	!
+    }
+    custom-config {
+	custom-config-id basic_range
+	custom-command {3 3 9 9 9}
+	config {
+	range=250
+	bandwidth=10000000
+	jitter=0
+	delay=20000
+	error=2
+	}
+    }
+    canvas c1
+    iconcoords {513.0 353.0}
+    labelcoords {513.0 385.0}
+    interface-peer {e0 n4}
+    interface-peer {e1 n3}
+}
+
+link l1 {
+    color Green
+    delay 160
+    nodes {n1 n2}
+    bandwidth 10000000
+}
+
+link l3 {
+    delay 80000
+    nodes {n1 n3}
+    bandwidth 300000
+}
+
+link l4 {
+    nodes {n5 n4}
+}
+
+link l5 {
+    nodes {n5 n3}
+}
+
+annotation a1 {
+    iconcoords {299.0 103.0}
+    type text
+    label {Ground Station}
+    labelcolor black
+    fontfamily {Arial}
+    fontsize {12}
+    canvas c1
+}
+
+annotation a2 {
+    iconcoords {643.0 130.0}
+    type text
+    label {Satellite}
+    labelcolor black
+    fontfamily {Arial}
+    fontsize {12}
+    canvas c1
+}
+
+annotation a3 {
+    iconcoords {297.0 379.0}
+    type text
+    label {GSFC DTN Testing}
+    labelcolor black
+    fontfamily {Arial}
+    fontsize {12}
+    effects {bold}
+    canvas c1
+}
+
+annotation a4 {
+    type text
+    iconcoords {315.0 87.0}
+    label {}
+    canvas c1
+}
+
+annotation a5 {
+    iconcoords {52.0 70.0}
+    type text
+    label {GSFC}
+    labelcolor black
+    fontfamily {Arial}
+    fontsize {12}
+    canvas c1
+}
+
+annotation a6 {
+    iconcoords {452.0 316.0}
+    type text
+    label {10.0 Mbps, 2% error}
+    labelcolor black
+    fontfamily {Arial}
+    fontsize 10
+    canvas c1
+}
+
+annotation a7 {
+    iconcoords {217.0 43.0}
+    type text
+    label {BPI send and receive from node 4 -> 2 is running automatically.}
+    labelcolor black
+    fontfamily {Arial}
+    fontsize 12
+    canvas c1
+}
+
+annotation a8 {
+    iconcoords {217.0 64.0}
+    type text
+    label {The bpirecv window will pop up 30-40 seconds after startup, and the image will start to arrive slowly}
+    labelcolor black
+    fontfamily {Arial}
+    fontsize 12
+    canvas c1
+}
+
+annotation a9 {
+    type text
+    iconcoords {422.0 63.0}
+    label {}
+    canvas c1
+}
+
+canvas c1 {
+    name {Canvas1}
+}
+
+hook 4:runtime_hook.sh {
+#!/bin/sh
+# session hook script; write commands here to execute on the host at the
+# specified state
+
+ssh-keygen -f "/root/.ssh/known_hosts" -R 192.168.0.2
+
+sleep 20 && ssh -X -t -i /root/.ssh/id_rsa root@192.168.0.2 "bpirecv ipn:2.5" &
+
+sleep 30 && /usr/sbin/vcmd -c /tmp/`ls /tmp|grep pycore`/n4 -- bpisend ipn:4.5 ipn:2.5 curiosity.png &
+}
+
+hook 6:shutdown_hook.sh {
+#!/bin/sh
+# session hook script; write commands here to execute on the host at the
+# specified state
+
+killall -9 bpirecv
+killall -9 ssh
+
+
+
+
+
+}
+
+option global {
+    interface_names yes
+    ip_addresses yes
+    ipv6_addresses no
+    node_labels yes
+    link_labels yes
+    show_api no
+    background_images no
+    annotations yes
+    grid yes
+    traffic_start 0
+}
+
+option session {
+    controlnet=192.168.0.0/24
+    controlnet_updown_script=
+    enablerj45=1
+    enablesdt=0
+    preservedir=0
+    sdturl=tcp://127.0.0.1:50000/
+}
+

@@ -1,0 +1,10 @@
+#BPI Satellite Testing:  60 seconds on, 60 seconds off
+
+$node_(4) set X_ 600.0
+$node_(4) set Y_ 160.0
+$node_(4) set Z_ 0.00
+$ns_ at 000.00 "$node_(4) setdest 400.0  60.0 7.0"
+$ns_ at 030.00 "$node_(4) setdest 600.0 160.0 7.0"
+$ns_ at 060.00 "$node_(4) setdest 800.0 260.0 7.0"
+$ns_ at 090.00 "$node_(4) setdest 600.0 160.0 7.0"
+$ns_ at 120.00 "$node_(4) setdest 600.0 160.0 7.0"
