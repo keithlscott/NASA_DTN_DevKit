@@ -403,7 +403,7 @@ node n7 {
 	loop=1
 	autostart=0.0
 	map=
-	script_start=/home/core/.core/configs/miss/mobility.sh
+	script_start=/home/core/.core/configs/common/mobility.sh
 	script_pause=
 	script_stop=
 	}

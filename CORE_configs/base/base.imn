@@ -179,11 +179,13 @@ node n5 {
 	custom-command {10 3 11 10 10 10 10 10}
 	config {
 	file=/home/core/.core/configs/base/30-30.scen
+	#file=~/.core/configs/base/30-30.scen
 	refresh_ms=50
 	loop=1
 	autostart=0.0
 	map=
-	script_start=/home/core/.core/configs/base/mobility.sh
+	script_start=/home/core/.core/configs/common/mobility.sh
+	#script_start=~/.core/configs/common/mobility.sh
 	script_pause=
 	script_stop=
 	}

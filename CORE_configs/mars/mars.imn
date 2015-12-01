@@ -383,7 +383,7 @@ node n7 {
 	loop=1
 	autostart=0.0
 	map=
-	script_start=/home/core/.core/configs/mars/mobility.sh
+	script_start=/home/core/.core/configs/common/mobility.sh
 	script_pause=
 	script_stop=
 	}
@@ -439,7 +439,7 @@ annotation a1 {
     label {Mars to Earth Communication Demo}
     labelcolor black
     fontfamily {Arial}
-    fontsize 12
+    fontsize {12}
     canvas c1
 }
 
@@ -449,7 +449,7 @@ annotation a2 {
     label {Mars Rover}
     labelcolor black
     fontfamily {Arial}
-    fontsize 12
+    fontsize {12}
     canvas c1
 }
 
@@ -459,7 +459,7 @@ annotation a3 {
     label {Mars Orbiter}
     labelcolor black
     fontfamily {Arial}
-    fontsize 12
+    fontsize {12}
     canvas c1
 }
 
@@ -469,7 +469,7 @@ annotation a4 {
     label {California}
     labelcolor black
     fontfamily {Arial}
-    fontsize 12
+    fontsize {12}
     canvas c1
 }
 
@@ -479,7 +479,7 @@ annotation a5 {
     label {Spain}
     labelcolor black
     fontfamily {Arial}
-    fontsize 12
+    fontsize {12}
     canvas c1
 }
 
@@ -489,7 +489,7 @@ annotation a6 {
     label {Australia}
     labelcolor black
     fontfamily {Arial}
-    fontsize 12
+    fontsize {12}
     canvas c1
 }
 
@@ -499,7 +499,7 @@ annotation a7 {
     label {Mission Control}
     labelcolor black
     fontfamily {Arial}
-    fontsize 12
+    fontsize {12}
     canvas c1
 }
 
@@ -514,6 +514,16 @@ hook 3:instantiation_hook.sh {
 
 rm -f /tmp/ionrcdate
 
+
+}
+
+hook 4:runtime_hook.sh {
+#!/bin/sh
+# session hook script; write commands here to execute on the host at the
+# specified state
+
+pycore=`ls /tmp | grep pycore`
+sleep 15 && xterm -e "/usr/sbin/vcmd -c /tmp/$pycore/n1 -- bping ipn:1.5 ipn:6.1" &
 }
 
 option global {
