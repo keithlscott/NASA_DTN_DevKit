@@ -36,8 +36,6 @@ if [ $DO_PREREQS == 1 ]; then
 		imagemagick help2man
 fi
 
-pushd .
-
 
 mkdir DTNDevKit_Install
 cd DTNDevKit_Install
@@ -48,7 +46,6 @@ cd DTNDevKit_Install
 # Get CORE and uncompress
 #
 if [ $MAKE_CORE == 1 ]; then
-	pushd .
 
 	wget $CORE_URL
 	tar -xzf core-$CORE_VERSION.tar.gz
@@ -69,7 +66,7 @@ if [ $MAKE_CORE == 1 ]; then
 	# sudo -E apt-get -y install python-sphinx texlive-latex-base
 	# make latexpdf
 	
-	popd
+	cd ..
 fi
 
 
@@ -78,7 +75,6 @@ fi
 # Needed for wireless MANET networks to work
 #
 if [ $MAKE_QUAGGA == 1 ]; then
-	pushd .
 
 	wget $QUAGGA_URL
 
@@ -91,8 +87,6 @@ if [ $MAKE_QUAGGA == 1 ]; then
 	sudo make install
 
 	sudo ldconfig
-
-	popd
 fi
 
 
@@ -100,7 +94,6 @@ fi
 # ION
 #
 if [ $MAKE_ION == 1 ]; then
-	pushd .
 	
 	wget $ION_URL
 	tar -zxf ion-$ION_VERSION.tar.gz
@@ -111,16 +104,23 @@ if [ $MAKE_ION == 1 ]; then
 	sudo make install
 	
 	sudo ldconfig
-
-	popd
 fi
 
-popd
+cd ..
 
 #
 # DevKit Scenarios
 #
 if [ $INSTALL_SCENARIOS == 1 ]; then
+	#
+	# Run core-gui to generate the .core directory and populate it
+	# with the default configs
+	#
+	core-gui &
+	GUI_PID=$!
+	sleep 5
+	kill $GUI_PID
+
 	cp -r ./CORE_configs ~/.core/configs/NASADTNDevKit
 
 	#
