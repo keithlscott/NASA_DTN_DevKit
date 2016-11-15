@@ -5,17 +5,17 @@
 # It is just a compilation of the instructions in section 2.3 of
 #		http://downloads.pf.itd.nrl.navy.mil/docs/core/core-html/install.html
 #
-DO_PREREQS=0
+DO_PREREQS=1
 
-MAKE_CORE=0
+MAKE_CORE=1
 CORE_VERSION=4.8
 CORE_URL=http://downloads.pf.itd.nrl.navy.mil/core/source/core-$CORE_VERSION.tar.gz
 
-MAKE_QUAGGA=0
+MAKE_QUAGGA=1
 QUAGGA_VERSION=0.99.21mr2.2
 QUAGGA_URL=http://downloads.pf.itd.nrl.navy.mil/ospf-manet/quagga-0.99.21mr2.2/$QUAGGA_VERSION.tar.gz
 
-MAKE_ION=0
+MAKE_ION=1
 ION_VERSION=3.5.0
 ION_URL=http://downloads.sourceforge.net/project/ion-dtn/ion-$ION_VERSION.tar.gz
 
