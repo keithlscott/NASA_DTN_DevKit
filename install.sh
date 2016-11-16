@@ -30,13 +30,17 @@ INSTALL_SCENARIOS=1
 SDL_VERSION=1.2.15
 SDL_URL=https://www.libsdl.org/release/SDL-$SDL_VERSION.tar.gz
 
-export http_proxy=http://gatekeeper-w.mitre.org:80
-export https_proxy=http://gatekeeper-w.mitre.org:80
+#
+# If you need to define an http/https proxy server, uncomment the following
+# and provide the information
+#
+# export http_proxy=http://SERVER:PORT
+# export https_proxy=//SERVER:PORT
 
 # If your corporate firewall breaks ssl, you might want to consider uncommenting
 # the following.  It's insecure (obviously) but sometimes expedient if you don't
 # want to bother adding the firewall cert to your cert store.
-#WGET_OPTS=--no-check-certificate
+# WGET_OPTS=--no-check-certificate
 
 #
 # End of configuration section
