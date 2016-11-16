@@ -12,7 +12,7 @@
 # The CORE piece is just a compilation of the instructions in section 2.3 of
 #		http://downloads.pf.itd.nrl.navy.mil/docs/core/core-html/install.html
 #
-DO_PREREQS=0
+DO_PREREQS=1
 
 MAKE_CORE=1
 CORE_VERSION=4.8
@@ -33,9 +33,15 @@ SDL_URL=https://www.libsdl.org/release/SDL-$SDL_VERSION.tar.gz
 export http_proxy=http://gatekeeper-w.mitre.org:80
 export https_proxy=http://gatekeeper-w.mitre.org:80
 
-# If your corporate firewall breaks ssl, you might want to consider this:
+# If your corporate firewall breaks ssl, you might want to consider uncommenting
+# the following.  It's insecure (obviously) but sometimes expedient if you don't
+# want to bother adding the firewall cert to your cert store.
 #WGET_OPTS=--no-check-certificate
-WGET_OPTS=--no-check-certificate
+
+#
+# End of configuration section
+#
+NEED_LDCONFIG=0
 
 #
 # Prerequisites
@@ -99,7 +105,7 @@ if [ $MAKE_QUAGGA == 1 ]; then
 	make
 	sudo make install
 
-	sudo ldconfig
+	NEED_LDCONFIG=1
 
 	cd ..
 fi
@@ -114,22 +120,24 @@ if [ $MAKE_ION == 1 ]; then
 	tar -zxf ion-$ION_VERSION.tar.gz
 	
 	cd ion-$ION_VERSION
-	./configure
-	make
-	sudo make install
+	#./configure
+	#make
+	#sudo make install
 	
-	sudo ldconfig
+	NEED_LDCONFIG=1
 
 	cd ..
 fi
 
 # CD back into the NASA_DTN_CORE directory with all our stuff in it.
-cd ..
+cd ../..
+echo "Working directory now: " `pwd`
 
 #
 # DevKit Scenarios
 #
 if [ $INSTALL_SCENARIOS == 1 ]; then
+	echo "Installing scenarios; working directory now: " `pwd`
 	#
 	# Run core-gui to generate the .core directory and populate it
 	# with the default configs
@@ -175,6 +183,10 @@ if [ $INSTALL_SCENARIOS == 1 ]; then
 
 	sudo make install	
 
+fi
+
+if [ $NEED_LDCONFIG == 1 ]; then
+	sudo ldconfig
 fi
 
 # Good luck.
