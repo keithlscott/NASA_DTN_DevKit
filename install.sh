@@ -1,8 +1,15 @@
 #!/bin/bash
 
+# Invoke me with 'bash ./install.sh'
+
 #
-# This script will attempt to build core on an Ubuntu system.
-# It is just a compilation of the instructions in section 2.3 of
+# This script will attempt to install and build the NASA DTN Dev Kit on an Ubuntu system.
+#	Common Open Research Emulator (CORE)
+#	NRL MANET OSPF version of QUAGGA
+#	ION
+#	NASA DTN DevKit scenarios and demo apps
+#
+# The CORE piece is just a compilation of the instructions in section 2.3 of
 #		http://downloads.pf.itd.nrl.navy.mil/docs/core/core-html/install.html
 #
 DO_PREREQS=1
@@ -13,16 +20,21 @@ CORE_URL=http://downloads.pf.itd.nrl.navy.mil/core/source/core-$CORE_VERSION.tar
 
 MAKE_QUAGGA=1
 QUAGGA_VERSION=0.99.21mr2.2
-QUAGGA_URL=http://downloads.pf.itd.nrl.navy.mil/ospf-manet/quagga-0.99.21mr2.2/$QUAGGA_VERSION.tar.gz
+QUAGGA_URL=http://downloads.pf.itd.nrl.navy.mil/ospf-manet/quagga-$QUAGGA_VERSION/$QUAGGA_VERSION.tar.gz
 
 MAKE_ION=1
 ION_VERSION=3.5.0
 ION_URL=http://downloads.sourceforge.net/project/ion-dtn/ion-$ION_VERSION.tar.gz
 
 INSTALL_SCENARIOS=1
+SDL_VERSION=1.2.15
+SDL_URL=https://www.libsdl.org/release/SDL-$SDL_VERSION.tar.gz
 
 export http_proxy=http://gatekeeper-w.mitre.org:80
 export https_proxy=http://gatekeeper-w.mitre.org:80
+
+# If your corporate firewall breaks ssl, you might want to consider this:
+#WGET_OPTS=--no-check-certificate
 WGET_OPTS=--no-check-certificate
 
 #
@@ -142,9 +154,8 @@ if [ $INSTALL_SCENARIOS == 1 ]; then
 	# instructions at https://wiki.libsdl.org/MigrationGuide)
 	#
 	cd DTNDevKit_Install
-	SDL_VERSION=1.2.15
 
-	# wget $WGET_OPTS https://www.libsdl.org/release/SDL-$SDL_VERSION.tar.gz
+	wget $SDL_URL
 
 	tar -xzf SDL-$SDL_VERSION.tar.gz
 	cd SDL-$SDL_VERSION
