@@ -23,6 +23,7 @@ INSTALL_SCENARIOS=1
 
 export http_proxy=http://gatekeeper-w.mitre.org:80
 export https_proxy=http://gatekeeper-w.mitre.org:80
+WGET_OPTS=--no-check-certificate
 
 #
 # Prerequisites
@@ -87,6 +88,8 @@ if [ $MAKE_QUAGGA == 1 ]; then
 	sudo make install
 
 	sudo ldconfig
+
+	cd ..
 fi
 
 
@@ -104,8 +107,11 @@ if [ $MAKE_ION == 1 ]; then
 	sudo make install
 	
 	sudo ldconfig
+
+	cd ..
 fi
 
+# CD back into the NASA_DTN_CORE directory with all our stuff in it.
 cd ..
 
 #
@@ -119,7 +125,7 @@ if [ $INSTALL_SCENARIOS == 1 ]; then
 	core-gui &
 	GUI_PID=$!
 	sleep 5
-	kill $GUI_PID
+	kill -9 $GUI_PID
 
 	cp -r ./CORE_configs ~/.core/configs/NASADTNDevKit
 
@@ -129,8 +135,38 @@ if [ $INSTALL_SCENARIOS == 1 ]; then
 	# scripts have to have full path names.
 	#
 	find ~/.core/configs/NASADTNDevKit -name "*.imn" -exec sed -i "s?file=/home/core/?file=$HOME/?" {} \;
+
+	#
+	# Pull the SDL graphics library in order to build the image-transfer demo
+	# app.  We use the older version 1.2 (there's a version 2.x with migration
+	# instructions at https://wiki.libsdl.org/MigrationGuide)
+	#
+	cd DTNDevKit_Install
+	SDL_VERSION=1.2.15
+
+	# wget $WGET_OPTS https://www.libsdl.org/release/SDL-$SDL_VERSION.tar.gz
+
+	tar -xzf SDL-$SDL_VERSION.tar.gz
+	cd SDL-$SDL_VERSION
+
+	# Apply patch needed to compile SDL 1.2
+	patch -p1 < ../../XData32.patch
+	sh autogen.sh
+
+	# Make SDL
+	./configure
+	make
+	sudo make install
+
+	# Back up to our directory and make bpi
+	cd ../../bpi
+	make
+
+	sudo make install	
+
 fi
 
+# Good luck.
 
 
 
