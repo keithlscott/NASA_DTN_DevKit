@@ -5,15 +5,20 @@ srcdir= ~/ion/ion-open-source
 ###
 
 CC=gcc
-bpcflags= -I$(srcdir)/bp/library -I$(srcdir)/bp/library/acs -I$(srcdir)/bp/library/ext -I$(srcdir)/bp/library/ext/meb -I$(srcdir)/bp/library/ext/bae -I$(srcdir)/bp/library/ext/cteb -I$(srcdir)/bp/include -I$(srcdir)/bp/ipn -I$(srcdir)/bp/dtn2 -I$(srcdir)/bp/library/crypto -I$(srcdir)/bp/library/ext/ecos -I$(srcdir)/bp/library/ext/bsp -I$(srcdir)/bp/library/ext/bsp/ciphersuites -I$(srcdir)/bp/library/ext/phn -I$(srcdir)/bp/imc -I$(srcdir)/ici/include/ -I$(srcdir)/bp/library/ext/ecos -I$(srcdir)/bp/library/ext/bsp -I$(srcdir)/bp/imc -DBP_EXTENDED -g
+#bpcflags= -I$(srcdir)/bp/library -I$(srcdir)/bp/library/acs -I$(srcdir)/bp/library/ext -I$(srcdir)/bp/library/ext/meb -I$(srcdir)/bp/library/ext/bae -I$(srcdir)/bp/library/ext/cteb -I$(srcdir)/bp/include -I$(srcdir)/bp/ipn -I$(srcdir)/bp/dtn2 -I$(srcdir)/bp/library/crypto -I$(srcdir)/bp/library/ext/ecos -I$(srcdir)/bp/library/ext/bsp -I$(srcdir)/bp/library/ext/bsp/ciphersuites -I$(srcdir)/bp/library/ext/phn -I$(srcdir)/bp/imc -I$(srcdir)/ici/include/ -I$(srcdir)/bp/library/ext/ecos -I$(srcdir)/bp/library/ext/bsp -I$(srcdir)/bp/imc -DBP_EXTENDED -g
+bpcflags = 
 
 bpisend_SOURCES = bp/test/bpisend.c bp/test/lodepng.c
-bpisend_LDADD = $(srcdir)/.libs/libbp.so $(srcdir)/.libs/libici.so
-bpisend_CFLAGS = $(bpcflags)
+#bpisend_LDADD = $(srcdir)/.libs/libbp.so $(srcdir)/.libs/libici.so
+#bpisend_CFLAGS = $(bpcflags)
+bpisend_LDADD = -lbp -lici
+bpisend_CFLAGS = -L/usr/local/lib
 
 bpirecv_SOURCES = bp/test/bpirecv.c
-bpirecv_LDADD = $(srcdir)/.libs/libbp.so $(srcdir)/.libs/libici.so `sdl-config --libs`
-bpirecv_CFLAGS = `sdl-config --cflags` $(bpcflags)
+#bpirecv_LDADD = $(srcdir)/.libs/libbp.so $(srcdir)/.libs/libici.so `sdl-config --libs`
+#bpirecv_CFLAGS = `sdl-config --cflags` $(bpcflags)
+bpirecv_LDADD = -lbp -lici `sdl-config --libs`
+bpirecv_CFLAGS = -L/usr/local/lib
 
 all: bpisend bpirecv
 	
