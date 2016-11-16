@@ -12,7 +12,7 @@
 # The CORE piece is just a compilation of the instructions in section 2.3 of
 #		http://downloads.pf.itd.nrl.navy.mil/docs/core/core-html/install.html
 #
-DO_PREREQS=1
+DO_PREREQS=0
 
 MAKE_CORE=1
 CORE_VERSION=4.8
@@ -20,7 +20,7 @@ CORE_URL=http://downloads.pf.itd.nrl.navy.mil/core/source/core-$CORE_VERSION.tar
 
 MAKE_QUAGGA=1
 QUAGGA_VERSION=0.99.21mr2.2
-QUAGGA_URL=http://downloads.pf.itd.nrl.navy.mil/ospf-manet/quagga-$QUAGGA_VERSION/$QUAGGA_VERSION.tar.gz
+QUAGGA_URL=http://downloads.pf.itd.nrl.navy.mil/ospf-manet/quagga-$QUAGGA_VERSION/quagga-$QUAGGA_VERSION.tar.gz
 
 MAKE_ION=1
 ION_VERSION=3.5.0
@@ -60,7 +60,7 @@ cd DTNDevKit_Install
 #
 if [ $MAKE_CORE == 1 ]; then
 
-	wget $CORE_URL
+	wget $WGET_OPTS $CORE_URL
 	tar -xzf core-$CORE_VERSION.tar.gz
 
 	# Build CORE and documentation
@@ -89,9 +89,9 @@ fi
 #
 if [ $MAKE_QUAGGA == 1 ]; then
 
-	wget $QUAGGA_URL
+	wget $WGET_OPTS $QUAGGA_URL
 
-	tar xzf quagga-$QUAGGA_VERSION.tar.gz
+	tar -xzf quagga-$QUAGGA_VERSION.tar.gz
 	cd quagga-$QUAGGA_VERSION
 	./configure --enable-user=root --enable-group=root --with-cflags=-ggdb \
 		--sysconfdir=/usr/local/etc/quagga --enable-vtysh \
@@ -110,7 +110,7 @@ fi
 #
 if [ $MAKE_ION == 1 ]; then
 	
-	wget $ION_URL
+	wget $WGET_OPTS $ION_URL
 	tar -zxf ion-$ION_VERSION.tar.gz
 	
 	cd ion-$ION_VERSION
@@ -155,7 +155,7 @@ if [ $INSTALL_SCENARIOS == 1 ]; then
 	#
 	cd DTNDevKit_Install
 
-	wget $SDL_URL
+	wget $WGET_OPTS $SDL_URL
 
 	tar -xzf SDL-$SDL_VERSION.tar.gz
 	cd SDL-$SDL_VERSION
