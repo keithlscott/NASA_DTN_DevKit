@@ -36,7 +36,7 @@ export https_proxy=http://gatekeeper-w.mitre.org:80
 # If your corporate firewall breaks ssl, you might want to consider uncommenting
 # the following.  It's insecure (obviously) but sometimes expedient if you don't
 # want to bother adding the firewall cert to your cert store.
-#WGET_OPTS=--no-check-certificate
+WGET_OPTS=--no-check-certificate
 
 #
 # End of configuration section
@@ -120,9 +120,9 @@ if [ $MAKE_ION == 1 ]; then
 	tar -zxf ion-$ION_VERSION.tar.gz
 	
 	cd ion-$ION_VERSION
-	#./configure
-	#make
-	#sudo make install
+	./configure
+	make
+	sudo make install
 	
 	NEED_LDCONFIG=1
 
