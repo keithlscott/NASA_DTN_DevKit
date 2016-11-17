@@ -3,14 +3,15 @@
 # Invoke me with 'bash ./install.sh'
 
 #
-# This script will attempt to install and build the NASA DTN Dev Kit on an Ubuntu system.
+# This script will attempt to install and build the NASA DTN Dev Kit on an
+# Ubuntu 16.04 system.
 #	Common Open Research Emulator (CORE)
 #	NRL MANET OSPF version of QUAGGA
 #	ION
 #	NASA DTN DevKit scenarios and demo apps
 #
 # The CORE piece is just a compilation of the instructions in section 2.3 of
-#		http://downloads.pf.itd.nrl.navy.mil/docs/core/core-html/install.html
+#	http://downloads.pf.itd.nrl.navy.mil/docs/core/core-html/install.html
 #
 DO_PREREQS=1
 
