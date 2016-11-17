@@ -193,7 +193,7 @@ if [ $INSTALL_SCENARIOS == 1 ]; then
 	# Make ssh keys to allow ssh into node to run image receiver
 	#
 	sudo ssh-keygen -f /root/.ssh/DTNDevKit -P ""
-	sudo cat ~/root/.ssh/DTNDevKit.pub >> ~/root/authorized_keys2
+	sudo cat ~/root/.ssh/DTNDevKit.pub >> /root/.ssh/authorized_keys2
 fi
 
 if [ $NEED_LDCONFIG == 1 ]; then
