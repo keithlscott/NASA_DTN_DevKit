@@ -56,7 +56,7 @@ if [ $DO_PREREQS == 1 ]; then
 	sudo -E apt-get -y install bash bridge-utils ebtables gawk iproute libev-dev python \
 		tcl8.5 tk8.5 libtk-img \
 		autoconf automake gcc libev-dev make python-dev libreadline-dev pkg-config \
-		imagemagick help2man
+		imagemagick help2man openssh-server xorg-dev
 fi
 
 
