@@ -35,7 +35,7 @@ SDL_URL=https://www.libsdl.org/release/SDL-$SDL_VERSION.tar.gz
 # and provide the information
 #
 # export http_proxy=http://SERVER:PORT
-# export https_proxy=http//SERVER:PORT
+# export https_proxy=http://SERVER:PORT
 
 # If your corporate firewall breaks ssl, you might want to consider uncommenting
 # the following.  It's insecure (obviously) but sometimes expedient if you don't
