@@ -295,11 +295,11 @@ hook 4:runtime_hook.sh {
 # session hook script; write commands here to execute on the host at the
 # specified state
 
-ssh-keygen -f "/root/.ssh/known_hosts" -R 192.168.0.2
+sudo ssh-keygen -f "/root/.ssh/known_hosts" -R 192.168.0.2
 
-sleep 20 && ssh -X -t -i /root/.ssh/id_rsa root@192.168.0.2 "bpirecv ipn:2.5" &
+sleep 20 && sudo ssh -X -t -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -i /root/.ssh/DTNDevKit root@192.168.0.2 "bpirecv ipn:2.5" &
 
-sleep 30 && /usr/sbin/vcmd -c /tmp/`ls /tmp|grep pycore`/n4 -- bpisend ipn:4.5 ipn:2.5 curiosity.png &
+sleep 30 && /usr/local/sbin/vcmd -c /tmp/`ls /tmp|grep pycore`/n4 -- bpisend ipn:4.5 ipn:2.5 curiosity.png &
 }
 
 hook 6:shutdown_hook.sh {
