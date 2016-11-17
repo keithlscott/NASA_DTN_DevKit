@@ -89,6 +89,7 @@ if [ $MAKE_CORE == 1 ]; then
 	# up for now).
 	# sudo -E apt-get -y install python-sphinx texlive-latex-base
 	# make latexpdf
+	cd ..
 	
 	cd ..
 fi
