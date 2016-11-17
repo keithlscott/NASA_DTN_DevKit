@@ -35,7 +35,7 @@ SDL_URL=https://www.libsdl.org/release/SDL-$SDL_VERSION.tar.gz
 # and provide the information
 #
 # export http_proxy=http://SERVER:PORT
-# export https_proxy=//SERVER:PORT
+# export https_proxy=http//SERVER:PORT
 
 # If your corporate firewall breaks ssl, you might want to consider uncommenting
 # the following.  It's insecure (obviously) but sometimes expedient if you don't
@@ -152,6 +152,7 @@ if [ $INSTALL_SCENARIOS == 1 ]; then
 	kill -9 $GUI_PID
 
 	cp -r ./CORE_configs ~/.core/configs/NASADTNDevKit
+	sudo chown -R $SUDO_USER:$SUDO_USER ~/.core
 
 	#
 	# Replace hard-coded pathnames of mobility scripts with path to
@@ -187,6 +188,12 @@ if [ $INSTALL_SCENARIOS == 1 ]; then
 
 	sudo make install	
 
+
+	#
+	# Make ssh keys to allow ssh into node to run image receiver
+	#
+	sudo ssh-keygen -f /root/.ssh/DTNDevKit -P ""
+	sudo cat ~/root/.ssh/DTNDevKit.pub >> ~/root/authorized_keys2
 fi
 
 if [ $NEED_LDCONFIG == 1 ]; then
