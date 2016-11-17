@@ -194,7 +194,7 @@ if [ $INSTALL_SCENARIOS == 1 ]; then
 	# Make ssh keys to allow ssh into node to run image receiver
 	#
 	# Have to make a shell so that * in root's directory is interpretable
-	sudo bash -c "rm -f /root/.ssh/*"
+	sudo bash -c "rm -f /root/.ssh/DTNDevKit*"
 	sudo ssh-keygen -f /root/.ssh/DTNDevKit -P ""
 	sudo bash -c "cat /root/.ssh/DTNDevKit.pub >> /root/.ssh/authorized_keys2"
 fi
