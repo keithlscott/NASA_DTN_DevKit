@@ -135,7 +135,7 @@ if [ $MAKE_ION == 1 ]; then
 fi
 
 # CD back into the NASA_DTN_CORE directory with all our stuff in it.
-cd ../..
+cd ..
 echo "Working directory now: " `pwd`
 
 #
@@ -193,8 +193,10 @@ if [ $INSTALL_SCENARIOS == 1 ]; then
 	#
 	# Make ssh keys to allow ssh into node to run image receiver
 	#
+	# Have to make a shell so that * in root's directory is interpretable
+	sudo bash -c "rm -f /root/.ssh/*"
 	sudo ssh-keygen -f /root/.ssh/DTNDevKit -P ""
-	sudo cat ~/root/.ssh/DTNDevKit.pub >> /root/.ssh/authorized_keys2
+	sudo bash -c "cat /root/.ssh/DTNDevKit.pub >> /root/.ssh/authorized_keys2"
 fi
 
 if [ $NEED_LDCONFIG == 1 ]; then
