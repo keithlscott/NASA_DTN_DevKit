@@ -1,2 +1,7 @@
 .DS_Store
 
+bpi/bpirecv
+bpi/bpirecv.o
+bpi/bpisend
+bpi/bpisend.o
+bpi/lodepng.o
