@@ -1,0 +1,153 @@
+#  FILE:    MO.bprc
+#  CONTENT: configuration commands
+#  FOR:     bpadmin
+#  BUILDER: ION Configuration Editor
+#  NETWORK: GSFCDemo3
+#  NODE:    MO
+#  IP NAME: 10.10.30.4
+#  DATE:    Sat Jan 03 02:10:59 EST 1970
+#
+#  INITIALIZE
+1
+#
+#  SCHEME
+#  Scheme type:      ipn
+#  Forwarding task:  ipnfw
+#  Custodian daemon: ipnadminep
+a scheme ipn 'ipnfw' 'ipnadminep'
+#
+#  ENDPOINT
+#  IPN Endpoint ID:             ipn:5.0
+#  Action if no receiver open:  x  [Discard]
+a endpoint ipn:5.0 x
+#
+#  ENDPOINT
+#  IPN Endpoint ID:             ipn:5.1
+#  Action if no receiver open:  x  [Discard]
+a endpoint ipn:5.1 x
+#
+#  ENDPOINT
+#  IPN Endpoint ID:             ipn:5.2
+#  Action if no receiver open:  x  [Discard]
+a endpoint ipn:5.2 x
+#
+#  ENDPOINT
+#  IPN Endpoint ID:             ipn:5.64
+#  Action if no receiver open:  x  [Discard]
+a endpoint ipn:5.64 x
+#
+#  ENDPOINT
+#  IPN Endpoint ID:             ipn:5.65
+#  Action if no receiver open:  x  [Discard]
+a endpoint ipn:5.65 x
+#
+#  PROTOCOL
+#  Protocol:  tcp
+#  Payload bytes per frame:           1400         [(KB/sec): 1  with K=1000]
+#  Overhead bytes per frame:          100
+#  Nominal data rate (bytes per sec): 1250000     [(KB/sec): 1250  (MB/sec): 1  with K=1000]
+a protocol tcp 1400 100 1250000
+#
+#  INDUCT
+#  Protocol:      tcp
+#  Duct name:     localhost      [From Node:  MO  with IP Name: localhost]
+#  CLI task name: tcpcli
+a induct tcp localhost tcpcli
+#
+#  INDUCT
+#  Protocol:      tcp
+#  Duct name:     10.10.30.4      [From Node:  GS1  with IP Name: 10.10.20.2]
+#  CLI task name: tcpcli
+#  Redundant command omitted (one induct task per protocol)
+#
+#  INDUCT
+#  Protocol:      tcp
+#  Duct name:     10.10.30.4      [From Node:  ScienceOps  with IP Name: 10.10.30.5]
+#  CLI task name: tcpcli
+#  Redundant command omitted (one induct task per protocol)
+#
+#  INDUCT
+#  Protocol:      tcp
+#  Duct name:     10.10.30.4      [From Node:  GS2  with IP Name: 10.10.20.3]
+#  CLI task name: tcpcli
+#  Redundant command omitted (one induct task per protocol)
+#
+#  INDUCT
+#  Protocol:      tcp
+#  Duct name:     10.10.30.4      [From Node:  GS3  with IP Name: 10.10.20.4]
+#  CLI task name: tcpcli
+#  Redundant command omitted (one induct task per protocol)
+#
+#  INDUCT
+#  Protocol:      tcp
+#  Duct name:     10.10.30.4      [From Node:  GS1b  with IP Name: 10.10.30.11]
+#  CLI task name: tcpcli
+#  Redundant command omitted (one induct task per protocol)
+#
+#  INDUCT
+#  Protocol:      tcp
+#  Duct name:     10.10.30.4      [From Node:  GS2b  with IP Name: 10.10.30.22]
+#  CLI task name: tcpcli
+#  Redundant command omitted (one induct task per protocol)
+#
+#  INDUCT
+#  Protocol:      tcp
+#  Duct name:     10.10.30.4      [From Node:  GS3b  with IP Name: 10.10.30.33]
+#  CLI task name: tcpcli
+#  Redundant command omitted (one induct task per protocol)
+#
+#  OUTDUCT
+#  Protocol:      tcp
+#  Duct name:     localhost      [To Node:   MO  with IP Name: localhost]
+#  CLO task name: tcpclo
+a outduct tcp localhost tcpclo
+#
+#  OUTDUCT
+#  Protocol:      tcp
+#  Duct name:     10.10.30.11      [To Node:   GS1b  with IP Name: 10.10.30.11]
+#  CLO task name: tcpclo
+a outduct tcp 10.10.30.11 tcpclo
+#
+#  OUTDUCT
+#  Protocol:      tcp
+#  Duct name:     10.10.30.5      [To Node:   ScienceOps  with IP Name: 10.10.30.5]
+#  CLO task name: tcpclo
+a outduct tcp 10.10.30.5 tcpclo
+#
+#  OUTDUCT
+#  Protocol:      tcp
+#  Duct name:     10.10.30.22      [To Node:   GS2b  with IP Name: 10.10.30.22]
+#  CLO task name: tcpclo
+a outduct tcp 10.10.30.22 tcpclo
+#
+#  OUTDUCT
+#  Protocol:      tcp
+#  Duct name:     10.10.30.33      [To Node:   GS3b  with IP Name: 10.10.30.33]
+#  CLO task name: tcpclo
+a outduct tcp 10.10.30.33 tcpclo
+#
+#  OUTDUCT
+#  Protocol:      tcp
+#  Duct name:     10.10.20.2      [To Node:   GS1  with IP Name: 10.10.20.2]
+#  CLO task name: tcpclo
+a outduct tcp 10.10.20.2 tcpclo
+#
+#  OUTDUCT
+#  Protocol:      tcp
+#  Duct name:     10.10.20.3      [To Node:   GS2  with IP Name: 10.10.20.3]
+#  CLO task name: tcpclo
+a outduct tcp 10.10.20.3 tcpclo
+#
+#  OUTDUCT
+#  Protocol:      tcp
+#  Duct name:     10.10.20.4      [To Node:   GS3  with IP Name: 10.10.20.4]
+#  CLO task name: tcpclo
+a outduct tcp 10.10.20.4 tcpclo
+#
+#  RUN
+#  Program:                 ipnadmin
+#  Configuration file name: MO.ipnrc
+r 'ipnadmin MO.ipnrc'
+#
+#  START DAEMONS
+s
