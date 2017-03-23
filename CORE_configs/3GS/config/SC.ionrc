@@ -1,0 +1,17 @@
+#  FILE:    SC.ionrc
+#  CONTENT: configuration commands
+#  FOR:     ionadmin
+#  BUILDER: ION Configuration Editor
+#  NETWORK: GSFCDemo3
+#  NODE:    SC
+#  IP NAME: 10.10.10.1
+#  DATE:    Sat Jan 03 02:10:59 EST 1970
+#
+#  INITIALIZE
+#  Ion node number:  1
+#  Ion configuration file name:  
+1 1 SC.ionconfig
+#
+#  START
+#  Program:   rfxclock
+s

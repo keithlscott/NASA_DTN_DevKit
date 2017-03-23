@@ -1,0 +1,17 @@
+#  FILE:    GS3b.ionrc
+#  CONTENT: configuration commands
+#  FOR:     ionadmin
+#  BUILDER: ION Configuration Editor
+#  NETWORK: GSFCDemo3
+#  NODE:    GS3b
+#  IP NAME: 10.10.30.33
+#  DATE:    Sat Jan 03 02:10:59 EST 1970
+#
+#  INITIALIZE
+#  Ion node number:  44
+#  Ion configuration file name:  
+1 44 GS3b.ionconfig
+#
+#  START
+#  Program:   rfxclock
+s
