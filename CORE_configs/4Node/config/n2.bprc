@@ -1,0 +1,88 @@
+#  FILE:    n2.bprc
+#  CONTENT: configuration commands
+#  FOR:     bpadmin
+#  BUILDER: ION Configuration Editor
+#  NETWORK: 4Node
+#  NODE:    n2
+#  IP NAME: 10.0.0.2
+#  DATE:    Wed Dec 31 23:31:32 EST 1969
+#
+#  INITIALIZE
+1
+#
+#  SCHEME
+#  Scheme type:      ipn
+#  Forwarding task:  ipnfw
+#  Custodian daemon: ipnadminep
+a scheme ipn 'ipnfw' 'ipnadminep'
+#
+#  ENDPOINT
+#  IPN Endpoint ID:             ipn:2.0
+#  Action if no receiver open:  x  [Discard]
+a endpoint ipn:2.0 x
+#
+#  ENDPOINT
+#  IPN Endpoint ID:             ipn:2.1
+#  Action if no receiver open:  x  [Discard]
+a endpoint ipn:2.1 x
+#
+#  ENDPOINT
+#  IPN Endpoint ID:             ipn:2.2
+#  Action if no receiver open:  x  [Discard]
+a endpoint ipn:2.2 x
+#
+#  ENDPOINT
+#  IPN Endpoint ID:             ipn:2.3
+#  Action if no receiver open:  x  [Discard]
+a endpoint ipn:2.3 x
+#
+#  ENDPOINT
+#  IPN Endpoint ID:             ipn:2.4
+#  Action if no receiver open:  x  [Discard]
+a endpoint ipn:2.4 x
+#
+#  PROTOCOL
+#  Protocol:  tcp
+#  Payload bytes per frame:           1400         [(KB/sec): 1  with K=1000]
+#  Overhead bytes per frame:          100
+#  Nominal data rate (bytes per sec): 1250000     [(KB/sec): 1250  (MB/sec): 1  with K=1000]
+a protocol tcp 1400 100 1250000
+#
+#  INDUCT
+#  Protocol:      tcp
+#  Duct name:     10.0.0.2      [From Node:  n1  with IP Name: 10.0.1.1]
+#  CLI task name: tcpcli
+a induct tcp 10.0.0.2 tcpcli
+#
+#  INDUCT
+#  Protocol:      tcp
+#  Duct name:     localhost      [From Node:  n2  with IP Name: localhost]
+#  CLI task name: tcpcli
+#  Redundant command omitted (one induct task per protocol)
+#
+#  OUTDUCT
+#  Protocol:      tcp
+#  Duct name:     localhost      [To Node:   n2  with IP Name: localhost]
+#  CLO task name: tcpclo
+a outduct tcp localhost tcpclo
+#
+#  OUTDUCT
+#  Protocol:      tcp
+#  Duct name:     10.0.1.1      [To Node:   n1  with IP Name: 10.0.1.1]
+#  CLO task name: tcpclo
+a outduct tcp 10.0.1.1 tcpclo
+#
+#  PROTOCOL
+#  Protocol:  udp
+#  Payload bytes per frame:           1400         [(KB/sec): 1  with K=1000]
+#  Overhead bytes per frame:          100
+#  Nominal data rate (bytes per sec): 1250000     [(KB/sec): 1250  (MB/sec): 1  with K=1000]
+a protocol udp 1400 100 1250000
+#
+#  RUN
+#  Program:                 ipnadmin
+#  Configuration file name: n2.ipnrc
+r 'ipnadmin n2.ipnrc'
+#
+#  START DAEMONS
+s
