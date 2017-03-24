@@ -1,0 +1,28 @@
+#  FILE:    MO.cfdprc
+#  CONTENT: configuration commands
+#  FOR:     cfdpadmin
+#  BUILDER: ION Configuration Editor
+#  NETWORK: GSFCDemo3
+#  NODE:    MO 
+#  IP NAME: 10.10.30.4
+#  DATE:    Wed Dec 31 22:02:06 EST 1969
+#
+#  INITIALIZE
+1
+#
+
+## KLS
+a entity 6 bp ipn:6.0 7 0 0
+e 1
+w 1
+m segsize 1000
+
+#
+#  MANAGE
+#  Discard Partial File:  true
+m discard 1
+
+#  START
+#  UTS Task:  bputa
+s 'bputa'
+

@@ -1,0 +1,356 @@
+node n1 {
+    type router
+    model router
+    network-config {
+	hostname n1
+	!
+	interface eth0
+	 ip address 10.0.0.1/24
+	 ipv6 address 2001:0::1/64
+	!
+	interface eth2
+	 ip address 10.0.1.1/24
+	 ipv6 address 2001:1::1/64
+	!
+	interface eth1
+	 ip address 10.0.2.1/24
+	 ipv6 address 2001:2::1/64
+	!
+    }
+    canvas c1
+    iconcoords {287.0 139.0}
+    labelcoords {287.0 171.0}
+    custom-config {
+	custom-config-id service:UserDefined
+	custom-command UserDefined
+	config {
+	dirs=('/var/tmp/ion', )
+	files=('bootstrap.sh', )
+	cmdup=('sh ./bootstrap.sh', )
+	}
+    }
+    custom-config {
+	custom-config-id service:UserDefined:bootstrap.sh
+	custom-command bootstrap.sh
+	config {
+	sh `dirname $SESSION_FILENAME`/generalSetup.sh
+	}
+    }
+    services {zebra OSPFv2 OSPFv3 vtysh IPForward SSH UserDefined}
+    interface-peer {eth2 n4}
+    interface-peer {eth1 n3}
+    interface-peer {eth0 n2}
+}
+
+node n2 {
+    type router
+    model router
+    network-config {
+	hostname n2
+	!
+	interface eth0
+	 ip address 10.0.0.2/24
+	 ipv6 address 2001:0::2/64
+	!
+    }
+    canvas c1
+    iconcoords {72.0 203.0}
+    labelcoords {72.0 235.0}
+    custom-config {
+	custom-config-id service:UserDefined
+	custom-command UserDefined
+	config {
+	dirs=('/var/tmp/ion', )
+	files=('bootstrap.sh', )
+	cmdup=('sh ./bootstrap.sh', )
+	}
+    }
+    custom-config {
+	custom-config-id service:UserDefined:bootstrap.sh
+	custom-command bootstrap.sh
+	config {
+	sh `dirname $SESSION_FILENAME`/generalSetup.sh
+	}
+    }
+    services {zebra OSPFv2 OSPFv3 vtysh IPForward SSH UserDefined}
+    interface-peer {eth0 n1}
+}
+
+node n4 {
+    type router
+    model router
+    network-config {
+	hostname n4
+	!
+	interface eth0
+	 ip address 10.0.1.2/24
+	 ipv6 address 2001:1::2/64
+	!
+    }
+    canvas c1
+    iconcoords {515.0 35.0}
+    labelcoords {515.0 67.0}
+    interface-peer {eth0 n1}
+}
+
+node n3 {
+    type router
+    model router
+    network-config {
+	hostname n3
+	!
+	interface eth0
+	 ip address 10.0.2.2/24
+	 ipv6 address 2001:2::2/64
+	!
+    }
+    canvas c1
+    iconcoords {507.0 230.0}
+    labelcoords {507.0 262.0}
+    interface-peer {eth0 n1}
+    custom-config {
+	custom-config-id service:UserDefined
+	custom-command UserDefined
+	config {
+	dirs=('/var/tmp/ion', )
+	files=('bootstrap.sh', )
+	cmdup=('sh ./bootstrap.sh', )
+	}
+    }
+    custom-config {
+	custom-config-id service:UserDefined:bootstrap.sh
+	custom-command bootstrap.sh
+	config {
+	sh `dirname $SESSION_FILENAME`/generalSetup.sh
+	}
+    }
+    services {zebra OSPFv2 OSPFv3 vtysh IPForward UserDefined}
+}
+
+link l2 {
+    nodes {n1 n4}
+    bandwidth 0
+}
+
+link l3 {
+    nodes {n1 n3}
+    bandwidth 0
+}
+
+link l1 {
+    nodes {n1 n2}
+    bandwidth 0
+}
+
+annotation a4 {
+    type text
+    iconcoords {315.0 87.0}
+    label {}
+    canvas c1
+}
+
+annotation a1 {
+    iconcoords {13.0 55.0 575.0 334.0}
+    type oval
+    label {Running ION}
+    labelcolor black
+    fontfamily {Arial}
+    fontsize {12}
+    color #cfcfff
+    width 0
+    border black
+    canvas c1
+}
+
+annotation a2 {
+    iconcoords {107.0 260.0}
+    type text
+    label {ION Nodes running bpecho on x.1}
+    labelcolor black
+    fontfamily {Arial}
+    fontsize {12}
+    canvas c1
+}
+
+annotation a3 {
+    iconcoords {248.0 276.0}
+    type text
+    label {bprecvfile on x.2}
+    labelcolor black
+    fontfamily {Arial}
+    fontsize {12}
+    canvas c1
+}
+
+annotation a5 {
+    type text
+    iconcoords {203.0 348.0}
+    label {}
+    canvas c1
+}
+
+annotation a6 {
+    iconcoords {114.0 298.0}
+    type text
+    label {e.g. double-click on n2 and run 'bping ipn:2.4 ipn:3.1'}
+    labelcolor black
+    fontfamily {Arial}
+    fontsize {12}
+    canvas c1
+}
+
+annotation a7 {
+    type text
+    iconcoords {132.0 336.0}
+    label {}
+    canvas c1
+}
+
+annotation a8 {
+    iconcoords {397.0 0.0 578.0 79.0}
+    type oval
+    label {}
+    labelcolor black
+    fontfamily {Arial}
+    fontsize {12}
+    color #cfcf96
+    width 0
+    border black
+    canvas c1
+}
+
+annotation a9 {
+    iconcoords {172.0 15.0}
+    type text
+    label {This node (n4) is NOT running ION}
+    labelcolor black
+    fontfamily {Arial}
+    fontsize {12}
+    canvas c1
+}
+
+annotation a10 {
+    type text
+    iconcoords {294.0 21.0}
+    label {}
+    canvas c1
+}
+
+annotation a11 {
+    type text
+    iconcoords {58.0 54.0}
+    label {}
+    canvas c1
+}
+
+annotation a12 {
+    type text
+    iconcoords {288.0 14.0}
+    label {}
+    canvas c1
+}
+
+annotation a13 {
+    iconcoords {24.0 33.0}
+    type text
+    label {ION Node Number 4 IS in the ION Nodes' contact plans.}
+    labelcolor black
+    fontfamily {Arial}
+    fontsize {12}
+    canvas c1
+}
+
+annotation a14 {
+    type text
+    iconcoords {81.0 41.0}
+    label {}
+    canvas c1
+}
+
+canvas c1 {
+    name {Canvas1}
+}
+
+hook 3:instantiation_hook.sh {
+#!/bin/sh
+# session hook script; write commands here to execute on the host at the
+# specified state
+rm -f /tmp/ionrcdate
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
+
+hook 4:runtime_hook.sh {
+#!/bin/bash
+# session hook script; write commands here to execute on the host at the
+# specified state
+
+pycore=`ls /tmp | grep pycore`
+#sleep 15 && xterm -e "/usr/sbin/vcmd -c /tmp/$pycore/n2 -- bping ipn:2.5 ipn:4.1" &
+exit 0
+
+
+
+
+
+
+}
+
+hook 6:shutdown_hook.sh {
+#!/bin/sh
+# session hook script; write commands here to execute on the host at the
+# specified state
+
+killall -9 vcmd
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
+
+option global {
+    interface_names yes
+    ip_addresses yes
+    ipv6_addresses no
+    node_labels yes
+    link_labels yes
+    show_api no
+    background_images no
+    annotations yes
+    grid yes
+    traffic_start 0
+}
+
+option session {
+    controlnet=192.168.0.0/24
+    controlnet_updown_script=
+    enablerj45=1
+    enablesdt=0
+    preservedir=0
+    sdturl=tcp://127.0.0.1:50000/
+}
+

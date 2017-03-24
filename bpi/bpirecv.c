@@ -76,7 +76,13 @@ int	main(int argc, char **argv)
 	SDL_Event event;
 	
 	//Init SDL
-	if (SDL_Init(SDL_INIT_VIDEO) < 0 ) return 1;
+	printf("About to call SDL_Init())\n");
+	if (SDL_Init(SDL_INIT_VIDEO) < 0 ) {
+		printf("SDL_INIT_VIDEO failed.\n");
+		fprintf(stderr, "Unable to initialize SDL: %s\n",
+			SDL_GetError());
+		return 1;
+	}
 
 	if (ownEid == NULL)
 	{

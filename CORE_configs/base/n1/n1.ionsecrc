@@ -1,0 +1,5 @@
+# Initialization command (command 1). 
+1
+# Select level of "echo control" activities
+# 0 = None; 1 = print to both log and stdout
+e 1

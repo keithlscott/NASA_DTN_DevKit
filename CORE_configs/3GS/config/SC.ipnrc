@@ -1,0 +1,29 @@
+#  FILE:    SC.ipnrc
+#  CONTENT: configuration commands
+#  FOR:     ipnadmin
+#  BUILDER: ION Configuration Editor
+#  NETWORK: GSFCDemo3
+#  NODE:    SC
+#  IP NAME: 10.10.10.1
+#  DATE:    Sat Jan 03 02:10:59 EST 1970
+#
+#  PLAN
+#  Destination node:   1         [To Node: SC  with IP Name: 10.10.10.1]
+#  Duct Expression:    tcp/localhost
+a plan 1 tcp/localhost
+#
+#  PLAN
+#  Destination node:   2         [To Node: GS1  with IP Name: 10.10.20.2]
+#  Duct Expression:    udp/*
+a plan 2 udp/*,10.10.20.2:4556
+#
+#  PLAN
+#  Destination node:   3         [To Node: GS2  with IP Name: 10.10.20.3]
+#  Duct Expression:    udp/*
+a plan 3 udp/*,10.10.20.3:4556
+#
+#  PLAN
+#  Destination node:   4         [To Node: GS3  with IP Name: 10.10.20.4]
+#  Duct Expression:    udp/*
+a plan 4 udp/*,10.10.20.4:4556
+

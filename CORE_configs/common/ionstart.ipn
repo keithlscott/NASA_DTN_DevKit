@@ -1,0 +1,26 @@
+#!/bin/bash
+# shell script to get ION node running
+
+#                       NOTICE
+# This software / technical data was produced for the U.S. 
+# Government under Prime Contract No. NNN12AA01C and JPL
+# Contract Number 149581, and is subject to the FAR
+# 52.227-14 (6/87) Rights in Data General.
+#
+#
+
+BASE_NAME=`hostname`
+echo "Starting ION node $BASE_NAME"
+ionadmin	$BASE_NAME\.ionrc
+sleep 1
+ionsecadmin     $BASE_NAME\.ionsecrc
+sleep 1
+ltpadmin        $BASE_NAME\.ltprc
+sleep 1
+bpadmin         $BASE_NAME\.bprc
+sleep 1
+cfdpadmin       $BASE_NAME\.cfdprc
+sleep 1
+acsadmin        $BASE_NAME\.acsrc
+sleep 1
+echo "Startup of ION node $BASE_NAME is complete!"

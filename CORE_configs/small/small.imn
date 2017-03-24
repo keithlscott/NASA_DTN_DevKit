@@ -144,12 +144,12 @@ node n7 {
 	custom-config-id ns2script
 	custom-command {10 3 11 10 10 10 10 10}
 	config {
-	file=/home/core/.core/configs/small/120.scen
+	file=/home/core/.core/configs/NASADTNDevKit/small/120.scen
 	refresh_ms=50
 	loop=1
 	autostart=0.0
 	map=
-	script_start=/home/core/.core/configs/small/mobility.sh
+	script_start=/home/core/.core/configs/NASADTNDevKit/small/mobility.sh
 	script_pause=
 	script_stop=
 	}
