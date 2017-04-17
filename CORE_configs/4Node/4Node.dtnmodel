@@ -21,7 +21,7 @@
       <defaultIonServiceNumbers>9</defaultIonServiceNumbers>
       <defaultIonServiceNumbers>15</defaultIonServiceNumbers>
     </services>
-    <services serviceName="cfdp-1">
+    <services ipnEndpoints="//@nodesAndHops/@nodes.2/@nodeIpnEndpoints.6 //@nodesAndHops/@nodes.2/@nodeIpnEndpoints.5 //@nodesAndHops/@nodes.1/@nodeIpnEndpoints.5 //@nodesAndHops/@nodes.1/@nodeIpnEndpoints.6 //@nodesAndHops/@nodes.0/@nodeIpnEndpoints.5 //@nodesAndHops/@nodes.0/@nodeIpnEndpoints.6" serviceNodes="//@nodesAndHops/@nodes.0 //@nodesAndHops/@nodes.1" serviceName="cfdp-1">
       <defaultIonServiceNumbers>64</defaultIonServiceNumbers>
       <defaultIonServiceNumbers>65</defaultIonServiceNumbers>
     </services>
@@ -77,8 +77,9 @@
   </commonProtocols>
   <commonSecurity/>
   <nodesAndHops>
-    <nodes nodeServices="//@commonServices/@services.2" priorHops="//@nodesAndHops/@nodes.1/@nextHops.1 //@nodesAndHops/@nodes.2/@nextHops.1 //@nodesAndHops/@nodes.0/@nextHops.0" nodeName="n1" ipName="10.0.1.1">
+    <nodes nodeServices="//@commonServices/@services.2 //@commonServices/@services.1" priorHops="//@nodesAndHops/@nodes.1/@nextHops.1 //@nodesAndHops/@nodes.2/@nextHops.1 //@nodesAndHops/@nodes.0/@nextHops.0" nodeName="n1" ipName="10.0.1.1">
       <ionNode nodeNum="1">
+        <cfdpNode/>
         <ionBpLayers inductPortNumber="4556" payloadBytesPerFrame="1400" inducts="//@nodesAndHops/@nodes.1/@nextHops.1/@ionHop //@nodesAndHops/@nodes.2/@nextHops.1/@ionHop //@nodesAndHops/@nodes.0/@nextHops.0/@ionHop" outducts="//@nodesAndHops/@nodes.0/@nextHops.0/@ionHop //@nodesAndHops/@nodes.0/@nextHops.1/@ionHop //@nodesAndHops/@nodes.0/@nextHops.2/@ionHop" ionLayer="//@commonProtocols/@protocols.0/@lowerLayers.5/@ionLayer"/>
         <ionBpLayers inductPortNumber="4556" payloadBytesPerFrame="1400" inducts="//@nodesAndHops/@nodes.0/@nextHops.3/@ionHop" outducts="//@nodesAndHops/@nodes.0/@nextHops.3/@ionHop" ionLayer="//@commonProtocols/@protocols.0/@lowerLayers.6/@ionLayer"/>
       </ionNode>
@@ -117,9 +118,16 @@
       <nodeIpnEndpoints ipnService="//@commonServices/@services.2" serviceNum="4">
         <ionIpnEndpoint/>
       </nodeIpnEndpoints>
+      <nodeIpnEndpoints ipnService="//@commonServices/@services.1" serviceNum="64">
+        <ionIpnEndpoint/>
+      </nodeIpnEndpoints>
+      <nodeIpnEndpoints ipnService="//@commonServices/@services.1" serviceNum="65">
+        <ionIpnEndpoint/>
+      </nodeIpnEndpoints>
     </nodes>
-    <nodes nodeServices="//@commonServices/@services.2" priorHops="//@nodesAndHops/@nodes.0/@nextHops.1 //@nodesAndHops/@nodes.1/@nextHops.0" nodeName="n2" ipName="10.0.0.2">
+    <nodes nodeServices="//@commonServices/@services.2 //@commonServices/@services.1" priorHops="//@nodesAndHops/@nodes.0/@nextHops.1 //@nodesAndHops/@nodes.1/@nextHops.0" nodeName="n2" ipName="10.0.0.2">
       <ionNode nodeNum="2">
+        <cfdpNode/>
         <ionBpLayers inductPortNumber="4556" payloadBytesPerFrame="1400" inducts="//@nodesAndHops/@nodes.0/@nextHops.1/@ionHop //@nodesAndHops/@nodes.1/@nextHops.0/@ionHop" outducts="//@nodesAndHops/@nodes.1/@nextHops.0/@ionHop //@nodesAndHops/@nodes.1/@nextHops.1/@ionHop" ionLayer="//@commonProtocols/@protocols.0/@lowerLayers.5/@ionLayer"/>
         <ionBpLayers inductPortNumber="4556" payloadBytesPerFrame="1400" ionLayer="//@commonProtocols/@protocols.0/@lowerLayers.6/@ionLayer"/>
       </ionNode>
@@ -148,9 +156,16 @@
       <nodeIpnEndpoints ipnService="//@commonServices/@services.2" serviceNum="4">
         <ionIpnEndpoint/>
       </nodeIpnEndpoints>
+      <nodeIpnEndpoints ipnService="//@commonServices/@services.1" serviceNum="64">
+        <ionIpnEndpoint/>
+      </nodeIpnEndpoints>
+      <nodeIpnEndpoints ipnService="//@commonServices/@services.1" serviceNum="65">
+        <ionIpnEndpoint/>
+      </nodeIpnEndpoints>
     </nodes>
     <nodes nodeServices="//@commonServices/@services.2" priorHops="//@nodesAndHops/@nodes.0/@nextHops.2 //@nodesAndHops/@nodes.2/@nextHops.0" nodeName="n3" ipName="10.0.2.2">
       <ionNode nodeNum="3">
+        <cfdpNode/>
         <ionBpLayers inductPortNumber="4556" payloadBytesPerFrame="1400" inducts="//@nodesAndHops/@nodes.0/@nextHops.2/@ionHop //@nodesAndHops/@nodes.2/@nextHops.0/@ionHop" outducts="//@nodesAndHops/@nodes.2/@nextHops.0/@ionHop //@nodesAndHops/@nodes.2/@nextHops.1/@ionHop" ionLayer="//@commonProtocols/@protocols.0/@lowerLayers.5/@ionLayer"/>
         <ionBpLayers inductPortNumber="4556" payloadBytesPerFrame="1400" ionLayer="//@commonProtocols/@protocols.0/@lowerLayers.6/@ionLayer"/>
       </ionNode>
@@ -177,6 +192,12 @@
         <ionIpnEndpoint/>
       </nodeIpnEndpoints>
       <nodeIpnEndpoints ipnService="//@commonServices/@services.2" serviceNum="4">
+        <ionIpnEndpoint/>
+      </nodeIpnEndpoints>
+      <nodeIpnEndpoints ipnService="//@commonServices/@services.1" serviceNum="64">
+        <ionIpnEndpoint/>
+      </nodeIpnEndpoints>
+      <nodeIpnEndpoints ipnService="//@commonServices/@services.1" serviceNum="65">
         <ionIpnEndpoint/>
       </nodeIpnEndpoints>
     </nodes>
