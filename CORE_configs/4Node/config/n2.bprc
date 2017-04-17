@@ -40,6 +40,8 @@ a endpoint ipn:2.3 x
 #  IPN Endpoint ID:             ipn:2.4
 #  Action if no receiver open:  x  [Discard]
 a endpoint ipn:2.4 x
+a endpoint ipn:2.64 x
+a endpoint ipn:2.65 x
 #
 #  PROTOCOL
 #  Protocol:  tcp

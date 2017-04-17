@@ -40,6 +40,8 @@ a endpoint ipn:1.3 x
 #  IPN Endpoint ID:             ipn:1.4
 #  Action if no receiver open:  x  [Discard]
 a endpoint ipn:1.4 x
+a endpoint ipn:1.64 x
+a endpoint ipn:1.65 x
 #
 #  PROTOCOL
 #  Protocol:  tcp
