@@ -1,0 +1,533 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dtnmodel:Network xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:dtnmodel="http://dtnmodel/1.0" netName="GSFCDemo3" nextIonNodeNumber="15">
+  <contactGraphs graphName="contacts">
+    <ranges rangedHop="//@nodesAndHops/@nodes.0/@nextHops.0/@ionHop" distanceLightSecs="1" relativeStopTimeSecs="4000000"/>
+    <ranges rangedHop="//@nodesAndHops/@nodes.0/@nextHops.1/@ionHop" distanceLightSecs="1" relativeStopTimeSecs="400000"/>
+    <ranges rangedHop="//@nodesAndHops/@nodes.0/@nextHops.2/@ionHop" distanceLightSecs="1" relativeStopTimeSecs="400000"/>
+    <ranges rangedHop="//@nodesAndHops/@nodes.0/@nextHops.3/@ionHop" distanceLightSecs="1" relativeStopTimeSecs="4000000"/>
+    <ranges rangedHop="//@nodesAndHops/@nodes.1/@nextHops.0/@ionHop" distanceLightSecs="1" relativeStopTimeSecs="4000000"/>
+    <ranges rangedHop="//@nodesAndHops/@nodes.2/@nextHops.0/@ionHop" distanceLightSecs="1" relativeStopTimeSecs="4000000"/>
+    <ranges rangedHop="//@nodesAndHops/@nodes.3/@nextHops.0/@ionHop" distanceLightSecs="1" relativeStopTimeSecs="4000000"/>
+    <ranges rangedHop="//@nodesAndHops/@nodes.4/@nextHops.0/@ionHop" distanceLightSecs="1" relativeStopTimeSecs="4000000"/>
+    <ranges rangedHop="//@nodesAndHops/@nodes.5/@nextHops.0/@ionHop" distanceLightSecs="1" relativeStopTimeSecs="4000000"/>
+    <ranges rangedHop="//@nodesAndHops/@nodes.6/@nextHops.0/@ionHop" distanceLightSecs="1" relativeStopTimeSecs="4000000"/>
+    <ranges rangedHop="//@nodesAndHops/@nodes.7/@nextHops.0/@ionHop" distanceLightSecs="1" relativeStopTimeSecs="4000000"/>
+    <ranges rangedHop="//@nodesAndHops/@nodes.8/@nextHops.0/@ionHop" distanceLightSecs="1" relativeStopTimeSecs="4000000"/>
+    <ranges rangedHop="//@nodesAndHops/@nodes.1/@nextHops.3/@ionHop" distanceLightSecs="1" relativeStopTimeSecs="4000000"/>
+    <ranges rangedHop="//@nodesAndHops/@nodes.1/@nextHops.4/@ionHop" distanceLightSecs="1" relativeStopTimeSecs="4000000"/>
+    <ranges rangedHop="//@nodesAndHops/@nodes.1/@nextHops.1/@ionHop" distanceLightSecs="1" relativeStopTimeSecs="4000000"/>
+    <ranges rangedHop="//@nodesAndHops/@nodes.1/@nextHops.2/@ionHop" distanceLightSecs="1" relativeStopTimeSecs="4000000"/>
+    <ranges rangedHop="//@nodesAndHops/@nodes.2/@nextHops.1/@ionHop" distanceLightSecs="1" relativeStopTimeSecs="4000000"/>
+    <ranges rangedHop="//@nodesAndHops/@nodes.2/@nextHops.2/@ionHop" distanceLightSecs="1" relativeStopTimeSecs="4000000"/>
+    <ranges rangedHop="//@nodesAndHops/@nodes.3/@nextHops.1/@ionHop" distanceLightSecs="1" relativeStopTimeSecs="4000000"/>
+    <ranges rangedHop="//@nodesAndHops/@nodes.3/@nextHops.2/@ionHop" distanceLightSecs="1" relativeStopTimeSecs="4000000"/>
+    <ranges rangedHop="//@nodesAndHops/@nodes.8/@nextHops.4/@ionHop" distanceLightSecs="1" relativeStopTimeSecs="400000"/>
+    <ranges rangedHop="//@nodesAndHops/@nodes.4/@nextHops.1/@ionHop" distanceLightSecs="1" relativeStopTimeSecs="400000"/>
+    <ranges rangedHop="//@nodesAndHops/@nodes.5/@nextHops.1/@ionHop" distanceLightSecs="1" relativeStopTimeSecs="400000"/>
+    <ranges rangedHop="//@nodesAndHops/@nodes.6/@nextHops.1/@ionHop" distanceLightSecs="1" relativeStopTimeSecs="400000"/>
+    <ranges rangedHop="//@nodesAndHops/@nodes.7/@nextHops.2/@ionHop" distanceLightSecs="1" relativeStopTimeSecs="400000"/>
+    <ranges rangedHop="//@nodesAndHops/@nodes.7/@nextHops.3/@ionHop" distanceLightSecs="1" relativeStopTimeSecs="400000"/>
+    <ranges rangedHop="//@nodesAndHops/@nodes.7/@nextHops.4/@ionHop" distanceLightSecs="1" relativeStopTimeSecs="400000"/>
+    <ranges rangedHop="//@nodesAndHops/@nodes.4/@nextHops.2/@ionHop" distanceLightSecs="1" relativeStopTimeSecs="400000"/>
+    <ranges rangedHop="//@nodesAndHops/@nodes.5/@nextHops.2/@ionHop" distanceLightSecs="1" relativeStopTimeSecs="400000"/>
+    <ranges rangedHop="//@nodesAndHops/@nodes.6/@nextHops.2/@ionHop" distanceLightSecs="1" relativeStopTimeSecs="400000"/>
+    <contacts timedHop="//@nodesAndHops/@nodes.0/@nextHops.0/@ionHop" dataRateBytesPerSec="1000000" relativeStopTimeSecs="4000000"/>
+    <contacts timedHop="//@nodesAndHops/@nodes.1/@nextHops.0/@ionHop" dataRateBytesPerSec="1000000" relativeStopTimeSecs="4000000"/>
+    <contacts timedHop="//@nodesAndHops/@nodes.2/@nextHops.0/@ionHop" dataRateBytesPerSec="1000000" relativeStopTimeSecs="40000"/>
+    <contacts timedHop="//@nodesAndHops/@nodes.3/@nextHops.0/@ionHop" dataRateBytesPerSec="1000000" relativeStopTimeSecs="4000000"/>
+    <contacts timedHop="//@nodesAndHops/@nodes.4/@nextHops.0/@ionHop" dataRateBytesPerSec="1000000" relativeStopTimeSecs="400000"/>
+    <contacts timedHop="//@nodesAndHops/@nodes.5/@nextHops.0/@ionHop" dataRateBytesPerSec="1000000" relativeStopTimeSecs="400000"/>
+    <contacts timedHop="//@nodesAndHops/@nodes.6/@nextHops.0/@ionHop" dataRateBytesPerSec="1000000" relativeStopTimeSecs="400000"/>
+    <contacts timedHop="//@nodesAndHops/@nodes.7/@nextHops.0/@ionHop" dataRateBytesPerSec="1000000" relativeStopTimeSecs="4000000"/>
+    <contacts timedHop="//@nodesAndHops/@nodes.8/@nextHops.0/@ionHop" dataRateBytesPerSec="1000000" relativeStopTimeSecs="400000"/>
+    <contacts timedHop="//@nodesAndHops/@nodes.0/@nextHops.1/@ionHop" dataRateBytesPerSec="1000000" relativeStopTimeSecs="30"/>
+    <contacts timedHop="//@nodesAndHops/@nodes.0/@nextHops.1/@ionHop" dataRateBytesPerSec="1000000" relativeStartTimeSecs="135" relativeStopTimeSecs="165"/>
+    <contacts timedHop="//@nodesAndHops/@nodes.0/@nextHops.1/@ionHop" dataRateBytesPerSec="1000000" relativeStartTimeSecs="270" relativeStopTimeSecs="300"/>
+    <contacts timedHop="//@nodesAndHops/@nodes.0/@nextHops.1/@ionHop" dataRateBytesPerSec="1000000" relativeStartTimeSecs="405" relativeStopTimeSecs="435"/>
+    <contacts timedHop="//@nodesAndHops/@nodes.0/@nextHops.1/@ionHop" dataRateBytesPerSec="1000000" relativeStartTimeSecs="540" relativeStopTimeSecs="570"/>
+    <contacts timedHop="//@nodesAndHops/@nodes.0/@nextHops.1/@ionHop" dataRateBytesPerSec="1000000" relativeStartTimeSecs="675" relativeStopTimeSecs="705"/>
+    <contacts timedHop="//@nodesAndHops/@nodes.0/@nextHops.1/@ionHop" dataRateBytesPerSec="1000000" relativeStartTimeSecs="810" relativeStopTimeSecs="400000"/>
+    <contacts timedHop="//@nodesAndHops/@nodes.0/@nextHops.2/@ionHop" dataRateBytesPerSec="1000000" relativeStartTimeSecs="45" relativeStopTimeSecs="75"/>
+    <contacts timedHop="//@nodesAndHops/@nodes.0/@nextHops.2/@ionHop" dataRateBytesPerSec="1000000" relativeStartTimeSecs="180" relativeStopTimeSecs="210"/>
+    <contacts timedHop="//@nodesAndHops/@nodes.0/@nextHops.2/@ionHop" dataRateBytesPerSec="1000000" relativeStartTimeSecs="315" relativeStopTimeSecs="345"/>
+    <contacts timedHop="//@nodesAndHops/@nodes.0/@nextHops.2/@ionHop" dataRateBytesPerSec="1000000" relativeStartTimeSecs="450" relativeStopTimeSecs="480"/>
+    <contacts timedHop="//@nodesAndHops/@nodes.0/@nextHops.2/@ionHop" dataRateBytesPerSec="1000000" relativeStartTimeSecs="585" relativeStopTimeSecs="615"/>
+    <contacts timedHop="//@nodesAndHops/@nodes.0/@nextHops.3/@ionHop" dataRateBytesPerSec="1000000" relativeStartTimeSecs="90" relativeStopTimeSecs="120"/>
+    <contacts timedHop="//@nodesAndHops/@nodes.0/@nextHops.3/@ionHop" dataRateBytesPerSec="1000000" relativeStartTimeSecs="225" relativeStopTimeSecs="255"/>
+    <contacts timedHop="//@nodesAndHops/@nodes.0/@nextHops.3/@ionHop" dataRateBytesPerSec="1000000" relativeStartTimeSecs="360" relativeStopTimeSecs="390"/>
+    <contacts timedHop="//@nodesAndHops/@nodes.0/@nextHops.3/@ionHop" dataRateBytesPerSec="1000000" relativeStartTimeSecs="495" relativeStopTimeSecs="525"/>
+    <contacts timedHop="//@nodesAndHops/@nodes.0/@nextHops.3/@ionHop" dataRateBytesPerSec="1000000" relativeStartTimeSecs="630" relativeStopTimeSecs="660"/>
+    <contacts timedHop="//@nodesAndHops/@nodes.4/@nextHops.2/@ionHop" dataRateBytesPerSec="1000000" relativeStopTimeSecs="400000"/>
+    <contacts timedHop="//@nodesAndHops/@nodes.4/@nextHops.1/@ionHop" dataRateBytesPerSec="1000000" relativeStopTimeSecs="30"/>
+    <contacts timedHop="//@nodesAndHops/@nodes.4/@nextHops.1/@ionHop" dataRateBytesPerSec="1000000" relativeStartTimeSecs="135" relativeStopTimeSecs="165"/>
+    <contacts timedHop="//@nodesAndHops/@nodes.4/@nextHops.1/@ionHop" dataRateBytesPerSec="1000000" relativeStartTimeSecs="270" relativeStopTimeSecs="300"/>
+    <contacts timedHop="//@nodesAndHops/@nodes.4/@nextHops.1/@ionHop" dataRateBytesPerSec="1000000" relativeStartTimeSecs="405" relativeStopTimeSecs="435"/>
+    <contacts timedHop="//@nodesAndHops/@nodes.4/@nextHops.1/@ionHop" dataRateBytesPerSec="1000000" relativeStartTimeSecs="540" relativeStopTimeSecs="570"/>
+    <contacts timedHop="//@nodesAndHops/@nodes.5/@nextHops.2/@ionHop" dataRateBytesPerSec="1000000" relativeStopTimeSecs="400000"/>
+    <contacts timedHop="//@nodesAndHops/@nodes.5/@nextHops.1/@ionHop" dataRateBytesPerSec="1000000" relativeStopTimeSecs="1"/>
+    <contacts timedHop="//@nodesAndHops/@nodes.6/@nextHops.2/@ionHop" dataRateBytesPerSec="1000000" relativeStopTimeSecs="400000"/>
+    <contacts timedHop="//@nodesAndHops/@nodes.6/@nextHops.1/@ionHop" dataRateBytesPerSec="1000000" relativeStopTimeSecs="1"/>
+    <contacts timedHop="//@nodesAndHops/@nodes.1/@nextHops.1/@ionHop" dataRateBytesPerSec="1000000" relativeStopTimeSecs="4000000"/>
+    <contacts timedHop="//@nodesAndHops/@nodes.2/@nextHops.1/@ionHop" dataRateBytesPerSec="1000000" relativeStopTimeSecs="4000000"/>
+    <contacts timedHop="//@nodesAndHops/@nodes.3/@nextHops.1/@ionHop" dataRateBytesPerSec="1000000" relativeStopTimeSecs="4000000"/>
+    <contacts timedHop="//@nodesAndHops/@nodes.1/@nextHops.2/@ionHop" dataRateBytesPerSec="1000000" relativeStopTimeSecs="400000"/>
+    <contacts timedHop="//@nodesAndHops/@nodes.2/@nextHops.2/@ionHop" dataRateBytesPerSec="1000000" relativeStopTimeSecs="400000"/>
+    <contacts timedHop="//@nodesAndHops/@nodes.3/@nextHops.2/@ionHop" dataRateBytesPerSec="1000000" relativeStopTimeSecs="400000"/>
+    <contacts timedHop="//@nodesAndHops/@nodes.7/@nextHops.5/@ionHop" dataRateBytesPerSec="1000000" relativeStopTimeSecs="4000000"/>
+    <contacts timedHop="//@nodesAndHops/@nodes.7/@nextHops.6/@ionHop" dataRateBytesPerSec="1000000" relativeStopTimeSecs="4000000"/>
+    <contacts timedHop="//@nodesAndHops/@nodes.7/@nextHops.7/@ionHop" dataRateBytesPerSec="1000000" relativeStopTimeSecs="4000000"/>
+    <contacts timedHop="//@nodesAndHops/@nodes.7/@nextHops.1/@ionHop" dataRateBytesPerSec="1000000" relativeStopTimeSecs="400000"/>
+    <contacts timedHop="//@nodesAndHops/@nodes.7/@nextHops.2/@ionHop" dataRateBytesPerSec="1000000" relativeStopTimeSecs="4000000"/>
+    <contacts timedHop="//@nodesAndHops/@nodes.7/@nextHops.3/@ionHop" dataRateBytesPerSec="1000000" relativeStopTimeSecs="4000000"/>
+    <contacts timedHop="//@nodesAndHops/@nodes.7/@nextHops.4/@ionHop" dataRateBytesPerSec="1000000" relativeStopTimeSecs="4000000"/>
+    <contacts timedHop="//@nodesAndHops/@nodes.8/@nextHops.1/@ionHop" dataRateBytesPerSec="1000000" relativeStopTimeSecs="4000000"/>
+    <contacts timedHop="//@nodesAndHops/@nodes.8/@nextHops.2/@ionHop" dataRateBytesPerSec="1000000" relativeStopTimeSecs="4000000"/>
+    <contacts timedHop="//@nodesAndHops/@nodes.8/@nextHops.3/@ionHop" dataRateBytesPerSec="1000000" relativeStopTimeSecs="4000000"/>
+    <contacts timedHop="//@nodesAndHops/@nodes.8/@nextHops.4/@ionHop" dataRateBytesPerSec="1000000" relativeStopTimeSecs="400000"/>
+    <contacts timedHop="//@nodesAndHops/@nodes.1/@nextHops.3/@ionHop" dataRateBytesPerSec="1000000" relativeStopTimeSecs="4000000"/>
+    <contacts timedHop="//@nodesAndHops/@nodes.1/@nextHops.4/@ionHop" dataRateBytesPerSec="1000000" relativeStopTimeSecs="4000000"/>
+    <contacts timedHop="//@nodesAndHops/@nodes.2/@nextHops.3/@ionHop" dataRateBytesPerSec="1000000" relativeStopTimeSecs="4000000"/>
+    <contacts timedHop="//@nodesAndHops/@nodes.2/@nextHops.4/@ionHop" dataRateBytesPerSec="1000000" relativeStopTimeSecs="4000000"/>
+    <contacts timedHop="//@nodesAndHops/@nodes.3/@nextHops.3/@ionHop" dataRateBytesPerSec="1000000" relativeStopTimeSecs="4000000"/>
+    <contacts timedHop="//@nodesAndHops/@nodes.3/@nextHops.4/@ionHop" dataRateBytesPerSec="1000000" relativeStopTimeSecs="4000000"/>
+  </contactGraphs>
+  <commonServices>
+    <services serviceName="ams">
+      <defaultIonServiceNumbers>9</defaultIonServiceNumbers>
+      <defaultIonServiceNumbers>15</defaultIonServiceNumbers>
+    </services>
+    <services ipnEndpoints="//@nodesAndHops/@nodes.8/@nodeIpnEndpoints.6 //@nodesAndHops/@nodes.7/@nodeIpnEndpoints.3 //@nodesAndHops/@nodes.0/@nodeIpnEndpoints.6" serviceNodes="//@nodesAndHops/@nodes.8" serviceName="cfdp-1">
+      <defaultIonServiceNumbers>64</defaultIonServiceNumbers>
+      <defaultIonServiceNumbers>65</defaultIonServiceNumbers>
+    </services>
+    <services ipnEndpoints="//@nodesAndHops/@nodes.0/@nodeIpnEndpoints.0 //@nodesAndHops/@nodes.0/@nodeIpnEndpoints.1 //@nodesAndHops/@nodes.0/@nodeIpnEndpoints.2 //@nodesAndHops/@nodes.1/@nodeIpnEndpoints.0 //@nodesAndHops/@nodes.1/@nodeIpnEndpoints.1 //@nodesAndHops/@nodes.1/@nodeIpnEndpoints.2 //@nodesAndHops/@nodes.7/@nodeIpnEndpoints.0 //@nodesAndHops/@nodes.7/@nodeIpnEndpoints.1 //@nodesAndHops/@nodes.7/@nodeIpnEndpoints.2 //@nodesAndHops/@nodes.8/@nodeIpnEndpoints.0 //@nodesAndHops/@nodes.8/@nodeIpnEndpoints.1 //@nodesAndHops/@nodes.8/@nodeIpnEndpoints.2 //@nodesAndHops/@nodes.4/@nodeIpnEndpoints.0 //@nodesAndHops/@nodes.4/@nodeIpnEndpoints.1 //@nodesAndHops/@nodes.4/@nodeIpnEndpoints.2 //@nodesAndHops/@nodes.5/@nodeIpnEndpoints.0 //@nodesAndHops/@nodes.5/@nodeIpnEndpoints.1 //@nodesAndHops/@nodes.5/@nodeIpnEndpoints.2 //@nodesAndHops/@nodes.6/@nodeIpnEndpoints.0 //@nodesAndHops/@nodes.6/@nodeIpnEndpoints.1 //@nodesAndHops/@nodes.6/@nodeIpnEndpoints.2 //@nodesAndHops/@nodes.3/@nodeIpnEndpoints.2 //@nodesAndHops/@nodes.3/@nodeIpnEndpoints.1 //@nodesAndHops/@nodes.3/@nodeIpnEndpoints.0 //@nodesAndHops/@nodes.2/@nodeIpnEndpoints.2 //@nodesAndHops/@nodes.2/@nodeIpnEndpoints.1 //@nodesAndHops/@nodes.2/@nodeIpnEndpoints.0 //@nodesAndHops/@nodes.8/@nodeIpnEndpoints.3 //@nodesAndHops/@nodes.8/@nodeIpnEndpoints.4 //@nodesAndHops/@nodes.8/@nodeIpnEndpoints.5 //@nodesAndHops/@nodes.8/@nodeIpnEndpoints.7 //@nodesAndHops/@nodes.0/@nodeIpnEndpoints.5 //@nodesAndHops/@nodes.0/@nodeIpnEndpoints.4 //@nodesAndHops/@nodes.0/@nodeIpnEndpoints.3 //@nodesAndHops/@nodes.0/@nodeIpnEndpoints.7 //@nodesAndHops/@nodes.7/@nodeIpnEndpoints.4" serviceNodes="//@nodesAndHops/@nodes.0 //@nodesAndHops/@nodes.1 //@nodesAndHops/@nodes.7 //@nodesAndHops/@nodes.8 //@nodesAndHops/@nodes.4 //@nodesAndHops/@nodes.5 //@nodesAndHops/@nodes.6 //@nodesAndHops/@nodes.3 //@nodesAndHops/@nodes.2" serviceName="ion">
+      <defaultIonServiceNumbers>0</defaultIonServiceNumbers>
+      <defaultIonServiceNumbers>1</defaultIonServiceNumbers>
+      <defaultIonServiceNumbers>2</defaultIonServiceNumbers>
+    </services>
+    <services serviceName="lgagent">
+      <defaultIonServiceNumbers>127</defaultIonServiceNumbers>
+    </services>
+  </commonServices>
+  <commonProtocols>
+    <protocols higherLayers="//@commonProtocols/@protocols.3/@lowerLayers.0" protocolName="bp" isPromiscuous="false">
+      <lowerLayers lowProtocol="//@commonProtocols/@protocols.1">
+        <ionLayer payloadBytesPerFrame="1400" inductTask="brsccla" outductTask="brsccla"/>
+      </lowerLayers>
+      <lowerLayers lowProtocol="//@commonProtocols/@protocols.2">
+        <ionLayer payloadBytesPerFrame="1400" inductTask="brsscla" outductTask="brsscla"/>
+      </lowerLayers>
+      <lowerLayers lowProtocol="//@commonProtocols/@protocols.4">
+        <ionLayer inductPortNumber="1113" payloadBytesPerFrame="1400" inductTask="dgrcla" outductTask="dgrcla"/>
+      </lowerLayers>
+      <lowerLayers lowProtocol="//@commonProtocols/@protocols.5">
+        <ionLayer inductTask="ltpcli" outductTask="ltpclo"/>
+      </lowerLayers>
+      <lowerLayers lowProtocol="//@commonProtocols/@protocols.6">
+        <ionLayer inductPortNumber="4556" payloadBytesPerFrame="1400" inductTask="stcpcli" outductTask="stcpclo"/>
+      </lowerLayers>
+      <lowerLayers lowProtocol="//@commonProtocols/@protocols.7" bpHops="//@nodesAndHops/@nodes.0/@nextHops.0 //@nodesAndHops/@nodes.1/@nextHops.0 //@nodesAndHops/@nodes.7/@nextHops.0 //@nodesAndHops/@nodes.1/@nextHops.2 //@nodesAndHops/@nodes.8/@nextHops.1 //@nodesAndHops/@nodes.4/@nextHops.1 //@nodesAndHops/@nodes.1/@nextHops.1 //@nodesAndHops/@nodes.7/@nextHops.2 //@nodesAndHops/@nodes.7/@nextHops.1 //@nodesAndHops/@nodes.8/@nextHops.4 //@nodesAndHops/@nodes.5/@nextHops.1 //@nodesAndHops/@nodes.6/@nextHops.1 //@nodesAndHops/@nodes.2/@nextHops.1 //@nodesAndHops/@nodes.2/@nextHops.2 //@nodesAndHops/@nodes.3/@nextHops.2 //@nodesAndHops/@nodes.3/@nextHops.1 //@nodesAndHops/@nodes.7/@nextHops.3 //@nodesAndHops/@nodes.7/@nextHops.4 //@nodesAndHops/@nodes.8/@nextHops.2 //@nodesAndHops/@nodes.8/@nextHops.3 //@nodesAndHops/@nodes.7/@nextHops.5 //@nodesAndHops/@nodes.7/@nextHops.6 //@nodesAndHops/@nodes.7/@nextHops.7 //@nodesAndHops/@nodes.2/@nextHops.0 //@nodesAndHops/@nodes.3/@nextHops.0 //@nodesAndHops/@nodes.4/@nextHops.0 //@nodesAndHops/@nodes.8/@nextHops.0 //@nodesAndHops/@nodes.5/@nextHops.0 //@nodesAndHops/@nodes.6/@nextHops.0 //@nodesAndHops/@nodes.4/@nextHops.2 //@nodesAndHops/@nodes.2/@nextHops.3 //@nodesAndHops/@nodes.2/@nextHops.4 //@nodesAndHops/@nodes.1/@nextHops.3 //@nodesAndHops/@nodes.1/@nextHops.4 //@nodesAndHops/@nodes.3/@nextHops.3 //@nodesAndHops/@nodes.3/@nextHops.4 //@nodesAndHops/@nodes.5/@nextHops.2 //@nodesAndHops/@nodes.6/@nextHops.2">
+        <ionLayer ionBpLayers="//@nodesAndHops/@nodes.0/@ionNode/@ionBpLayers.1 //@nodesAndHops/@nodes.1/@ionNode/@ionBpLayers.0 //@nodesAndHops/@nodes.7/@ionNode/@ionBpLayers.0 //@nodesAndHops/@nodes.8/@ionNode/@ionBpLayers.0 //@nodesAndHops/@nodes.4/@ionNode/@ionBpLayers.0 //@nodesAndHops/@nodes.6/@ionNode/@ionBpLayers.0 //@nodesAndHops/@nodes.5/@ionNode/@ionBpLayers.0 //@nodesAndHops/@nodes.2/@ionNode/@ionBpLayers.0 //@nodesAndHops/@nodes.3/@ionNode/@ionBpLayers.0" inductPortNumber="4556" payloadBytesPerFrame="1400" inductTask="tcpcli" outductTask="tcpclo"/>
+      </lowerLayers>
+      <lowerLayers lowProtocol="//@commonProtocols/@protocols.8" bpHops="//@nodesAndHops/@nodes.0/@nextHops.1 //@nodesAndHops/@nodes.0/@nextHops.2 //@nodesAndHops/@nodes.0/@nextHops.3">
+        <ionLayer ionBpLayers="//@nodesAndHops/@nodes.0/@ionNode/@ionBpLayers.0 //@nodesAndHops/@nodes.1/@ionNode/@ionBpLayers.1 //@nodesAndHops/@nodes.8/@ionNode/@ionBpLayers.1 //@nodesAndHops/@nodes.4/@ionNode/@ionBpLayers.1 //@nodesAndHops/@nodes.5/@ionNode/@ionBpLayers.1 //@nodesAndHops/@nodes.6/@ionNode/@ionBpLayers.1 //@nodesAndHops/@nodes.2/@ionNode/@ionBpLayers.1 //@nodesAndHops/@nodes.3/@ionNode/@ionBpLayers.1" inductPortNumber="4556" payloadBytesPerFrame="1400" inductTask="udpcli" outductTask="udpclo"/>
+      </lowerLayers>
+    </protocols>
+    <protocols higherLayers="//@commonProtocols/@protocols.0/@lowerLayers.0" protocolName="brsc" isPromiscuous="false"/>
+    <protocols higherLayers="//@commonProtocols/@protocols.0/@lowerLayers.1" protocolName="brss" isPromiscuous="false"/>
+    <protocols protocolName="cfdp-1" isPromiscuous="false">
+      <lowerLayers lowProtocol="//@commonProtocols/@protocols.0">
+        <ionLayer inductPortNumber="4556" payloadBytesPerFrame="1400" inductTask="bputa" outductTask="bputa"/>
+      </lowerLayers>
+    </protocols>
+    <protocols higherLayers="//@commonProtocols/@protocols.0/@lowerLayers.2" protocolName="dgr"/>
+    <protocols higherLayers="//@commonProtocols/@protocols.0/@lowerLayers.3" protocolName="ltp" isPromiscuous="false">
+      <lowerLayers lowProtocol="//@commonProtocols/@protocols.8">
+        <ionLayer inductPortNumber="1113" payloadBytesPerFrame="1400" nominalDataRateBytesPerSec="0" inductTask="udplsi" outductTask="udplso"/>
+      </lowerLayers>
+    </protocols>
+    <protocols higherLayers="//@commonProtocols/@protocols.0/@lowerLayers.4" protocolName="stcp" isPromiscuous="false"/>
+    <protocols higherLayers="//@commonProtocols/@protocols.0/@lowerLayers.5" protocolName="tcp" isPromiscuous="false"/>
+    <protocols higherLayers="//@commonProtocols/@protocols.0/@lowerLayers.6 //@commonProtocols/@protocols.5/@lowerLayers.0" protocolName="udp"/>
+  </commonProtocols>
+  <commonSecurity/>
+  <nodesAndHops>
+    <nodes nodeServices="//@commonServices/@services.2" priorHops="//@nodesAndHops/@nodes.0/@nextHops.0 //@nodesAndHops/@nodes.4/@nextHops.1 //@nodesAndHops/@nodes.5/@nextHops.1 //@nodesAndHops/@nodes.6/@nextHops.1" nodeName="SC" ipName="10.10.10.1">
+      <ionNode nodeNum="1" pathName="/var/tmp/ion" configFileName="SC.ionconfig">
+        <cfdpNode/>
+        <ionBpLayers inductPortNumber="4556" payloadBytesPerFrame="1400" outducts="//@nodesAndHops/@nodes.0/@nextHops.1/@ionHop //@nodesAndHops/@nodes.0/@nextHops.2/@ionHop //@nodesAndHops/@nodes.0/@nextHops.3/@ionHop" ionLayer="//@commonProtocols/@protocols.0/@lowerLayers.6/@ionLayer"/>
+        <ionBpLayers inductPortNumber="4556" payloadBytesPerFrame="1400" inducts="//@nodesAndHops/@nodes.0/@nextHops.0/@ionHop //@nodesAndHops/@nodes.4/@nextHops.1/@ionHop //@nodesAndHops/@nodes.6/@nextHops.1/@ionHop //@nodesAndHops/@nodes.5/@nextHops.1/@ionHop" outducts="//@nodesAndHops/@nodes.0/@nextHops.0/@ionHop" ionLayer="//@commonProtocols/@protocols.0/@lowerLayers.5/@ionLayer"/>
+      </ionNode>
+      <nextHops toNode="//@nodesAndHops/@nodes.0" bpLayer="//@commonProtocols/@protocols.0/@lowerLayers.5">
+        <ionHop fromIonNode="//@nodesAndHops/@nodes.0/@ionNode/@ionBpLayers.1" toIonNode="//@nodesAndHops/@nodes.0/@ionNode/@ionBpLayers.1" hopRanges="//@contactGraphs.0/@ranges.0" hopContacts="//@contactGraphs.0/@contacts.0">
+          <ipnPlan/>
+        </ionHop>
+      </nextHops>
+      <nextHops toNode="//@nodesAndHops/@nodes.1" bpLayer="//@commonProtocols/@protocols.0/@lowerLayers.6">
+        <ionHop fromIonNode="//@nodesAndHops/@nodes.0/@ionNode/@ionBpLayers.0" toIonNode="//@nodesAndHops/@nodes.1/@ionNode/@ionBpLayers.1" hopRanges="//@contactGraphs.0/@ranges.1" hopContacts="//@contactGraphs.0/@contacts.9 //@contactGraphs.0/@contacts.10 //@contactGraphs.0/@contacts.11 //@contactGraphs.0/@contacts.12 //@contactGraphs.0/@contacts.13 //@contactGraphs.0/@contacts.14 //@contactGraphs.0/@contacts.15">
+          <ipnPlan/>
+        </ionHop>
+      </nextHops>
+      <nextHops toNode="//@nodesAndHops/@nodes.2" bpLayer="//@commonProtocols/@protocols.0/@lowerLayers.6">
+        <ionHop fromIonNode="//@nodesAndHops/@nodes.0/@ionNode/@ionBpLayers.0" toIonNode="//@nodesAndHops/@nodes.2/@ionNode/@ionBpLayers.1" hopRanges="//@contactGraphs.0/@ranges.2" hopContacts="//@contactGraphs.0/@contacts.16 //@contactGraphs.0/@contacts.17 //@contactGraphs.0/@contacts.18 //@contactGraphs.0/@contacts.19 //@contactGraphs.0/@contacts.20">
+          <ipnPlan/>
+        </ionHop>
+      </nextHops>
+      <nextHops toNode="//@nodesAndHops/@nodes.3" bpLayer="//@commonProtocols/@protocols.0/@lowerLayers.6">
+        <ionHop fromIonNode="//@nodesAndHops/@nodes.0/@ionNode/@ionBpLayers.0" toIonNode="//@nodesAndHops/@nodes.3/@ionNode/@ionBpLayers.1" hopRanges="//@contactGraphs.0/@ranges.3" hopContacts="//@contactGraphs.0/@contacts.21 //@contactGraphs.0/@contacts.22 //@contactGraphs.0/@contacts.23 //@contactGraphs.0/@contacts.24 //@contactGraphs.0/@contacts.25">
+          <ipnPlan/>
+        </ionHop>
+      </nextHops>
+      <nodeIpnEndpoints ipnService="//@commonServices/@services.2">
+        <ionIpnEndpoint/>
+      </nodeIpnEndpoints>
+      <nodeIpnEndpoints ipnService="//@commonServices/@services.2" serviceNum="1">
+        <ionIpnEndpoint/>
+      </nodeIpnEndpoints>
+      <nodeIpnEndpoints ipnService="//@commonServices/@services.2" serviceNum="2">
+        <ionIpnEndpoint/>
+      </nodeIpnEndpoints>
+      <nodeIpnEndpoints ipnService="//@commonServices/@services.2" serviceNum="3">
+        <ionIpnEndpoint/>
+      </nodeIpnEndpoints>
+      <nodeIpnEndpoints ipnService="//@commonServices/@services.2" serviceNum="4">
+        <ionIpnEndpoint/>
+      </nodeIpnEndpoints>
+      <nodeIpnEndpoints ipnService="//@commonServices/@services.2" serviceNum="5">
+        <ionIpnEndpoint/>
+      </nodeIpnEndpoints>
+      <nodeIpnEndpoints ipnService="//@commonServices/@services.1" serviceNum="64">
+        <ionIpnEndpoint/>
+      </nodeIpnEndpoints>
+      <nodeIpnEndpoints ipnService="//@commonServices/@services.2" serviceNum="65">
+        <ionIpnEndpoint/>
+      </nodeIpnEndpoints>
+    </nodes>
+    <nodes nodeServices="//@commonServices/@services.2" priorHops="//@nodesAndHops/@nodes.0/@nextHops.1 //@nodesAndHops/@nodes.1/@nextHops.0 //@nodesAndHops/@nodes.8/@nextHops.1 //@nodesAndHops/@nodes.7/@nextHops.5 //@nodesAndHops/@nodes.2/@nextHops.3 //@nodesAndHops/@nodes.3/@nextHops.3" nodeName="GS1" ipName="10.10.20.2">
+      <ionNode nodeNum="2" pathName="/var/tmp/ion" configFileName="GS1.ionconfig">
+        <ionBpLayers inductPortNumber="4556" payloadBytesPerFrame="1400" inducts="//@nodesAndHops/@nodes.1/@nextHops.0/@ionHop //@nodesAndHops/@nodes.8/@nextHops.1/@ionHop //@nodesAndHops/@nodes.7/@nextHops.5/@ionHop //@nodesAndHops/@nodes.2/@nextHops.3/@ionHop //@nodesAndHops/@nodes.3/@nextHops.3/@ionHop" outducts="//@nodesAndHops/@nodes.1/@nextHops.0/@ionHop //@nodesAndHops/@nodes.1/@nextHops.2/@ionHop //@nodesAndHops/@nodes.1/@nextHops.1/@ionHop //@nodesAndHops/@nodes.1/@nextHops.4/@ionHop //@nodesAndHops/@nodes.1/@nextHops.3/@ionHop" ionLayer="//@commonProtocols/@protocols.0/@lowerLayers.5/@ionLayer"/>
+        <ionBpLayers inductPortNumber="4556" payloadBytesPerFrame="1400" inducts="//@nodesAndHops/@nodes.0/@nextHops.1/@ionHop" ionLayer="//@commonProtocols/@protocols.0/@lowerLayers.6/@ionLayer"/>
+      </ionNode>
+      <nextHops toNode="//@nodesAndHops/@nodes.1" bpLayer="//@commonProtocols/@protocols.0/@lowerLayers.5">
+        <ionHop fromIonNode="//@nodesAndHops/@nodes.1/@ionNode/@ionBpLayers.0" toIonNode="//@nodesAndHops/@nodes.1/@ionNode/@ionBpLayers.0" hopRanges="//@contactGraphs.0/@ranges.4" hopContacts="//@contactGraphs.0/@contacts.1">
+          <ipnPlan/>
+        </ionHop>
+      </nextHops>
+      <nextHops toNode="//@nodesAndHops/@nodes.7" bpLayer="//@commonProtocols/@protocols.0/@lowerLayers.5">
+        <ionHop fromIonNode="//@nodesAndHops/@nodes.1/@ionNode/@ionBpLayers.0" toIonNode="//@nodesAndHops/@nodes.7/@ionNode/@ionBpLayers.0" hopRanges="//@contactGraphs.0/@ranges.14" hopContacts="//@contactGraphs.0/@contacts.36">
+          <ipnPlan/>
+        </ionHop>
+      </nextHops>
+      <nextHops toNode="//@nodesAndHops/@nodes.8" bpLayer="//@commonProtocols/@protocols.0/@lowerLayers.5">
+        <ionHop fromIonNode="//@nodesAndHops/@nodes.1/@ionNode/@ionBpLayers.0" toIonNode="//@nodesAndHops/@nodes.8/@ionNode/@ionBpLayers.0" hopRanges="//@contactGraphs.0/@ranges.15" hopContacts="//@contactGraphs.0/@contacts.39">
+          <ipnPlan/>
+        </ionHop>
+      </nextHops>
+      <nextHops toNode="//@nodesAndHops/@nodes.2" bpLayer="//@commonProtocols/@protocols.0/@lowerLayers.5">
+        <ionHop fromIonNode="//@nodesAndHops/@nodes.1/@ionNode/@ionBpLayers.0" toIonNode="//@nodesAndHops/@nodes.2/@ionNode/@ionBpLayers.0" hopRanges="//@contactGraphs.0/@ranges.12" hopContacts="//@contactGraphs.0/@contacts.53">
+          <ipnPlan/>
+        </ionHop>
+      </nextHops>
+      <nextHops toNode="//@nodesAndHops/@nodes.3" bpLayer="//@commonProtocols/@protocols.0/@lowerLayers.5">
+        <ionHop fromIonNode="//@nodesAndHops/@nodes.1/@ionNode/@ionBpLayers.0" toIonNode="//@nodesAndHops/@nodes.3/@ionNode/@ionBpLayers.0" hopRanges="//@contactGraphs.0/@ranges.13" hopContacts="//@contactGraphs.0/@contacts.54">
+          <ipnPlan/>
+        </ionHop>
+      </nextHops>
+      <nodeIpnEndpoints ipnService="//@commonServices/@services.2">
+        <ionIpnEndpoint/>
+      </nodeIpnEndpoints>
+      <nodeIpnEndpoints ipnService="//@commonServices/@services.2" serviceNum="1">
+        <ionIpnEndpoint/>
+      </nodeIpnEndpoints>
+      <nodeIpnEndpoints ipnService="//@commonServices/@services.2" serviceNum="2">
+        <ionIpnEndpoint/>
+      </nodeIpnEndpoints>
+    </nodes>
+    <nodes nodeServices="//@commonServices/@services.2" priorHops="//@nodesAndHops/@nodes.8/@nextHops.2 //@nodesAndHops/@nodes.7/@nextHops.6 //@nodesAndHops/@nodes.0/@nextHops.2 //@nodesAndHops/@nodes.2/@nextHops.0 //@nodesAndHops/@nodes.1/@nextHops.3 //@nodesAndHops/@nodes.3/@nextHops.4" nodeName="GS2" ipName="10.10.20.3">
+      <ionNode nodeNum="3" pathName="/var/tmp/ion" configFileName="GS2.ionconfig">
+        <ionBpLayers inductPortNumber="4556" payloadBytesPerFrame="1400" inducts="//@nodesAndHops/@nodes.8/@nextHops.2/@ionHop //@nodesAndHops/@nodes.7/@nextHops.6/@ionHop //@nodesAndHops/@nodes.2/@nextHops.0/@ionHop //@nodesAndHops/@nodes.3/@nextHops.4/@ionHop //@nodesAndHops/@nodes.1/@nextHops.3/@ionHop" outducts="//@nodesAndHops/@nodes.2/@nextHops.2/@ionHop //@nodesAndHops/@nodes.2/@nextHops.0/@ionHop //@nodesAndHops/@nodes.2/@nextHops.4/@ionHop //@nodesAndHops/@nodes.2/@nextHops.3/@ionHop //@nodesAndHops/@nodes.2/@nextHops.1/@ionHop" ionLayer="//@commonProtocols/@protocols.0/@lowerLayers.5/@ionLayer"/>
+        <ionBpLayers inductPortNumber="4556" inducts="//@nodesAndHops/@nodes.0/@nextHops.2/@ionHop" ionLayer="//@commonProtocols/@protocols.0/@lowerLayers.6/@ionLayer"/>
+      </ionNode>
+      <nextHops toNode="//@nodesAndHops/@nodes.2" bpLayer="//@commonProtocols/@protocols.0/@lowerLayers.5">
+        <ionHop fromIonNode="//@nodesAndHops/@nodes.2/@ionNode/@ionBpLayers.0" toIonNode="//@nodesAndHops/@nodes.2/@ionNode/@ionBpLayers.0" hopRanges="//@contactGraphs.0/@ranges.5" hopContacts="//@contactGraphs.0/@contacts.2">
+          <ipnPlan/>
+        </ionHop>
+      </nextHops>
+      <nextHops toNode="//@nodesAndHops/@nodes.7" bpLayer="//@commonProtocols/@protocols.0/@lowerLayers.5">
+        <ionHop fromIonNode="//@nodesAndHops/@nodes.2/@ionNode/@ionBpLayers.0" toIonNode="//@nodesAndHops/@nodes.7/@ionNode/@ionBpLayers.0" hopRanges="//@contactGraphs.0/@ranges.16" hopContacts="//@contactGraphs.0/@contacts.37">
+          <ipnPlan/>
+        </ionHop>
+      </nextHops>
+      <nextHops toNode="//@nodesAndHops/@nodes.8" bpLayer="//@commonProtocols/@protocols.0/@lowerLayers.5">
+        <ionHop fromIonNode="//@nodesAndHops/@nodes.2/@ionNode/@ionBpLayers.0" toIonNode="//@nodesAndHops/@nodes.8/@ionNode/@ionBpLayers.0" hopRanges="//@contactGraphs.0/@ranges.17" hopContacts="//@contactGraphs.0/@contacts.40">
+          <ipnPlan/>
+        </ionHop>
+      </nextHops>
+      <nextHops toNode="//@nodesAndHops/@nodes.1" bpLayer="//@commonProtocols/@protocols.0/@lowerLayers.5">
+        <ionHop fromIonNode="//@nodesAndHops/@nodes.2/@ionNode/@ionBpLayers.0" toIonNode="//@nodesAndHops/@nodes.1/@ionNode/@ionBpLayers.0" hopContacts="//@contactGraphs.0/@contacts.55">
+          <ipnPlan/>
+        </ionHop>
+      </nextHops>
+      <nextHops toNode="//@nodesAndHops/@nodes.3" bpLayer="//@commonProtocols/@protocols.0/@lowerLayers.5">
+        <ionHop fromIonNode="//@nodesAndHops/@nodes.2/@ionNode/@ionBpLayers.0" toIonNode="//@nodesAndHops/@nodes.3/@ionNode/@ionBpLayers.0" hopContacts="//@contactGraphs.0/@contacts.56">
+          <ipnPlan/>
+        </ionHop>
+      </nextHops>
+      <nodeIpnEndpoints ipnService="//@commonServices/@services.2">
+        <ionIpnEndpoint/>
+      </nodeIpnEndpoints>
+      <nodeIpnEndpoints ipnService="//@commonServices/@services.2" serviceNum="1">
+        <ionIpnEndpoint/>
+      </nodeIpnEndpoints>
+      <nodeIpnEndpoints ipnService="//@commonServices/@services.2" serviceNum="2">
+        <ionIpnEndpoint/>
+      </nodeIpnEndpoints>
+    </nodes>
+    <nodes nodeServices="//@commonServices/@services.2" priorHops="//@nodesAndHops/@nodes.8/@nextHops.3 //@nodesAndHops/@nodes.7/@nextHops.7 //@nodesAndHops/@nodes.0/@nextHops.3 //@nodesAndHops/@nodes.3/@nextHops.0 //@nodesAndHops/@nodes.2/@nextHops.4 //@nodesAndHops/@nodes.1/@nextHops.4" nodeName="GS3" ipName="10.10.20.4">
+      <ionNode nodeNum="4" pathName="/var/tmp/ion" configFileName="GS3.ionconfig">
+        <ionBpLayers inductPortNumber="4556" payloadBytesPerFrame="1400" inducts="//@nodesAndHops/@nodes.8/@nextHops.3/@ionHop //@nodesAndHops/@nodes.7/@nextHops.7/@ionHop //@nodesAndHops/@nodes.3/@nextHops.0/@ionHop //@nodesAndHops/@nodes.2/@nextHops.4/@ionHop //@nodesAndHops/@nodes.1/@nextHops.4/@ionHop" outducts="//@nodesAndHops/@nodes.3/@nextHops.2/@ionHop //@nodesAndHops/@nodes.3/@nextHops.1/@ionHop //@nodesAndHops/@nodes.3/@nextHops.0/@ionHop //@nodesAndHops/@nodes.3/@nextHops.3/@ionHop //@nodesAndHops/@nodes.3/@nextHops.4/@ionHop" ionLayer="//@commonProtocols/@protocols.0/@lowerLayers.5/@ionLayer"/>
+        <ionBpLayers inductPortNumber="4556" inducts="//@nodesAndHops/@nodes.0/@nextHops.3/@ionHop" ionLayer="//@commonProtocols/@protocols.0/@lowerLayers.6/@ionLayer"/>
+      </ionNode>
+      <nextHops toNode="//@nodesAndHops/@nodes.3" bpLayer="//@commonProtocols/@protocols.0/@lowerLayers.5">
+        <ionHop fromIonNode="//@nodesAndHops/@nodes.3/@ionNode/@ionBpLayers.0" toIonNode="//@nodesAndHops/@nodes.3/@ionNode/@ionBpLayers.0" hopRanges="//@contactGraphs.0/@ranges.6" hopContacts="//@contactGraphs.0/@contacts.3">
+          <ipnPlan/>
+        </ionHop>
+      </nextHops>
+      <nextHops toNode="//@nodesAndHops/@nodes.7" bpLayer="//@commonProtocols/@protocols.0/@lowerLayers.5">
+        <ionHop fromIonNode="//@nodesAndHops/@nodes.3/@ionNode/@ionBpLayers.0" toIonNode="//@nodesAndHops/@nodes.7/@ionNode/@ionBpLayers.0" hopRanges="//@contactGraphs.0/@ranges.18" hopContacts="//@contactGraphs.0/@contacts.38">
+          <ipnPlan/>
+        </ionHop>
+      </nextHops>
+      <nextHops toNode="//@nodesAndHops/@nodes.8" bpLayer="//@commonProtocols/@protocols.0/@lowerLayers.5">
+        <ionHop fromIonNode="//@nodesAndHops/@nodes.3/@ionNode/@ionBpLayers.0" toIonNode="//@nodesAndHops/@nodes.8/@ionNode/@ionBpLayers.0" hopRanges="//@contactGraphs.0/@ranges.19" hopContacts="//@contactGraphs.0/@contacts.41">
+          <ipnPlan/>
+        </ionHop>
+      </nextHops>
+      <nextHops toNode="//@nodesAndHops/@nodes.1" bpLayer="//@commonProtocols/@protocols.0/@lowerLayers.5">
+        <ionHop fromIonNode="//@nodesAndHops/@nodes.3/@ionNode/@ionBpLayers.0" toIonNode="//@nodesAndHops/@nodes.1/@ionNode/@ionBpLayers.0" hopContacts="//@contactGraphs.0/@contacts.57">
+          <ipnPlan/>
+        </ionHop>
+      </nextHops>
+      <nextHops toNode="//@nodesAndHops/@nodes.2" bpLayer="//@commonProtocols/@protocols.0/@lowerLayers.5">
+        <ionHop fromIonNode="//@nodesAndHops/@nodes.3/@ionNode/@ionBpLayers.0" toIonNode="//@nodesAndHops/@nodes.2/@ionNode/@ionBpLayers.0" hopContacts="//@contactGraphs.0/@contacts.58">
+          <ipnPlan/>
+        </ionHop>
+      </nextHops>
+      <nodeIpnEndpoints ipnService="//@commonServices/@services.2">
+        <ionIpnEndpoint/>
+      </nodeIpnEndpoints>
+      <nodeIpnEndpoints ipnService="//@commonServices/@services.2" serviceNum="1">
+        <ionIpnEndpoint/>
+      </nodeIpnEndpoints>
+      <nodeIpnEndpoints ipnService="//@commonServices/@services.2" serviceNum="2">
+        <ionIpnEndpoint/>
+      </nodeIpnEndpoints>
+    </nodes>
+    <nodes nodeServices="//@commonServices/@services.2" priorHops="//@nodesAndHops/@nodes.4/@nextHops.0 //@nodesAndHops/@nodes.7/@nextHops.2" nodeName="GS1b" ipName="10.10.30.11">
+      <ionNode nodeNum="22" pathName="/var/tmp/ion" configFileName="GS1b.ionconfig">
+        <ionBpLayers inductPortNumber="4556" payloadBytesPerFrame="1400" inducts="//@nodesAndHops/@nodes.7/@nextHops.2/@ionHop //@nodesAndHops/@nodes.4/@nextHops.0/@ionHop" outducts="//@nodesAndHops/@nodes.4/@nextHops.1/@ionHop //@nodesAndHops/@nodes.4/@nextHops.2/@ionHop //@nodesAndHops/@nodes.4/@nextHops.0/@ionHop" ionLayer="//@commonProtocols/@protocols.0/@lowerLayers.5/@ionLayer"/>
+        <ionBpLayers inductPortNumber="4556" payloadBytesPerFrame="1400" ionLayer="//@commonProtocols/@protocols.0/@lowerLayers.6/@ionLayer"/>
+      </ionNode>
+      <nextHops toNode="//@nodesAndHops/@nodes.4" bpLayer="//@commonProtocols/@protocols.0/@lowerLayers.5">
+        <ionHop fromIonNode="//@nodesAndHops/@nodes.4/@ionNode/@ionBpLayers.0" toIonNode="//@nodesAndHops/@nodes.4/@ionNode/@ionBpLayers.0" hopRanges="//@contactGraphs.0/@ranges.7" hopContacts="//@contactGraphs.0/@contacts.4">
+          <ipnPlan/>
+        </ionHop>
+      </nextHops>
+      <nextHops toNode="//@nodesAndHops/@nodes.0" bpLayer="//@commonProtocols/@protocols.0/@lowerLayers.5">
+        <ionHop fromIonNode="//@nodesAndHops/@nodes.4/@ionNode/@ionBpLayers.0" toIonNode="//@nodesAndHops/@nodes.0/@ionNode/@ionBpLayers.1" hopRanges="//@contactGraphs.0/@ranges.21" hopContacts="//@contactGraphs.0/@contacts.27 //@contactGraphs.0/@contacts.28 //@contactGraphs.0/@contacts.29 //@contactGraphs.0/@contacts.30 //@contactGraphs.0/@contacts.31">
+          <ipnPlan/>
+        </ionHop>
+      </nextHops>
+      <nextHops toNode="//@nodesAndHops/@nodes.7" bpLayer="//@commonProtocols/@protocols.0/@lowerLayers.5">
+        <ionHop fromIonNode="//@nodesAndHops/@nodes.4/@ionNode/@ionBpLayers.0" toIonNode="//@nodesAndHops/@nodes.7/@ionNode/@ionBpLayers.0" hopRanges="//@contactGraphs.0/@ranges.27" hopContacts="//@contactGraphs.0/@contacts.26">
+          <ipnPlan/>
+        </ionHop>
+      </nextHops>
+      <nodeIpnEndpoints ipnService="//@commonServices/@services.2">
+        <ionIpnEndpoint/>
+      </nodeIpnEndpoints>
+      <nodeIpnEndpoints ipnService="//@commonServices/@services.2" serviceNum="1">
+        <ionIpnEndpoint/>
+      </nodeIpnEndpoints>
+      <nodeIpnEndpoints ipnService="//@commonServices/@services.2" serviceNum="2">
+        <ionIpnEndpoint/>
+      </nodeIpnEndpoints>
+    </nodes>
+    <nodes nodeServices="//@commonServices/@services.2" priorHops="//@nodesAndHops/@nodes.5/@nextHops.0 //@nodesAndHops/@nodes.7/@nextHops.3" nodeName="GS2b" ipName="10.10.30.22">
+      <ionNode nodeNum="33" pathName="/var/tmp/ion" configFileName="GS2b.ionconfig">
+        <ionBpLayers inductPortNumber="4556" payloadBytesPerFrame="1400" inducts="//@nodesAndHops/@nodes.7/@nextHops.3/@ionHop //@nodesAndHops/@nodes.5/@nextHops.0/@ionHop" outducts="//@nodesAndHops/@nodes.5/@nextHops.1/@ionHop //@nodesAndHops/@nodes.5/@nextHops.0/@ionHop //@nodesAndHops/@nodes.5/@nextHops.2/@ionHop" ionLayer="//@commonProtocols/@protocols.0/@lowerLayers.5/@ionLayer"/>
+        <ionBpLayers inductPortNumber="4556" payloadBytesPerFrame="1400" ionLayer="//@commonProtocols/@protocols.0/@lowerLayers.6/@ionLayer"/>
+      </ionNode>
+      <nextHops toNode="//@nodesAndHops/@nodes.5" bpLayer="//@commonProtocols/@protocols.0/@lowerLayers.5">
+        <ionHop fromIonNode="//@nodesAndHops/@nodes.5/@ionNode/@ionBpLayers.0" toIonNode="//@nodesAndHops/@nodes.5/@ionNode/@ionBpLayers.0" hopRanges="//@contactGraphs.0/@ranges.8" hopContacts="//@contactGraphs.0/@contacts.5">
+          <ipnPlan/>
+        </ionHop>
+      </nextHops>
+      <nextHops toNode="//@nodesAndHops/@nodes.0" bpLayer="//@commonProtocols/@protocols.0/@lowerLayers.5">
+        <ionHop fromIonNode="//@nodesAndHops/@nodes.5/@ionNode/@ionBpLayers.0" toIonNode="//@nodesAndHops/@nodes.0/@ionNode/@ionBpLayers.1" hopRanges="//@contactGraphs.0/@ranges.22" hopContacts="//@contactGraphs.0/@contacts.33">
+          <ipnPlan/>
+        </ionHop>
+      </nextHops>
+      <nextHops toNode="//@nodesAndHops/@nodes.7" bpLayer="//@commonProtocols/@protocols.0/@lowerLayers.5">
+        <ionHop fromIonNode="//@nodesAndHops/@nodes.5/@ionNode/@ionBpLayers.0" toIonNode="//@nodesAndHops/@nodes.7/@ionNode/@ionBpLayers.0" hopRanges="//@contactGraphs.0/@ranges.28" hopContacts="//@contactGraphs.0/@contacts.32">
+          <ipnPlan/>
+        </ionHop>
+      </nextHops>
+      <nodeIpnEndpoints ipnService="//@commonServices/@services.2">
+        <ionIpnEndpoint/>
+      </nodeIpnEndpoints>
+      <nodeIpnEndpoints ipnService="//@commonServices/@services.2" serviceNum="1">
+        <ionIpnEndpoint/>
+      </nodeIpnEndpoints>
+      <nodeIpnEndpoints ipnService="//@commonServices/@services.2" serviceNum="2">
+        <ionIpnEndpoint/>
+      </nodeIpnEndpoints>
+    </nodes>
+    <nodes nodeServices="//@commonServices/@services.2" priorHops="//@nodesAndHops/@nodes.6/@nextHops.0 //@nodesAndHops/@nodes.7/@nextHops.4" nodeName="GS3b" ipName="10.10.30.33">
+      <ionNode nodeNum="44" pathName="/var/tmp/ion" configFileName="GS3b.ionconfig">
+        <ionBpLayers inductPortNumber="4556" payloadBytesPerFrame="1400" inducts="//@nodesAndHops/@nodes.7/@nextHops.4/@ionHop //@nodesAndHops/@nodes.6/@nextHops.0/@ionHop" outducts="//@nodesAndHops/@nodes.6/@nextHops.1/@ionHop //@nodesAndHops/@nodes.6/@nextHops.2/@ionHop //@nodesAndHops/@nodes.6/@nextHops.0/@ionHop" ionLayer="//@commonProtocols/@protocols.0/@lowerLayers.5/@ionLayer"/>
+        <ionBpLayers inductPortNumber="4556" payloadBytesPerFrame="1400" ionLayer="//@commonProtocols/@protocols.0/@lowerLayers.6/@ionLayer"/>
+      </ionNode>
+      <nextHops toNode="//@nodesAndHops/@nodes.6" bpLayer="//@commonProtocols/@protocols.0/@lowerLayers.5">
+        <ionHop fromIonNode="//@nodesAndHops/@nodes.6/@ionNode/@ionBpLayers.0" toIonNode="//@nodesAndHops/@nodes.6/@ionNode/@ionBpLayers.0" hopRanges="//@contactGraphs.0/@ranges.9" hopContacts="//@contactGraphs.0/@contacts.6">
+          <ipnPlan/>
+        </ionHop>
+      </nextHops>
+      <nextHops toNode="//@nodesAndHops/@nodes.0" bpLayer="//@commonProtocols/@protocols.0/@lowerLayers.5">
+        <ionHop fromIonNode="//@nodesAndHops/@nodes.6/@ionNode/@ionBpLayers.0" toIonNode="//@nodesAndHops/@nodes.0/@ionNode/@ionBpLayers.1" hopRanges="//@contactGraphs.0/@ranges.23" hopContacts="//@contactGraphs.0/@contacts.35">
+          <ipnPlan/>
+        </ionHop>
+      </nextHops>
+      <nextHops toNode="//@nodesAndHops/@nodes.7" bpLayer="//@commonProtocols/@protocols.0/@lowerLayers.5">
+        <ionHop fromIonNode="//@nodesAndHops/@nodes.6/@ionNode/@ionBpLayers.0" toIonNode="//@nodesAndHops/@nodes.7/@ionNode/@ionBpLayers.0" hopRanges="//@contactGraphs.0/@ranges.29" hopContacts="//@contactGraphs.0/@contacts.34">
+          <ipnPlan/>
+        </ionHop>
+      </nextHops>
+      <nodeIpnEndpoints ipnService="//@commonServices/@services.2">
+        <ionIpnEndpoint/>
+      </nodeIpnEndpoints>
+      <nodeIpnEndpoints ipnService="//@commonServices/@services.2" serviceNum="1">
+        <ionIpnEndpoint/>
+      </nodeIpnEndpoints>
+      <nodeIpnEndpoints ipnService="//@commonServices/@services.2" serviceNum="2">
+        <ionIpnEndpoint/>
+      </nodeIpnEndpoints>
+    </nodes>
+    <nodes nodeServices="//@commonServices/@services.2" priorHops="//@nodesAndHops/@nodes.7/@nextHops.0 //@nodesAndHops/@nodes.1/@nextHops.1 //@nodesAndHops/@nodes.8/@nextHops.4 //@nodesAndHops/@nodes.2/@nextHops.1 //@nodesAndHops/@nodes.3/@nextHops.1 //@nodesAndHops/@nodes.4/@nextHops.2 //@nodesAndHops/@nodes.5/@nextHops.2 //@nodesAndHops/@nodes.6/@nextHops.2" nodeName="MO" ipName="10.10.30.4">
+      <ionNode nodeNum="5" pathName="/var/tmp/ion" wmKey="65005" configFileName="MO.ionconfig">
+        <ionBpLayers inductPortNumber="4556" payloadBytesPerFrame="1400" inducts="//@nodesAndHops/@nodes.7/@nextHops.0/@ionHop //@nodesAndHops/@nodes.1/@nextHops.1/@ionHop //@nodesAndHops/@nodes.8/@nextHops.4/@ionHop //@nodesAndHops/@nodes.2/@nextHops.1/@ionHop //@nodesAndHops/@nodes.3/@nextHops.1/@ionHop //@nodesAndHops/@nodes.4/@nextHops.2/@ionHop //@nodesAndHops/@nodes.5/@nextHops.2/@ionHop //@nodesAndHops/@nodes.6/@nextHops.2/@ionHop" outducts="//@nodesAndHops/@nodes.7/@nextHops.0/@ionHop //@nodesAndHops/@nodes.7/@nextHops.2/@ionHop //@nodesAndHops/@nodes.7/@nextHops.1/@ionHop //@nodesAndHops/@nodes.7/@nextHops.3/@ionHop //@nodesAndHops/@nodes.7/@nextHops.4/@ionHop //@nodesAndHops/@nodes.7/@nextHops.5/@ionHop //@nodesAndHops/@nodes.7/@nextHops.6/@ionHop //@nodesAndHops/@nodes.7/@nextHops.7/@ionHop" ionLayer="//@commonProtocols/@protocols.0/@lowerLayers.5/@ionLayer"/>
+      </ionNode>
+      <nextHops toNode="//@nodesAndHops/@nodes.7" bpLayer="//@commonProtocols/@protocols.0/@lowerLayers.5">
+        <ionHop fromIonNode="//@nodesAndHops/@nodes.7/@ionNode/@ionBpLayers.0" toIonNode="//@nodesAndHops/@nodes.7/@ionNode/@ionBpLayers.0" hopRanges="//@contactGraphs.0/@ranges.10" hopContacts="//@contactGraphs.0/@contacts.7">
+          <ipnPlan/>
+        </ionHop>
+      </nextHops>
+      <nextHops toNode="//@nodesAndHops/@nodes.8" bpLayer="//@commonProtocols/@protocols.0/@lowerLayers.5">
+        <ionHop fromIonNode="//@nodesAndHops/@nodes.7/@ionNode/@ionBpLayers.0" toIonNode="//@nodesAndHops/@nodes.8/@ionNode/@ionBpLayers.0" hopContacts="//@contactGraphs.0/@contacts.45">
+          <ipnPlan/>
+        </ionHop>
+      </nextHops>
+      <nextHops toNode="//@nodesAndHops/@nodes.4" bpLayer="//@commonProtocols/@protocols.0/@lowerLayers.5">
+        <ionHop fromIonNode="//@nodesAndHops/@nodes.7/@ionNode/@ionBpLayers.0" toIonNode="//@nodesAndHops/@nodes.4/@ionNode/@ionBpLayers.0" hopRanges="//@contactGraphs.0/@ranges.24" hopContacts="//@contactGraphs.0/@contacts.46">
+          <ipnPlan/>
+        </ionHop>
+      </nextHops>
+      <nextHops toNode="//@nodesAndHops/@nodes.5" bpLayer="//@commonProtocols/@protocols.0/@lowerLayers.5">
+        <ionHop fromIonNode="//@nodesAndHops/@nodes.7/@ionNode/@ionBpLayers.0" toIonNode="//@nodesAndHops/@nodes.5/@ionNode/@ionBpLayers.0" hopRanges="//@contactGraphs.0/@ranges.25" hopContacts="//@contactGraphs.0/@contacts.47">
+          <ipnPlan/>
+        </ionHop>
+      </nextHops>
+      <nextHops toNode="//@nodesAndHops/@nodes.6" bpLayer="//@commonProtocols/@protocols.0/@lowerLayers.5">
+        <ionHop fromIonNode="//@nodesAndHops/@nodes.7/@ionNode/@ionBpLayers.0" toIonNode="//@nodesAndHops/@nodes.6/@ionNode/@ionBpLayers.0" hopRanges="//@contactGraphs.0/@ranges.26" hopContacts="//@contactGraphs.0/@contacts.48">
+          <ipnPlan/>
+        </ionHop>
+      </nextHops>
+      <nextHops toNode="//@nodesAndHops/@nodes.1" bpLayer="//@commonProtocols/@protocols.0/@lowerLayers.5">
+        <ionHop fromIonNode="//@nodesAndHops/@nodes.7/@ionNode/@ionBpLayers.0" toIonNode="//@nodesAndHops/@nodes.1/@ionNode/@ionBpLayers.0" hopContacts="//@contactGraphs.0/@contacts.42">
+          <ipnPlan/>
+        </ionHop>
+      </nextHops>
+      <nextHops toNode="//@nodesAndHops/@nodes.2" bpLayer="//@commonProtocols/@protocols.0/@lowerLayers.5">
+        <ionHop fromIonNode="//@nodesAndHops/@nodes.7/@ionNode/@ionBpLayers.0" toIonNode="//@nodesAndHops/@nodes.2/@ionNode/@ionBpLayers.0" hopContacts="//@contactGraphs.0/@contacts.43">
+          <ipnPlan/>
+        </ionHop>
+      </nextHops>
+      <nextHops toNode="//@nodesAndHops/@nodes.3" bpLayer="//@commonProtocols/@protocols.0/@lowerLayers.5">
+        <ionHop fromIonNode="//@nodesAndHops/@nodes.7/@ionNode/@ionBpLayers.0" toIonNode="//@nodesAndHops/@nodes.3/@ionNode/@ionBpLayers.0" hopContacts="//@contactGraphs.0/@contacts.44">
+          <ipnPlan/>
+        </ionHop>
+      </nextHops>
+      <nodeIpnEndpoints ipnService="//@commonServices/@services.2">
+        <ionIpnEndpoint/>
+      </nodeIpnEndpoints>
+      <nodeIpnEndpoints ipnService="//@commonServices/@services.2" serviceNum="1">
+        <ionIpnEndpoint/>
+      </nodeIpnEndpoints>
+      <nodeIpnEndpoints ipnService="//@commonServices/@services.2" serviceNum="2">
+        <ionIpnEndpoint/>
+      </nodeIpnEndpoints>
+      <nodeIpnEndpoints ipnService="//@commonServices/@services.1" serviceNum="64">
+        <ionIpnEndpoint/>
+      </nodeIpnEndpoints>
+      <nodeIpnEndpoints ipnService="//@commonServices/@services.2" serviceNum="65">
+        <ionIpnEndpoint/>
+      </nodeIpnEndpoints>
+    </nodes>
+    <nodes nodeServices="//@commonServices/@services.1 //@commonServices/@services.2" priorHops="//@nodesAndHops/@nodes.1/@nextHops.2 //@nodesAndHops/@nodes.8/@nextHops.0 //@nodesAndHops/@nodes.7/@nextHops.1 //@nodesAndHops/@nodes.2/@nextHops.2 //@nodesAndHops/@nodes.3/@nextHops.2" nodeName="ScienceOps" ipName="10.10.30.5">
+      <ionNode nodeNum="6" pathName="/var/tmp/ion" configFileName="ScienceOps.ionconfig">
+        <cfdpNode/>
+        <ionBpLayers inductPortNumber="4556" payloadBytesPerFrame="1400" inducts="//@nodesAndHops/@nodes.1/@nextHops.2/@ionHop //@nodesAndHops/@nodes.7/@nextHops.1/@ionHop //@nodesAndHops/@nodes.2/@nextHops.2/@ionHop //@nodesAndHops/@nodes.3/@nextHops.2/@ionHop //@nodesAndHops/@nodes.8/@nextHops.0/@ionHop" outducts="//@nodesAndHops/@nodes.8/@nextHops.1/@ionHop //@nodesAndHops/@nodes.8/@nextHops.4/@ionHop //@nodesAndHops/@nodes.8/@nextHops.3/@ionHop //@nodesAndHops/@nodes.8/@nextHops.2/@ionHop //@nodesAndHops/@nodes.8/@nextHops.0/@ionHop" ionLayer="//@commonProtocols/@protocols.0/@lowerLayers.5/@ionLayer"/>
+        <ionBpLayers inductPortNumber="4556" payloadBytesPerFrame="1400" ionLayer="//@commonProtocols/@protocols.0/@lowerLayers.6/@ionLayer"/>
+      </ionNode>
+      <nextHops toNode="//@nodesAndHops/@nodes.8" bpLayer="//@commonProtocols/@protocols.0/@lowerLayers.5">
+        <ionHop fromIonNode="//@nodesAndHops/@nodes.8/@ionNode/@ionBpLayers.0" toIonNode="//@nodesAndHops/@nodes.8/@ionNode/@ionBpLayers.0" hopRanges="//@contactGraphs.0/@ranges.11" hopContacts="//@contactGraphs.0/@contacts.8">
+          <ipnPlan/>
+        </ionHop>
+      </nextHops>
+      <nextHops toNode="//@nodesAndHops/@nodes.1" bpLayer="//@commonProtocols/@protocols.0/@lowerLayers.5">
+        <ionHop fromIonNode="//@nodesAndHops/@nodes.8/@ionNode/@ionBpLayers.0" toIonNode="//@nodesAndHops/@nodes.1/@ionNode/@ionBpLayers.0" hopContacts="//@contactGraphs.0/@contacts.49">
+          <ipnPlan/>
+        </ionHop>
+      </nextHops>
+      <nextHops toNode="//@nodesAndHops/@nodes.2" bpLayer="//@commonProtocols/@protocols.0/@lowerLayers.5">
+        <ionHop fromIonNode="//@nodesAndHops/@nodes.8/@ionNode/@ionBpLayers.0" toIonNode="//@nodesAndHops/@nodes.2/@ionNode/@ionBpLayers.0" hopContacts="//@contactGraphs.0/@contacts.50">
+          <ipnPlan/>
+        </ionHop>
+      </nextHops>
+      <nextHops toNode="//@nodesAndHops/@nodes.3" bpLayer="//@commonProtocols/@protocols.0/@lowerLayers.5">
+        <ionHop fromIonNode="//@nodesAndHops/@nodes.8/@ionNode/@ionBpLayers.0" toIonNode="//@nodesAndHops/@nodes.3/@ionNode/@ionBpLayers.0" hopContacts="//@contactGraphs.0/@contacts.51">
+          <ipnPlan/>
+        </ionHop>
+      </nextHops>
+      <nextHops toNode="//@nodesAndHops/@nodes.7" bpLayer="//@commonProtocols/@protocols.0/@lowerLayers.5">
+        <ionHop fromIonNode="//@nodesAndHops/@nodes.8/@ionNode/@ionBpLayers.0" toIonNode="//@nodesAndHops/@nodes.7/@ionNode/@ionBpLayers.0" hopRanges="//@contactGraphs.0/@ranges.20" hopContacts="//@contactGraphs.0/@contacts.52">
+          <ipnPlan/>
+        </ionHop>
+      </nextHops>
+      <nodeIpnEndpoints ipnService="//@commonServices/@services.2">
+        <ionIpnEndpoint/>
+      </nodeIpnEndpoints>
+      <nodeIpnEndpoints ipnService="//@commonServices/@services.2" serviceNum="1">
+        <ionIpnEndpoint/>
+      </nodeIpnEndpoints>
+      <nodeIpnEndpoints ipnService="//@commonServices/@services.2" serviceNum="2">
+        <ionIpnEndpoint/>
+      </nodeIpnEndpoints>
+      <nodeIpnEndpoints ipnService="//@commonServices/@services.2" serviceNum="3">
+        <ionIpnEndpoint/>
+      </nodeIpnEndpoints>
+      <nodeIpnEndpoints ipnService="//@commonServices/@services.2" serviceNum="4">
+        <ionIpnEndpoint/>
+      </nodeIpnEndpoints>
+      <nodeIpnEndpoints ipnService="//@commonServices/@services.2" serviceNum="5">
+        <ionIpnEndpoint/>
+      </nodeIpnEndpoints>
+      <nodeIpnEndpoints ipnService="//@commonServices/@services.1" serviceNum="64">
+        <ionIpnEndpoint/>
+      </nodeIpnEndpoints>
+      <nodeIpnEndpoints ipnService="//@commonServices/@services.2" serviceNum="65">
+        <ionIpnEndpoint/>
+      </nodeIpnEndpoints>
+    </nodes>
+  </nodesAndHops>
+</dtnmodel:Network>
