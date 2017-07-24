@@ -10,9 +10,9 @@
 #  PLAN
 #  Destination node:   3         [To Node: n3  with IP Name: 10.0.2.2]
 #  Duct Expression:    tcp/localhost
-a plan 3 tcp/localhost
+a plan 3 udp/127.0.0.1
 #
 #  PLAN
 #  Destination node:   1         [To Node: n1  with IP Name: 10.0.1.1]
 #  Duct Expression:    tcp/10.0.1.1
-a plan 1 tcp/10.0.1.1
+a plan 1 tcp/10.0.2.1

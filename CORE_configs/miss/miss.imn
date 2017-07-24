@@ -37,7 +37,7 @@ node n1 {
 	custom-config-id service:UserDefined
 	custom-command UserDefined
 	config {
-	dirs=('/var/ion', )
+	dirs=('/var/tmp/ion', )
 	files=('setup.sh', )
 	cmdup=('sh ./setup.sh', )
 	}
@@ -100,7 +100,7 @@ node n2 {
 	custom-config-id service:UserDefined
 	custom-command UserDefined
 	config {
-	dirs=('/var/ion', )
+	dirs=('/var/tmp/ion', )
 	files=('setup.sh', )
 	cmdup=('sh ./setup.sh', )
 	}
@@ -163,7 +163,7 @@ node n3 {
 	custom-config-id service:UserDefined
 	custom-command UserDefined
 	config {
-	dirs=('/var/ion', )
+	dirs=('/var/tmp/ion', )
 	files=('setup.sh', )
 	cmdup=('sh ./setup.sh', )
 	}
@@ -226,7 +226,7 @@ node n4 {
 	custom-config-id service:UserDefined
 	custom-command UserDefined
 	config {
-	dirs=('/var/ion', )
+	dirs=('/var/tmp/ion', )
 	files=('setup.sh', )
 	cmdup=('sh ./setup.sh', )
 	}
@@ -289,7 +289,7 @@ node n5 {
 	custom-config-id service:UserDefined
 	custom-command UserDefined
 	config {
-	dirs=('/var/ion', )
+	dirs=('/var/tmp/ion', )
 	files=('setup.sh', )
 	cmdup=('sh ./setup.sh', )
 	}
@@ -352,7 +352,7 @@ node n6 {
 	custom-config-id service:UserDefined
 	custom-command UserDefined
 	config {
-	dirs=('/var/ion', )
+	dirs=('/var/tmp/ion', )
 	files=('setup.sh', )
 	cmdup=('sh ./setup.sh', )
 	}
@@ -431,15 +431,15 @@ node n8 {
 	!
     }
     canvas c1
-    iconcoords {443.0 133.0}
-    labelcoords {443.0 165.0}
+    iconcoords {655.0 217.0}
+    labelcoords {655.0 249.0}
     interface-peer {eth0 n7}
     services {IPForward UserDefined}
     custom-config {
 	custom-config-id service:UserDefined
 	custom-command UserDefined
 	config {
-	dirs=('/var/ion', )
+	dirs=('/var/tmp/ion', )
 	files=('setup.sh', )
 	cmdup=('sh ./setup.sh', )
 	}
@@ -509,7 +509,7 @@ annotation a1 {
     label {Planet Missed Contact (n5) Scenario}
     labelcolor black
     fontfamily {Arial}
-    fontsize 12
+    fontsize {12}
     canvas c1
 }
 
@@ -569,7 +569,7 @@ annotation a7 {
     label {Satellite will miss Node 5 on the first pass}
     labelcolor black
     fontfamily {Arial}
-    fontsize 10
+    fontsize {10}
     canvas c1
 }
 
@@ -579,7 +579,7 @@ annotation a8 {
     label {But will come around and connect on the second}
     labelcolor black
     fontfamily {Arial}
-    fontsize 10
+    fontsize {10}
     canvas c1
 }
 
@@ -589,7 +589,7 @@ annotation a9 {
     label {Nodes will be held there expecting to be sent}
     labelcolor black
     fontfamily {Arial}
-    fontsize 10
+    fontsize {10}
     canvas c1
 }
 
@@ -599,7 +599,7 @@ annotation a10 {
     label {Instead of being forwarded to N2 for delivery}
     labelcolor black
     fontfamily {Arial}
-    fontsize 10
+    fontsize {10}
     canvas c1
 }
 
@@ -622,6 +622,9 @@ hook 3:instantiation_hook.sh {
 rm -f /tmp/ionrcdate
 
 
+
+
+
 }
 
 option global {
@@ -638,7 +641,7 @@ option global {
 }
 
 option session {
-    controlnet=192.168.0.2/24
+    controlnet=192.168.5.0/24
     controlnet_updown_script=
     enablerj45=1
     enablesdt=0

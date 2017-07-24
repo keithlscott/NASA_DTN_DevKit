@@ -24,15 +24,18 @@ global nodeNames
 
 nodeNames = {}
 ignoreLinks = []
-# nodeNames = {'1': 'SC', '5': 'MO'}
-# ignoreLinks = [[1,1], [2,2], [3,3], [4,4], [5,5], [6,6], [22, 22], [33,33], [44,44]]
 
 try:
-	myDir = os.path.dirname(os.path.realpath(__file__))
+	myDir = os.getcwd()
 	print 'reading prefs from: %s' % (myDir+'/'+'cg2Prefs.py')
 	execfile(myDir+'/'+'cg2Prefs.py')
 except:
-	pass
+	try:
+		myDir = os.path.dirname(os.path.realpath(__file__))
+		print 'reading prefs from: %s' % (myDir+'/'+'cg2Prefs.py')
+		execfile(myDir+'/'+'cg2Prefs.py')
+	except:
+		pass
 
 print "nodeNames:", nodeNames
 
@@ -49,9 +52,8 @@ def getContacts(fileName=None):
 
     if fileName==None:
 	print "Attempting to read contacts from running ion..."
-	os.system('echo "l contact" | ionadmin | grep "From" | sed -e "s/: //" > contacts.txt')
-	fileName = 'contacts.txt'
-	os.system('touch foo')
+	os.system('echo "l contact" | ionadmin | grep "From" | sed -e "s/: //" > cg2_contacts.txt')
+	fileName = 'cg2_contacts.txt'
 
     contacts = []
     if fileName==None:
@@ -66,6 +68,10 @@ def getContacts(fileName=None):
         contacts += [line]
 
     f.close()
+    try:
+        os.remove('cg2_contacts.txt')
+    except:
+	pass
     
     return contacts
 

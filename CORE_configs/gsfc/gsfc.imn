@@ -50,8 +50,8 @@ node n2 {
 	!
     }
     canvas c1
-    iconcoords {78.0 106.0}
-    labelcoords {78.0 138.0}
+    iconcoords {79.0 106.0}
+    labelcoords {79.0 138.0}
     interface-peer {eth0 n1}
     custom-config {
 	custom-config-id service:UserDefined
@@ -174,8 +174,8 @@ node n5 {
 	}
     }
     canvas c1
-    iconcoords {513.0 353.0}
-    labelcoords {513.0 385.0}
+    iconcoords {477.0 110.0}
+    labelcoords {477.0 142.0}
     interface-peer {e0 n4}
     interface-peer {e1 n3}
 }
@@ -250,12 +250,12 @@ annotation a5 {
 }
 
 annotation a6 {
-    iconcoords {452.0 316.0}
+    iconcoords {422.0 175.0}
     type text
     label {10.0 Mbps, 2% error}
     labelcolor black
     fontfamily {Arial}
-    fontsize 10
+    fontsize {10}
     canvas c1
 }
 
@@ -265,7 +265,7 @@ annotation a7 {
     label {BPI send and receive from node 4 -> 2 is running automatically.}
     labelcolor black
     fontfamily {Arial}
-    fontsize 12
+    fontsize {12}
     canvas c1
 }
 
@@ -275,7 +275,7 @@ annotation a8 {
     label {The bpirecv window will pop up 30-40 seconds after startup, and the image will start to arrive slowly}
     labelcolor black
     fontfamily {Arial}
-    fontsize 12
+    fontsize {12}
     canvas c1
 }
 
@@ -300,6 +300,7 @@ sudo ssh-keygen -f "/root/.ssh/known_hosts" -R 192.168.0.2
 sleep 20 && sudo ssh -X -t -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -i /root/.ssh/DTNDevKit root@192.168.0.2 "bpirecv ipn:2.5" &
 
 sleep 30 && /usr/local/sbin/vcmd -c /tmp/`ls /tmp|grep pycore`/n4 -- bpisend ipn:4.5 ipn:2.5 curiosity.png &
+
 }
 
 hook 6:shutdown_hook.sh {
@@ -309,6 +310,7 @@ hook 6:shutdown_hook.sh {
 
 killall -9 bpirecv
 killall -9 ssh
+
 
 
 

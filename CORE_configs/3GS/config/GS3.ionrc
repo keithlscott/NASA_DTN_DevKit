@@ -5,12 +5,12 @@
 #  NETWORK: GSFCDemo3
 #  NODE:    GS3
 #  IP NAME: 10.10.20.4
-#  DATE:    Sat Jan 03 02:10:59 EST 1970
+#  DATE:    Wed Dec 31 22:21:37 EST 1969
 #
 #  INITIALIZE
 #  Ion node number:  4
-#  Ion configuration file name:  
-1 4  GS3.ionconfig
+#  Ion configuration file name:  GS3.ionconfig
+1 4 GS3.ionconfig
 #
 #  START
 #  Program:   rfxclock

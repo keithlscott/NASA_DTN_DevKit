@@ -5,7 +5,7 @@
 #  NETWORK: GSFCDemo3
 #  NODE:    GS3b
 #  IP NAME: 10.10.30.33
-#  DATE:    Sat Jan 03 02:10:59 EST 1970
+#  DATE:    Wed Dec 31 22:21:37 EST 1969
 #
 #  INITIALIZE
 1
@@ -42,13 +42,8 @@ a protocol tcp 1400 100 1250000
 #  Protocol:      tcp
 #  Duct name:     10.10.30.33      [From Node:  MO  with IP Name: 10.10.30.4]
 #  CLI task name: tcpcli
-a induct tcp 10.10.30.33 tcpcli
-#
-#  INDUCT
-#  Protocol:      tcp
-#  Duct name:     10.10.30.33      [From Node:  GS3b  with IP Name: localhost]
-#  CLI task name: tcpcli
-#  Redundant command omitted (one induct task per protocol)
+a induct tcp 0.0.0.0 tcpcli
+
 #
 #  OUTDUCT
 #  Protocol:      tcp
@@ -69,6 +64,19 @@ a outduct tcp 10.10.30.4 tcpclo
 #  Nominal data rate (bytes per sec): 1250000     [(KB/sec): 1250  (MB/sec): 1  with K=1000]
 a protocol udp 1400 100 1250000
 #
+#  INDUCT
+#  Protocol:      udp
+#  Duct name:     localhost      [From Node:  GS3b  with IP Name: localhost]
+#  CLI task name: udpcli
+a induct udp 0.0.0.0 udpcli
+
+#
+#  OUTDUCT
+#  Protocol:      udp
+#  Duct name:     *      [To Node:   GS3b  with IP Name: localhost]
+#  CLO task name: udpclo
+a outduct udp 10.10.30.33 udpclo
+#
 #  RUN
 #  Program:                 ipnadmin
 #  Configuration file name: GS3b.ipnrc
@@ -76,3 +84,4 @@ r 'ipnadmin GS3b.ipnrc'
 #
 #  START DAEMONS
 s
+

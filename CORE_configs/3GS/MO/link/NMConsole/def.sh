@@ -193,9 +193,8 @@ function createStatsIndex {
 }
 
 #deleteIndex twitter
-#deleteIndex bpnm
-#deleteIndex bpnmoo
-#createIndex bpnm
+deleteIndex bpnm
+createIndex bpnm
 createStatsIndex bpnm
 #createMappings
 #createTestIndex

@@ -53,7 +53,7 @@ node n2 {
 	sh $foo/generalSetup.sh
 	}
     }
-    services {zebra OSPFv3MDR vtysh IPForward UserDefined}
+    services {zebra OSPFv3MDR vtysh IPForward SSH UserDefined}
 }
 
 node n6 {
@@ -111,7 +111,7 @@ node n6 {
 	sh $foo/generalSetup.sh
 	}
     }
-    services {zebra OSPFv3MDR vtysh IPForward UserDefined}
+    services {zebra OSPFv3MDR vtysh IPForward SSH UserDefined}
 }
 
 node n7 {
@@ -174,10 +174,10 @@ node n8 {
 	!
     }
     canvas c1
-    iconcoords {406.0 215.0}
-    labelcoords {406.0 247.0}
+    iconcoords {435.0 215.0}
+    labelcoords {435.0 247.0}
     interface-peer {eth0 n7}
-    services {IPForward UserDefined}
+    services {IPForward SSH UserDefined}
     custom-config {
 	custom-config-id service:UserDefined
 	custom-command UserDefined
@@ -227,7 +227,7 @@ option global {
 }
 
 option session {
-    controlnet=192.168.0.2/24
+    controlnet=192.168.5.0/24
     controlnet_updown_script=
     enablerj45=1
     enablesdt=0

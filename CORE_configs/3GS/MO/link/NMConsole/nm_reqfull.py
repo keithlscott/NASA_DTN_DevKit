@@ -196,8 +196,8 @@ def printFormattedOutput(output):
 
 
 if __name__=='__main__':
-	DEF_MGR='ipn:3.5'
-	DEF_AGENT='ipn:2.3'
+	DEF_MGR='ipn:5.6'
+	DEF_AGENT='ipn:2.5'
 	DEF_DELAY=5
 	DEF_COUNT=5
 	parser = argparse.ArgumentParser(description="""Connect to a

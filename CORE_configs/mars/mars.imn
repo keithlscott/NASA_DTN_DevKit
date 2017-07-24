@@ -188,6 +188,23 @@ node n4 {
     iconcoords {121.0 407.0}
     labelcoords {121.0 439.0}
     custom-config {
+	custom-config-id service:UserDefined
+	custom-command UserDefined
+	config {
+	dirs=('/var/tmp/ion', )
+	files=('setup.sh', )
+	cmdup=('sh ./setup.sh', )
+	}
+    }
+    custom-config {
+	custom-config-id service:UserDefined:setup.sh
+	custom-command setup.sh
+	config {
+	foo=`dirname $SESSION_FILENAME`
+	sh $foo/generalSetup.sh
+	}
+    }
+    custom-config {
 	custom-config-id service:zebra
 	custom-command zebra
 	config {
@@ -210,23 +227,6 @@ node n4 {
 	
 	}
     }
-    custom-config {
-	custom-config-id service:UserDefined
-	custom-command UserDefined
-	config {
-	dirs=('/var/ion', )
-	files=('setup.sh', )
-	cmdup=('sh ./setup.sh', )
-	}
-    }
-    custom-config {
-	custom-config-id service:UserDefined:setup.sh
-	custom-command setup.sh
-	config {
-	foo=`dirname $SESSION_FILENAME`
-	sh $foo/generalSetup.sh
-	}
-    }
     services {zebra OSPFv3MDR vtysh IPForward UserDefined}
     interface-peer {eth0 n1}
     interface-peer {eth1 n7}
@@ -244,8 +244,8 @@ node n5 {
 	!
     }
     canvas c1
-    iconcoords {430.0 160.0}
-    labelcoords {430.0 192.0}
+    iconcoords {430.0 410.0}
+    labelcoords {430.0 442.0}
     custom-config {
 	custom-config-id service:zebra
 	custom-command zebra
@@ -378,12 +378,12 @@ node n7 {
 	custom-config-id ns2script
 	custom-command {10 3 11 10 10 10 10 10}
 	config {
-	file=/home/core/.core/NASADTNDevKit/configs/mars/mars.scen
+	file=/home/core/.core/configs/NASADTNDevKit/mars/mars.scen
 	refresh_ms=50
 	loop=1
 	autostart=0.0
 	map=
-	script_start=/home/core/.core/NASADTNDevKit/configs/common/mobility.sh
+	script_start=/home/core/.core/configs/NASADTNDevKit/common/mobility.sh
 	script_pause=
 	script_stop=
 	}
@@ -515,6 +515,9 @@ hook 3:instantiation_hook.sh {
 rm -f /tmp/ionrcdate
 
 
+
+
+
 }
 
 hook 4:runtime_hook.sh {
@@ -523,7 +526,16 @@ hook 4:runtime_hook.sh {
 # specified state
 
 pycore=`ls /tmp | grep pycore`
-sleep 15 && xterm -e "/usr/sbin/vcmd -c /tmp/$pycore/n1 -- bping ipn:1.5 ipn:6.1" &
+sleep 15 && xterm -e "/usr/sbin/vcmd -c /tmp/$pycore/n1 -- bping ipn:1.2 ipn:6.1" &
+}
+
+hook 6:shutdown_hook.sh {
+#!/bin/sh
+# session hook script; write commands here to execute on the host at the
+# specified state
+rm -f /tmp/ionrcdate
+
+
 }
 
 option global {
@@ -540,7 +552,7 @@ option global {
 }
 
 option session {
-    controlnet=192.168.0.2/24
+    controlnet=192.168.240.0/24
     controlnet_updown_script=
     enablerj45=1
     enablesdt=0

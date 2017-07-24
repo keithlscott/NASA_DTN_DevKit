@@ -15,11 +15,10 @@ global nodeNames
 
 nodeNames = {}
 ignoreLinks = []
-# nodeNames = {'1': 'SC', '5': 'MO'}
-# ignoreLinks = [[1,1], [2,2], [3,3], [4,4], [5,5], [6,6], [22, 22], [33,33], [44,44]]
 
 try:
 	myDir = os.path.dirname(os.path.realpath(__file__))
+	myDir = '.'
 	print 'reading prefs from: %s' % (myDir+'/'+'cg2Prefs.py')
 	execfile(myDir+'/'+'cg2Prefs.py')
 except:

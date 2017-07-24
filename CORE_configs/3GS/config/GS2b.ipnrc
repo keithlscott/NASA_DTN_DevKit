@@ -5,12 +5,13 @@
 #  NETWORK: GSFCDemo3
 #  NODE:    GS2b
 #  IP NAME: 10.10.30.22
-#  DATE:    Sat Jan 03 02:10:59 EST 1970
+#  DATE:    Wed Dec 31 22:21:37 EST 1969
 #
 #  PLAN
 #  Destination node:   33         [To Node: GS2b  with IP Name: 10.10.30.22]
-#  Duct Expression:    tcp/localhost
-a plan 33 tcp/localhost
+#  Duct Expression:    udp/*
+a plan 33 udp/10.10.30.22
+
 #
 #  PLAN
 #  Destination node:   1         [To Node: SC  with IP Name: 10.10.10.1]
@@ -21,3 +22,4 @@ a plan 1 tcp/10.10.10.1
 #  Destination node:   5         [To Node: MO  with IP Name: 10.10.30.4]
 #  Duct Expression:    tcp/10.10.30.4
 a plan 5 tcp/10.10.30.4
+

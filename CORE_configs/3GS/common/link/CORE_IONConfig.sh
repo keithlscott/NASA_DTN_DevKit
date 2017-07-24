@@ -4,6 +4,24 @@ THEDIR=`dirname $SESSION_FILENAME`
 LOG=`hostname`.log
 HOSTNAME=`hostname`
 
+
+if [ -f ./paramSetup.sh ]; then
+	echo "Sourcing ./paramSetup.sh"
+	source ./paramSetup.sh
+fi
+
+if [ -f ./nodeParams.sh ]; then
+	echo "Sourcing ./nodeParams.sh"
+	cat ./nodeParams.sh
+	source ./nodeParams.sh
+fi
+
+echo "IPN_NODE_NUMBER is:" $IPN_NODE_NUMBER
+if [ -x ./rcgen.sh ]; then
+	echo "Running rcgen.sh with node number: $IPN_NODE_NUMBER"
+	./rcgen.sh $IPN_NODE_NUMBER >& rcgen.out
+fi
+
 # 
 # Wait until we can ping a location...
 #
@@ -28,25 +46,6 @@ for file in $THEDIR/config/$NODE_NAME\.*; do
 done
 ln -s $THEDIR/config/contacts.ionrc
 
-# Convert tcpcli instances that bind to localhost
-# to bind to INADDRANY instead.
-echo "Converting tcpcli instances to bind to INADDR_ANY"
-NUMFILES=`ls | grep \.bprc | wc -l`
-if [ $NUMFILES -eq 0 ]; then
-        echo "no files to convert"
-else
-	for file in *.bprc; do
-		echo "Conveting file $file"
-		sed -e "s/a induct tcp.* tcpcli/a induct tcp 0.0.0.0 tcpcli/" $file > $file.tmp
-		echo "  Done with first sed"
-		sed -e "s/induct ltp.* /induct ltp 1 /" $file.tmp > $file.tmp2
-		echo "  Done with second sed"
-		rm -f $file.tmp
-		mv $file.tmp2 $file
-	done
-fi
-echo "Done converting tcpcli and ltp inducts."
-
 
 # Fix the max ltp spans in the initialization commands of
 # .ltprc files  ION doesn't seem to like '0' as a max
@@ -62,9 +61,13 @@ else
 fi
 
 # Wait for OSPF to distribute routes.
-echo "Waiging for connectivity..." >> $LOG
-waitForConnectivity 10.10.20.3
-waitForConnectivity 10.10.30.5
+if [ -z ${WAITFORCONNECTIVITYDESTS+x} ]; then
+	echo "Waiting for connectivity..." >> $LOG
+	for d in $WAITFORCONNECTIVITYDESTS; do
+		waitForConnectivity $d
+	done
+fi
+
 echo "IP connectivity established: " `date` >> $LOG
 
 # Wait for everyone else to hopefully be ready.
@@ -94,3 +97,7 @@ if [ -f $NODE_NAME\.cfdprc ]; then
 else
 	echo "No cfdprc file for $NODE_NAME" >> $LOG
 fi
+
+# To allow core user to get contact list.
+chmod a+rwx /var/tmp/ion/ion.sdrlog
+
