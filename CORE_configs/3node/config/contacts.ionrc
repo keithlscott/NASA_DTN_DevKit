@@ -1,0 +1,103 @@
+#  FILE:          contacts.ionrc
+#  CONTENT:       contact graph commands
+#  FOR:           bpadmin
+#  BUILDER:       ION Configuration Editor
+#  NETWORK:       3node
+#  CONTACT GRAPH: contacts
+#  DATE:          Thu Jan 01 01:21:31 EST 1970
+#
+#  RANGE
+#  Start time (secs):       +0
+#  Stop time (secs):        +100000
+#  Source node num:         1         [Source Node: n1  with IP Name: 10.0.2.1]
+#  Destination node num:    1         [Dest Node: n1    with IP Name: 10.0.2.1]
+#  Distance (light secs):   1
+a range +0 +100000 1 1 1
+#
+#  RANGE
+#  Start time (secs):       +0
+#  Stop time (secs):        +100000
+#  Source node num:         2         [Source Node: n2  with IP Name: 10.0.0.2]
+#  Destination node num:    2         [Dest Node: n2    with IP Name: 10.0.0.2]
+#  Distance (light secs):   1
+a range +0 +100000 2 2 1
+#
+#  RANGE
+#  Start time (secs):       +0
+#  Stop time (secs):        +100000
+#  Source node num:         3         [Source Node: n3  with IP Name: 10.0.2.2]
+#  Destination node num:    3         [Dest Node: n3    with IP Name: 10.0.2.2]
+#  Distance (light secs):   1
+a range +0 +100000 3 3 1
+#
+#  RANGE
+#  Start time (secs):       +0
+#  Stop time (secs):        +100000
+#  Source node num:         1         [Source Node: n1  with IP Name: 10.0.2.1]
+#  Destination node num:    2         [Dest Node: n2    with IP Name: 10.0.0.2]
+#  Distance (light secs):   1
+a range +0 +100000 1 2 1
+#
+#  RANGE
+#  Start time (secs):       +0
+#  Stop time (secs):        +100000
+#  Source node num:         1         [Source Node: n1  with IP Name: 10.0.2.1]
+#  Destination node num:    3         [Dest Node: n3    with IP Name: 10.0.2.2]
+#  Distance (light secs):   1
+a range +0 +100000 1 3 1
+#
+#  CONTACT
+#  Start time (secs):                  +0
+#  Stop time (secs):                   +100000
+#  Source node num:                    1         [Source Node: n1  with IP Name: 10.0.2.1]
+#  Destination node num:               1         [Dest Node: n1    with IP Name: 10.0.2.1]
+#  Transmit data rate (bytes per sec): 100000     [(KB/sec): 100  (MB/sec): 0  with K=1000]
+a contact +0 +100000 1 1 100000
+#
+#  CONTACT
+#  Start time (secs):                  +0
+#  Stop time (secs):                   +100000
+#  Source node num:                    2         [Source Node: n2  with IP Name: 10.0.0.2]
+#  Destination node num:               2         [Dest Node: n2    with IP Name: 10.0.0.2]
+#  Transmit data rate (bytes per sec): 100000     [(KB/sec): 100  (MB/sec): 0  with K=1000]
+a contact +0 +100000 2 2 100000
+#
+#  CONTACT
+#  Start time (secs):                  +0
+#  Stop time (secs):                   +100000
+#  Source node num:                    3         [Source Node: n3  with IP Name: 10.0.2.2]
+#  Destination node num:               3         [Dest Node: n3    with IP Name: 10.0.2.2]
+#  Transmit data rate (bytes per sec): 100000     [(KB/sec): 100  (MB/sec): 0  with K=1000]
+a contact +0 +100000 3 3 100000
+#
+#  CONTACT
+#  Start time (secs):                  +0
+#  Stop time (secs):                   +1000000
+#  Source node num:                    1         [Source Node: n1  with IP Name: 10.0.2.1]
+#  Destination node num:               2         [Dest Node: n2    with IP Name: 10.0.0.2]
+#  Transmit data rate (bytes per sec): 1000000     [(KB/sec): 1000  (MB/sec): 1  with K=1000]
+a contact +0 +1000000 1 2 1000000
+#
+#  CONTACT
+#  Start time (secs):                  +0
+#  Stop time (secs):                   +100000
+#  Source node num:                    2         [Source Node: n2  with IP Name: 10.0.0.2]
+#  Destination node num:               1         [Dest Node: n1    with IP Name: 10.0.2.1]
+#  Transmit data rate (bytes per sec): 1000000     [(KB/sec): 1000  (MB/sec): 1  with K=1000]
+a contact +0 +100000 2 1 1000000
+#
+#  CONTACT
+#  Start time (secs):                  +0
+#  Stop time (secs):                   +1000000
+#  Source node num:                    1         [Source Node: n1  with IP Name: 10.0.2.1]
+#  Destination node num:               3         [Dest Node: n3    with IP Name: 10.0.2.2]
+#  Transmit data rate (bytes per sec): 1000000     [(KB/sec): 1000  (MB/sec): 1  with K=1000]
+a contact +0 +1000000 1 3 1000000
+#
+#  CONTACT
+#  Start time (secs):                  +0
+#  Stop time (secs):                   +1000000
+#  Source node num:                    3         [Source Node: n3  with IP Name: 10.0.2.2]
+#  Destination node num:               1         [Dest Node: n1    with IP Name: 10.0.2.1]
+#  Transmit data rate (bytes per sec): 1000000     [(KB/sec): 1000  (MB/sec): 1  with K=1000]
+a contact +0 +1000000 3 1 1000000

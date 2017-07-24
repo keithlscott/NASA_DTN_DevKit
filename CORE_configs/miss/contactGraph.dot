@@ -1,0 +1,12 @@
+graph contactGraph {
+    "SC" -- "I GS3" [color="0.2 0.05 0.8"];
+    "I GS4" -- "MOC" [color=red];
+    "SC" -- "I GS4" [color=red];
+    "SC" -- "IO GS5" [color=red];
+    "I GS8" -- "MOC" [color=red];
+    "SC" -- "I GS8" [color="0.2 0.05 0.8"];
+    "IO GS2" -- "MOC" [color=red];
+    "SC" -- "IO GS2" [color="0.2 0.05 0.8"];
+    "I GS3" -- "MOC" [color=red];
+    "IO GS5" -- "MOC" [color=red];
+}

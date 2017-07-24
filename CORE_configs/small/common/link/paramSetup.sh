@@ -1,0 +1,1 @@
+../../../3GS/common/link/paramSetup.sh

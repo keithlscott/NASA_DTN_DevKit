@@ -1,0 +1,1 @@
+../3GS/generalSetup.sh

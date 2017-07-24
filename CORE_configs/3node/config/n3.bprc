@@ -1,0 +1,76 @@
+#  FILE:    n3.bprc
+#  CONTENT: configuration commands
+#  FOR:     bpadmin
+#  BUILDER: ION Configuration Editor
+#  NETWORK: 3node
+#  NODE:    n3
+#  IP NAME: 10.0.2.2
+#  DATE:    Thu Jan 01 01:21:31 EST 1970
+#
+#  INITIALIZE
+1
+#
+#  SCHEME
+#  Scheme type:      ipn
+#  Forwarding task:  ipnfw
+#  Custodian daemon: ipnadminep
+a scheme ipn 'ipnfw' 'ipnadminep'
+#
+#  ENDPOINT
+#  IPN Endpoint ID:             ipn:3.0
+#  Action if no receiver open:  x  [Discard]
+a endpoint ipn:3.0 x
+a endpoint ipn:3.1 x
+a endpoint ipn:3.2 x
+a endpoint ipn:3.3 x
+a endpoint ipn:3.4 x
+a endpoint ipn:3.5 x
+#
+#  PROTOCOL
+#  Protocol:  udp
+#  Payload bytes per frame:           1500         [(KB/sec): 1  with K=1000]
+#  Overhead bytes per frame:          100
+#  Nominal data rate (bytes per sec): 1250000     [(KB/sec): 1250  (MB/sec): 1  with K=1000]
+a protocol udp 1500 100 1250000
+#
+#  INDUCT
+#  Protocol:      udp
+#  Duct name:     localhost:80      [From Node:  n3  with IP Name: localhost]
+#  CLI task name: udpcli
+a induct udp 0.0.0.0 udpcli
+
+#
+#  OUTDUCT
+#  Protocol:      udp
+#  Duct name:     *      [To Node:   n3  with IP Name: localhost]
+#  CLO task name: udpclo
+a outduct udp 10.0.2.2 udpclo
+#
+#  PROTOCOL
+#  Protocol:  tcp
+#  Payload bytes per frame:           1500         [(KB/sec): 1  with K=1000]
+#  Overhead bytes per frame:          100
+#  Nominal data rate (bytes per sec): 1250000     [(KB/sec): 1250  (MB/sec): 1  with K=1000]
+a protocol tcp 1500 100 1250000
+#
+#  INDUCT
+#  Protocol:      tcp
+#  Duct name:     10.0.2.2:80      [From Node:  n1  with IP Name: 10.0.2.1]
+#  CLI task name: tcpcli
+a induct tcp 0.0.0.0 tcpcli
+
+#
+#  OUTDUCT
+#  Protocol:      tcp
+#  Duct name:     10.0.2.1:80      [To Node:   n1  with IP Name: 10.0.2.1]
+#  CLO task name: tcpclo
+a outduct tcp 10.0.2.1 tcpclo
+#
+#  RUN
+#  Program:                 ipnadmin
+#  Configuration file name: n3.ipnrc
+r 'ipnadmin n3.ipnrc'
+#
+#  START DAEMONS
+s
+

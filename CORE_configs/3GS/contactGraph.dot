@@ -1,0 +1,19 @@
+graph contactGraph {
+    "33" -- "MO" [color=red];
+    "SC" -- "GS1d" [color="0.2 0.05 0.8"];
+    "44" -- "MO" [color=red];
+    "MO" -- "GS3d" [color=red];
+    "22" -- "MO" [color=red];
+    "Science" -- "GS3d" [color=red];
+    "MO" -- "GS2d" [color=red];
+    "22" -- "SC" [color="0.2 0.05 0.8"];
+    "GS3d" -- "GS1d" [color=red];
+    "Science" -- "MO" [color=red];
+    "SC" -- "GS3d" [color="0.2 0.05 0.8"];
+    "MO" -- "GS1d" [color=red];
+    "GS3d" -- "GS2d" [color=red];
+    "Science" -- "GS1d" [color=red];
+    "SC" -- "GS2d" [color="0.2 0.05 0.8"];
+    "GS2d" -- "GS1d" [color=red];
+    "Science" -- "GS2d" [color=red];
+}

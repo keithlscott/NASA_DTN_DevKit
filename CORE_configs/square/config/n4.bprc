@@ -1,0 +1,55 @@
+# Initialization command (command 1).
+1
+
+# Add an EID scheme.
+a scheme ipn 'ipnfw' 'ipnadminep'
+
+# Add endpoints.
+a endpoint ipn:4.1 x
+a endpoint ipn:4.2 x
+a endpoint ipn:4.3 x
+a endpoint ipn:4.4 x
+a endpoint ipn:4.5 x
+a endpoint ipn:4.6 x
+a endpoint ipn:4.7 x
+a endpoint ipn:4.8 x
+a endpoint ipn:4.9 x
+a endpoint ipn:4.10 x
+
+#-----------------------------------------------------------------
+# Add a protocol for external nodes.
+#-----------------------------------------------------------------
+# Estimate transmission capacity assuming 1400 bytes of each frame 
+# for payload, and 100 bytes for overhead.
+a protocol tcp 1400 100
+a protocol udp 1400 100
+a protocol ltp 1400 100
+
+#-----------------------------------------------------------------
+# Add an induct. (listen)
+#-----------------------------------------------------------------
+a induct  tcp 0.0.0.0 tcpcli
+a induct  udp 0.0.0.0 udpcli
+
+#-----------------------------------------------------------------
+# Add outducts.
+#-----------------------------------------------------------------
+#a outduct tcp x.x.x.x tcpclo
+
+a outduct udp 127.0.0.1 udpclo
+
+a outduct tcp 10.0.0.1 tcpclo
+a outduct tcp 10.0.0.5 tcpclo
+a outduct tcp 10.0.0.7 tcpclo
+
+#-----------------------------------------------------------------
+#a outduct ltp x ltpclo
+
+#-----------------------------------------------------------------
+# Select level of BP watch activities - 0 = None; 1 = All
+w 0
+
+r 'ipnadmin n4.ipnrc'
+
+# Start all declared schemes and protocols on the local node
+s

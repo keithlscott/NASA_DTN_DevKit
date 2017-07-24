@@ -1,0 +1,11 @@
+#  FILE:    GS3.ionconfig
+#  CONTENT: configuration parameters
+#  FOR:     ionadmin
+#  BUILDER: ION Configuration Editor
+#  NETWORK: GSFCDemo3
+#  NODE:    GS3
+#  IP NAME: 10.10.20.4
+#  DATE:    Sat Jan 03 02:10:59 EST 1970
+pathName /var/tmp/ion
+configFlags 1
+
