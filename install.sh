@@ -1,5 +1,15 @@
 #!/bin/bash
 
+# The data rights legend accompanying the software is:
+
+#                       NOTICE
+# This software / technical data was produced for the U.S.
+# Government under Prime Contract No. NNN12AA01C and JPL
+# Contract Number 149581, and is subject to the FAR
+# 52.227-14 (6/87) Rights in Data General.
+#
+#
+
 # Invoke me with 'bash ./install.sh'
 
 #
@@ -9,6 +19,10 @@
 #	NRL MANET OSPF version of QUAGGA
 #	ION
 #	NASA DTN DevKit scenarios and demo apps
+#
+#
+# This is NOT NEEDED to just run CORE on the .iso image, or a machine instantiated
+# from the ISO image.
 #
 # The CORE piece is just a compilation of the instructions in section 2.3 of
 #	http://downloads.pf.itd.nrl.navy.mil/docs/core/core-html/install.html

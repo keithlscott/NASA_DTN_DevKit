@@ -1,0 +1,9 @@
+graph contactGraph {
+    "Orbiter" -- "Canberra" [color="0.2 0.05 0.8"];
+    "Canberra" -- "Mission Control" [color=red];
+    "Rover" -- "Orbiter" [color="0.2 0.05 0.8"];
+    "Madrid" -- "Mission Control" [color=red];
+    "Goldstone" -- "Mission Control" [color=red];
+    "Orbiter" -- "Madrid" [color=red];
+    "Orbiter" -- "Goldstone" [color="0.2 0.05 0.8"];
+}

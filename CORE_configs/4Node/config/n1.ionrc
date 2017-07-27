@@ -1,0 +1,17 @@
+#  FILE:    n1.ionrc
+#  CONTENT: configuration commands
+#  FOR:     ionadmin
+#  BUILDER: ION Configuration Editor
+#  NETWORK: 4Node
+#  NODE:    n1
+#  IP NAME: 10.0.1.1
+#  DATE:    Wed Dec 31 23:31:32 EST 1969
+#
+#  INITIALIZE
+#  Ion node number:  1
+#  Ion configuration file name:  
+1 1 
+#
+#  START
+#  Program:   rfxclock
+s

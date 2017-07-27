@@ -5,7 +5,7 @@
 #  NETWORK: GSFCDemo3
 #  NODE:    GS1
 #  IP NAME: 10.10.20.2
-#  DATE:    Sat Jan 03 02:10:59 EST 1970
+#  DATE:    Wed Dec 31 22:21:37 EST 1969
 #
 #  INITIALIZE
 1
@@ -40,15 +40,10 @@ a protocol tcp 1400 100 1250000
 #
 #  INDUCT
 #  Protocol:      tcp
-#  Duct name:     localhost      [From Node:  GS1  with IP Name: localhost]
-#  CLI task name: tcpcli
-a induct tcp localhost tcpcli
-#
-#  INDUCT
-#  Protocol:      tcp
 #  Duct name:     10.10.20.2      [From Node:  ScienceOps  with IP Name: 10.10.30.5]
 #  CLI task name: tcpcli
-#  Redundant command omitted (one induct task per protocol)
+a induct tcp 0.0.0.0 tcpcli
+
 #
 #  INDUCT
 #  Protocol:      tcp
@@ -64,21 +59,9 @@ a induct tcp localhost tcpcli
 #
 #  INDUCT
 #  Protocol:      tcp
-#  Duct name:     10.10.20.2      [From Node:  GS1  with IP Name: 10.10.20.2]
-#  CLI task name: tcpcli
-#  Redundant command omitted (one induct task per protocol)
-#
-#  INDUCT
-#  Protocol:      tcp
 #  Duct name:     10.10.20.2      [From Node:  GS3  with IP Name: 10.10.20.4]
 #  CLI task name: tcpcli
 #  Redundant command omitted (one induct task per protocol)
-#
-#  OUTDUCT
-#  Protocol:      tcp
-#  Duct name:     localhost      [To Node:   GS1  with IP Name: localhost]
-#  CLO task name: tcpclo
-a outduct tcp localhost tcpclo
 #
 #  OUTDUCT
 #  Protocol:      tcp
@@ -94,13 +77,13 @@ a outduct tcp 10.10.30.4 tcpclo
 #
 #  OUTDUCT
 #  Protocol:      tcp
-#  Duct name:     10.10.30.4      [To Node:   MO  with IP Name: 10.10.30.4]
+#  Duct name:     10.10.20.4      [To Node:   GS3  with IP Name: 10.10.20.4]
 #  CLO task name: tcpclo
-a outduct tcp 10.10.30.4 tcpclo
+a outduct tcp 10.10.20.4 tcpclo
 #
 #  OUTDUCT
 #  Protocol:      tcp
-#  Duct name:     10.10.20.3      [To Node:   GS3  with IP Name: 10.10.20.4]
+#  Duct name:     10.10.20.3      [To Node:   GS2  with IP Name: 10.10.20.3]
 #  CLO task name: tcpclo
 a outduct tcp 10.10.20.3 tcpclo
 #
@@ -115,7 +98,20 @@ a protocol udp 1400 100 1250000
 #  Protocol:      udp
 #  Duct name:     10.10.20.2      [From Node:  SC  with IP Name: 10.10.10.1]
 #  CLI task name: udpcli
-a induct udp 10.10.20.2 udpcli
+a induct udp 0.0.0.0 udpcli
+
+#
+#  INDUCT
+#  Protocol:      udp
+#  Duct name:     localhost      [From Node:  GS1  with IP Name: localhost]
+#  CLI task name: udpcli
+#  Redundant command omitted (one induct task per protocol)
+#
+#  OUTDUCT
+#  Protocol:      udp
+#  Duct name:     *      [To Node:   GS1  with IP Name: localhost]
+#  CLO task name: udpclo
+a outduct udp 10.10.20.2 udpclo
 #
 #  RUN
 #  Program:                 ipnadmin
@@ -124,3 +120,4 @@ r 'ipnadmin GS1.ipnrc'
 #
 #  START DAEMONS
 s
+

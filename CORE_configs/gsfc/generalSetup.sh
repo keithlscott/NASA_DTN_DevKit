@@ -1,1 +1,1 @@
-../common/generalSetup.sh
+../3GS/generalSetup.sh

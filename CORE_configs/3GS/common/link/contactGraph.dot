@@ -1,19 +1,2 @@
 graph contactGraph {
-    "33" -- "MO" [color=red];
-    "SC" -- "2" [color=red];
-    "44" -- "MO" [color=red];
-    "MO" -- "4" [color=red];
-    "22" -- "MO" [color=red];
-    "6" -- "4" [color=red];
-    "MO" -- "3" [color=red];
-    "22" -- "SC" [color="0.2 0.05 0.8"];
-    "4" -- "2" [color=red];
-    "6" -- "MO" [color=red];
-    "SC" -- "4" [color="0.2 0.05 0.8"];
-    "MO" -- "2" [color=red];
-    "4" -- "3" [color=red];
-    "6" -- "2" [color=red];
-    "SC" -- "3" [color="0.2 0.05 0.8"];
-    "3" -- "2" [color=red];
-    "6" -- "3" [color=red];
 }

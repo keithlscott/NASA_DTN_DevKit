@@ -1,0 +1,18 @@
+#  FILE:    n3.ipnrc
+#  CONTENT: configuration commands
+#  FOR:     ipnadmin
+#  BUILDER: ION Configuration Editor
+#  NETWORK: 4Node
+#  NODE:    n3
+#  IP NAME: 10.0.2.2
+#  DATE:    Wed Dec 31 23:31:32 EST 1969
+#
+#  PLAN
+#  Destination node:   3         [To Node: n3  with IP Name: 10.0.2.2]
+#  Duct Expression:    tcp/localhost
+a plan 3 udp/127.0.0.1
+#
+#  PLAN
+#  Destination node:   1         [To Node: n1  with IP Name: 10.0.1.1]
+#  Duct Expression:    tcp/10.0.1.1
+a plan 1 tcp/10.0.2.1

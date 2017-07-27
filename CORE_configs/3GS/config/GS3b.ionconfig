@@ -5,7 +5,12 @@
 #  NETWORK: GSFCDemo3
 #  NODE:    GS3b
 #  IP NAME: 10.10.30.33
-#  DATE:    Sat Jan 03 02:10:59 EST 1970
+#  DATE:    Wed Dec 31 22:21:37 EST 1969
+#
+#  PATHNAME
+#  Full path name to log  & sdr:  /var/tmp/ion
 pathName /var/tmp/ion
-configFlags 1
-
+#
+#  WMKEY
+#  Working memory key:  65281
+wmKey 65281

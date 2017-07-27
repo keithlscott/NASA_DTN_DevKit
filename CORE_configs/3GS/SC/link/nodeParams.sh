@@ -1,0 +1,3 @@
+IPN_NODE_NUMBER=1
+MANAGER="ipn:5.6"
+

@@ -1,0 +1,14 @@
+graph contactGraph {
+    "4" -- "1" [color=red];
+    "5" -- "4" [color=red];
+    "9" -- "8" [color=red];
+    "8" -- "5" [color=red];
+    "7" -- "4" [color=red];
+    "6" -- "5" [color=red];
+    "5" -- "2" [color=red];
+    "2" -- "1" [color=red];
+    "9" -- "6" [color=red];
+    "3" -- "2" [color=red];
+    "8" -- "7" [color=red];
+    "6" -- "3" [color=red];
+}

@@ -125,8 +125,8 @@ node n4 {
 	!
     }
     canvas c1
-    iconcoords {600.0 160.0}
-    labelcoords {600.0 192.0}
+    iconcoords {541.0 130.0}
+    labelcoords {541.0 162.0}
     interface-peer {eth0 n5}
     custom-config {
 	custom-config-id service:UserDefined
@@ -299,6 +299,8 @@ rm -f /tmp/ionrcdate
 
 
 
+
+
 }
 
 hook 4:runtime_hook.sh {
@@ -307,7 +309,7 @@ hook 4:runtime_hook.sh {
 # specified state
 
 pycore=`ls /tmp | grep pycore`
-sleep 15 && xterm -e "/usr/sbin/vcmd -c /tmp/$pycore/n2 -- bping ipn:2.5 ipn:4.1" &
+sleep 15 && xterm -e "/usr/sbin/vcmd -c /tmp/$pycore/n2 -- bping ipn:2.2 ipn:4.1" &
 
 }
 
@@ -317,6 +319,8 @@ hook 6:shutdown_hook.sh {
 # specified state
 
 killall -9 vcmd
+
+
 
 
 

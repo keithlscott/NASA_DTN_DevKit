@@ -1,0 +1,11 @@
+#  FILE:    ScienceOps.ionconfig
+#  CONTENT: configuration parameters
+#  FOR:     ionadmin
+#  BUILDER: ION Configuration Editor
+#  NETWORK: GSFCDemo3
+#  NODE:    ScienceOps
+#  IP NAME: 10.10.30.5
+#  DATE:    Sat Jan 03 02:10:59 EST 1970
+pathName /var/tmp/ion
+configFlags 1
+

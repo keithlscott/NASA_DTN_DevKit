@@ -1,0 +1,17 @@
+#  FILE:    n2.ionrc
+#  CONTENT: configuration commands
+#  FOR:     ionadmin
+#  BUILDER: ION Configuration Editor
+#  NETWORK: 3node
+#  NODE:    n2
+#  IP NAME: 10.0.0.2
+#  DATE:    Thu Jan 01 01:21:31 EST 1970
+#
+#  INITIALIZE
+#  Ion node number:  2
+#  Ion configuration file name:  
+1 2 
+#
+#  START
+#  Program:   rfxclock
+s

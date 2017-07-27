@@ -1,0 +1,1 @@
+../../../3GS/common/link/CORE_IONConfig.sh

@@ -1,0 +1,14 @@
+#  FILE:    MO.ionconfig
+#  CONTENT: configuration parameters
+#  FOR:     ionadmin
+#  BUILDER: ION Configuration Editor
+#  NETWORK: GSFCDemo3
+#  NODE:    MO
+#  IP NAME: 10.10.30.4
+#  DATE:    Sat Jan 03 02:10:59 EST 1970
+#
+#  PATHNAME
+#  Full path name to log  & sdr:  /tmp/ion
+pathName /var/tmp/ion/
+configFlags 1
+

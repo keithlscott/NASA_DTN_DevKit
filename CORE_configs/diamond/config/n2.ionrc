@@ -1,0 +1,17 @@
+#  FILE:    MO.ionrc
+#  CONTENT: configuration commands
+#  FOR:     ionadmin
+#  BUILDER: ION Configuration Editor
+#  NETWORK: GSFCDemo3
+#  NODE:    MO
+#  IP NAME: 10.10.30.4
+#  DATE:    Wed Dec 31 22:21:37 EST 1969
+#
+#  INITIALIZE
+#  Ion node number:  5
+#  Ion configuration file name:  MO.ionconfig
+1 2 n2.ionconfig
+#
+#  START
+#  Program:   rfxclock
+s

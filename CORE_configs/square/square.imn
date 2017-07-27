@@ -17,7 +17,7 @@ node n1 {
 	custom-config-id service:UserDefined
 	custom-command UserDefined
 	config {
-	dirs=('/var/ion', )
+	dirs=('/var/tmp/ion', )
 	files=('setup.sh', )
 	cmdup=('sh ./setup.sh', )
 	}
@@ -30,7 +30,7 @@ node n1 {
 	sh $foo/generalSetup.sh
 	}
     }
-    services {zebra OSPFv3MDR vtysh IPForward UserDefined}
+    services {zebra OSPFv3MDR vtysh IPForward SSH UserDefined}
 }
 
 node n2 {
@@ -51,7 +51,7 @@ node n2 {
 	custom-config-id service:UserDefined
 	custom-command UserDefined
 	config {
-	dirs=('/var/ion', )
+	dirs=('/var/tmp/ion', )
 	files=('setup.sh', )
 	cmdup=('sh ./setup.sh', )
 	}
@@ -64,7 +64,7 @@ node n2 {
 	sh $foo/generalSetup.sh
 	}
     }
-    services {zebra OSPFv3MDR vtysh IPForward UserDefined}
+    services {zebra OSPFv3MDR vtysh IPForward SSH UserDefined}
     interface-peer {eth0 n10}
 }
 
@@ -86,7 +86,7 @@ node n3 {
 	custom-config-id service:UserDefined
 	custom-command UserDefined
 	config {
-	dirs=('/var/ion', )
+	dirs=('/var/tmp/ion', )
 	files=('setup.sh', )
 	cmdup=('sh ./setup.sh', )
 	}
@@ -99,7 +99,7 @@ node n3 {
 	sh $foo/generalSetup.sh
 	}
     }
-    services {zebra OSPFv3MDR vtysh IPForward UserDefined}
+    services {zebra OSPFv3MDR vtysh IPForward SSH UserDefined}
     interface-peer {eth0 n10}
 }
 
@@ -121,7 +121,7 @@ node n4 {
 	custom-config-id service:UserDefined
 	custom-command UserDefined
 	config {
-	dirs=('/var/ion', )
+	dirs=('/var/tmp/ion', )
 	files=('setup.sh', )
 	cmdup=('sh ./setup.sh', )
 	}
@@ -134,7 +134,7 @@ node n4 {
 	sh $foo/generalSetup.sh
 	}
     }
-    services {zebra OSPFv3MDR vtysh IPForward UserDefined}
+    services {zebra OSPFv3MDR vtysh IPForward SSH UserDefined}
     interface-peer {eth0 n10}
 }
 
@@ -156,7 +156,7 @@ node n5 {
 	custom-config-id service:UserDefined
 	custom-command UserDefined
 	config {
-	dirs=('/var/ion', )
+	dirs=('/var/tmp/ion', )
 	files=('setup.sh', )
 	cmdup=('sh ./setup.sh', )
 	}
@@ -169,7 +169,7 @@ node n5 {
 	sh $foo/generalSetup.sh
 	}
     }
-    services {zebra OSPFv3MDR vtysh IPForward UserDefined}
+    services {zebra OSPFv3MDR vtysh IPForward SSH UserDefined}
     interface-peer {eth0 n10}
 }
 
@@ -191,7 +191,7 @@ node n6 {
 	custom-config-id service:UserDefined
 	custom-command UserDefined
 	config {
-	dirs=('/var/ion', )
+	dirs=('/var/tmp/ion', )
 	files=('setup.sh', )
 	cmdup=('sh ./setup.sh', )
 	}
@@ -204,7 +204,7 @@ node n6 {
 	sh $foo/generalSetup.sh
 	}
     }
-    services {zebra OSPFv3MDR vtysh IPForward UserDefined}
+    services {zebra OSPFv3MDR vtysh IPForward SSH UserDefined}
     interface-peer {eth0 n10}
 }
 
@@ -227,7 +227,7 @@ node n7 {
 	custom-config-id service:UserDefined
 	custom-command UserDefined
 	config {
-	dirs=('/var/ion', )
+	dirs=('/var/tmp/ion', )
 	files=('setup.sh', )
 	cmdup=('sh ./setup.sh', )
 	}
@@ -240,7 +240,7 @@ node n7 {
 	sh $foo/generalSetup.sh
 	}
     }
-    services {zebra OSPFv3MDR vtysh IPForward UserDefined}
+    services {zebra OSPFv3MDR vtysh IPForward SSH UserDefined}
 }
 
 node n8 {
@@ -262,7 +262,7 @@ node n8 {
 	custom-config-id service:UserDefined
 	custom-command UserDefined
 	config {
-	dirs=('/var/ion', )
+	dirs=('/var/tmp/ion', )
 	files=('setup.sh', )
 	cmdup=('sh ./setup.sh', )
 	}
@@ -275,7 +275,7 @@ node n8 {
 	sh $foo/generalSetup.sh
 	}
     }
-    services {zebra OSPFv3MDR vtysh IPForward UserDefined}
+    services {zebra OSPFv3MDR vtysh IPForward SSH UserDefined}
 }
 
 node n9 {
@@ -309,7 +309,7 @@ node n9 {
 	sh $foo/generalSetup.sh
 	}
     }
-    services {zebra OSPFv3MDR vtysh IPForward UserDefined}
+    services {zebra OSPFv3MDR vtysh IPForward SSH UserDefined}
 }
 
 node n10 {
@@ -420,6 +420,7 @@ rm -f /tmp/ionrcdate
 
 
 
+
 }
 
 option global {
@@ -436,7 +437,7 @@ option global {
 }
 
 option session {
-    controlnet=192.168.0.2/24
+    controlnet=192.168.5.0/24
     controlnet_updown_script=
     enablerj45=1
     enablesdt=0

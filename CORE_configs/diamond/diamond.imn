@@ -17,7 +17,7 @@ node n1 {
 	custom-config-id service:UserDefined
 	custom-command UserDefined
 	config {
-	dirs=('/var/ion', )
+	dirs=('/var/tmp/ion', )
 	files=('setup.sh', )
 	cmdup=('sh ./setup.sh', )
 	}
@@ -52,7 +52,7 @@ node n2 {
 	custom-config-id service:UserDefined
 	custom-command UserDefined
 	config {
-	dirs=('/var/ion', )
+	dirs=('/var/tmp/ion', )
 	files=('setup.sh', )
 	cmdup=('sh ./setup.sh', )
 	}
@@ -65,7 +65,7 @@ node n2 {
 	sh $foo/generalSetup.sh
 	}
     }
-    services {zebra OSPFv3MDR vtysh IPForward UserDefined}
+    services {zebra OSPFv3MDR vtysh IPForward SSH UserDefined}
 }
 
 node n3 {
@@ -87,7 +87,7 @@ node n3 {
 	custom-config-id service:UserDefined
 	custom-command UserDefined
 	config {
-	dirs=('/var/ion', )
+	dirs=('/var/tmp/ion', )
 	files=('setup.sh', )
 	cmdup=('sh ./setup.sh', )
 	}
@@ -122,7 +122,7 @@ node n4 {
 	custom-config-id service:UserDefined
 	custom-command UserDefined
 	config {
-	dirs=('/var/ion', )
+	dirs=('/var/tmp/ion', )
 	files=('setup.sh', )
 	cmdup=('sh ./setup.sh', )
 	}
@@ -206,6 +206,9 @@ hook 3:instantiation_hook.sh {
 rm -f /tmp/ionrcdate
 
 
+
+
+
 }
 
 option global {
@@ -222,7 +225,7 @@ option global {
 }
 
 option session {
-    controlnet=192.168.0.0/24
+    controlnet=192.168.5.0/24
     controlnet_updown_script=
     enablerj45=1
     enablesdt=0

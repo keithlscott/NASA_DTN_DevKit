@@ -8,7 +8,7 @@ from elasticsearch import Elasticsearch
 
 def requestStats(myEID, fromEID):
 	child = pexpect.spawn('bpchat %s %s' % (myEID, fromEID))
-	child.write('\n')
+	child.write('foo\n')
 	return child
 
 def nodeNumberFromIPNEID(ipnEID):
@@ -63,7 +63,7 @@ def parseResults(child, fromEID):
 
 
 def doMain():
-	child = requestStats('ipn:5.10', 'ipn:2.10')
+	child = requestStats('ipn:5.2', 'ipn:2.10')
 	parseResults(child, 'ipn:2.10')
 
 if __name__=='__main__':
