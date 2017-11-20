@@ -1,1 +1,1 @@
-../3GS/common/link/nodeSetup.sh
+../../../common/nodeSetup.sh
