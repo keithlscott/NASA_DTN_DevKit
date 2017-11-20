@@ -526,7 +526,7 @@ hook 4:runtime_hook.sh {
 # specified state
 
 pycore=`ls /tmp | grep pycore`
-sleep 15 && xterm -e "/usr/sbin/vcmd -c /tmp/$pycore/n1 -- bping ipn:1.2 ipn:6.1" &
+sleep 15 && xterm -e "/usr/local/sbin/vcmd -c /tmp/$pycore/n1 -- bping ipn:1.2 ipn:6.1" &
 }
 
 hook 6:shutdown_hook.sh {
