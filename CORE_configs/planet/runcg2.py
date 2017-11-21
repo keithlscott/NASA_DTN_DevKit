@@ -15,7 +15,7 @@ child.expect('$')
 
 print 'starting cg2.py'
 time.sleep(1)
-child.write('./cg2.py &\n')
+child.write('./cg2.py >& cg2.out &\n')
 child.expect('$')
 print 'done'
 
