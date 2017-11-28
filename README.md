@@ -1,4 +1,4 @@
-= CORE DTN Scenarios for NASA Advanced Exploration Systems
+# CORE DTN Scenarios for NASA Advanced Exploration Systems
 
 These scenarios are part of a package that was public released by MITRE
 and NASA AES.  The MITRE public release information is:
@@ -7,8 +7,8 @@ and NASA AES.  The MITRE public release information is:
 
 The data rights legend accompanying the software is:
 
-#                       NOTICE
 ```
+                       NOTICE
 This software / technical data was produced for the U.S. 
 Government under Prime Contract No. NNN12AA01C and JPL
 Contract Number 149581, and is subject to the FAR
