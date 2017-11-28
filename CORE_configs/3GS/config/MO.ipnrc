@@ -1,0 +1,50 @@
+#  FILE:    MO.ipnrc
+#  CONTENT: configuration commands
+#  FOR:     ipnadmin
+#  BUILDER: ION Configuration Editor
+#  NETWORK: GSFCDemo3
+#  NODE:    MO
+#  IP NAME: 10.10.30.4
+#  DATE:    Wed Dec 31 22:21:37 EST 1969
+#
+#  PLAN
+#  Destination node:   5         [To Node: MO  with IP Name: 10.10.30.4]
+#  Duct Expression:    udp/*
+a plan 5 udp/10.10.30.4
+
+#
+#  PLAN
+#  Destination node:   6         [To Node: ScienceOps  with IP Name: 10.10.30.5]
+#  Duct Expression:    tcp/10.10.30.5
+a plan 6 tcp/10.10.30.5
+#
+#  PLAN
+#  Destination node:   22         [To Node: GS1b  with IP Name: 10.10.30.11]
+#  Duct Expression:    tcp/10.10.30.11
+a plan 22 tcp/10.10.30.11
+#
+#  PLAN
+#  Destination node:   33         [To Node: GS2b  with IP Name: 10.10.30.22]
+#  Duct Expression:    tcp/10.10.30.22
+a plan 33 tcp/10.10.30.22
+#
+#  PLAN
+#  Destination node:   44         [To Node: GS3b  with IP Name: 10.10.30.33]
+#  Duct Expression:    tcp/10.10.30.33
+a plan 44 tcp/10.10.30.33
+#
+#  PLAN
+#  Destination node:   2         [To Node: GS1  with IP Name: 10.10.20.2]
+#  Duct Expression:    tcp/10.10.20.2
+a plan 2 tcp/10.10.20.2
+#
+#  PLAN
+#  Destination node:   3         [To Node: GS2  with IP Name: 10.10.20.3]
+#  Duct Expression:    tcp/10.10.20.3
+a plan 3 tcp/10.10.20.3
+#
+#  PLAN
+#  Destination node:   4         [To Node: GS3  with IP Name: 10.10.20.4]
+#  Duct Expression:    tcp/10.10.20.4
+a plan 4 tcp/10.10.20.4
+

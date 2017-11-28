@@ -1,0 +1,11 @@
+.DS_Store
+
+bpi/bpirecv
+bpi/bpirecv.o
+bpi/bpisend
+bpi/bpisend.o
+bpi/lodepng.o
+**/contactGraph.dot
+**/contacts.txt
+**/cg2.out
+

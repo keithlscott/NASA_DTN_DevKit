@@ -1,0 +1,142 @@
+#  FILE:    ScienceOps.bprc
+#  CONTENT: configuration commands
+#  FOR:     bpadmin
+#  BUILDER: ION Configuration Editor
+#  NETWORK: GSFCDemo3
+#  NODE:    ScienceOps
+#  IP NAME: 10.10.30.5
+#  DATE:    Wed Dec 31 22:21:37 EST 1969
+#
+#  INITIALIZE
+1
+#
+#  SCHEME
+#  Scheme type:      ipn
+#  Forwarding task:  ipnfw
+#  Custodian daemon: ipnadminep
+a scheme ipn 'ipnfw' 'ipnadminep'
+#
+#  ENDPOINT
+#  IPN Endpoint ID:             ipn:6.0
+#  Action if no receiver open:  x  [Discard]
+a endpoint ipn:6.0 x
+#
+#  ENDPOINT
+#  IPN Endpoint ID:             ipn:6.1
+#  Action if no receiver open:  x  [Discard]
+a endpoint ipn:6.1 x
+#
+#  ENDPOINT
+#  IPN Endpoint ID:             ipn:6.2
+#  Action if no receiver open:  x  [Discard]
+a endpoint ipn:6.2 x
+#
+#  ENDPOINT
+#  IPN Endpoint ID:             ipn:6.3
+#  Action if no receiver open:  x  [Discard]
+a endpoint ipn:6.3 x
+#
+#  ENDPOINT
+#  IPN Endpoint ID:             ipn:6.4
+#  Action if no receiver open:  x  [Discard]
+a endpoint ipn:6.4 x
+#
+#  ENDPOINT
+#  IPN Endpoint ID:             ipn:6.5
+#  Action if no receiver open:  x  [Discard]
+a endpoint ipn:6.5 x
+#
+#  ENDPOINT
+#  IPN Endpoint ID:             ipn:6.64
+#  Action if no receiver open:  x  [Discard]
+a endpoint ipn:6.64 x
+#
+#  ENDPOINT
+#  IPN Endpoint ID:             ipn:6.65
+#  Action if no receiver open:  x  [Discard]
+a endpoint ipn:6.65 x
+#
+#  PROTOCOL
+#  Protocol:  tcp
+#  Payload bytes per frame:           1400         [(KB/sec): 1  with K=1000]
+#  Overhead bytes per frame:          100
+#  Nominal data rate (bytes per sec): 1250000     [(KB/sec): 1250  (MB/sec): 1  with K=1000]
+a protocol tcp 1400 100 1250000
+#
+#  INDUCT
+#  Protocol:      tcp
+#  Duct name:     10.10.30.5      [From Node:  GS1  with IP Name: 10.10.20.2]
+#  CLI task name: tcpcli
+a induct tcp 0.0.0.0 tcpcli
+
+#
+#  INDUCT
+#  Protocol:      tcp
+#  Duct name:     10.10.30.5      [From Node:  MO  with IP Name: 10.10.30.4]
+#  CLI task name: tcpcli
+#  Redundant command omitted (one induct task per protocol)
+#
+#  INDUCT
+#  Protocol:      tcp
+#  Duct name:     10.10.30.5      [From Node:  GS2  with IP Name: 10.10.20.3]
+#  CLI task name: tcpcli
+#  Redundant command omitted (one induct task per protocol)
+#
+#  INDUCT
+#  Protocol:      tcp
+#  Duct name:     10.10.30.5      [From Node:  GS3  with IP Name: 10.10.20.4]
+#  CLI task name: tcpcli
+#  Redundant command omitted (one induct task per protocol)
+#
+#  OUTDUCT
+#  Protocol:      tcp
+#  Duct name:     10.10.20.2      [To Node:   GS1  with IP Name: 10.10.20.2]
+#  CLO task name: tcpclo
+a outduct tcp 10.10.20.2 tcpclo
+#
+#  OUTDUCT
+#  Protocol:      tcp
+#  Duct name:     10.10.30.4      [To Node:   MO  with IP Name: 10.10.30.4]
+#  CLO task name: tcpclo
+a outduct tcp 10.10.30.4 tcpclo
+#
+#  OUTDUCT
+#  Protocol:      tcp
+#  Duct name:     10.10.20.4      [To Node:   GS3  with IP Name: 10.10.20.4]
+#  CLO task name: tcpclo
+a outduct tcp 10.10.20.4 tcpclo
+#
+#  OUTDUCT
+#  Protocol:      tcp
+#  Duct name:     10.10.20.3      [To Node:   GS2  with IP Name: 10.10.20.3]
+#  CLO task name: tcpclo
+a outduct tcp 10.10.20.3 tcpclo
+#
+#  PROTOCOL
+#  Protocol:  udp
+#  Payload bytes per frame:           1400         [(KB/sec): 1  with K=1000]
+#  Overhead bytes per frame:          100
+#  Nominal data rate (bytes per sec): 1250000     [(KB/sec): 1250  (MB/sec): 1  with K=1000]
+a protocol udp 1400 100 1250000
+#
+#  INDUCT
+#  Protocol:      udp
+#  Duct name:     localhost      [From Node:  ScienceOps  with IP Name: localhost]
+#  CLI task name: udpcli
+a induct udp 0.0.0.0 udpcli
+
+#
+#  OUTDUCT
+#  Protocol:      udp
+#  Duct name:     *      [To Node:   ScienceOps  with IP Name: localhost]
+#  CLO task name: udpclo
+a outduct udp 10.10.30.5 udpclo
+#
+#  RUN
+#  Program:                 ipnadmin
+#  Configuration file name: ScienceOps.ipnrc
+r 'ipnadmin ScienceOps.ipnrc'
+#
+#  START DAEMONS
+s
+

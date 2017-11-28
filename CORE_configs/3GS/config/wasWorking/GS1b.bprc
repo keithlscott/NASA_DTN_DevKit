@@ -1,0 +1,84 @@
+#  FILE:    GS1b.bprc
+#  CONTENT: configuration commands
+#  FOR:     bpadmin
+#  BUILDER: ION Configuration Editor
+#  NETWORK: GSFCDemo3
+#  NODE:    GS1b
+#  IP NAME: 10.10.30.11
+#  DATE:    Sat Jan 03 02:10:59 EST 1970
+#
+#  INITIALIZE
+1
+#
+#  SCHEME
+#  Scheme type:      ipn
+#  Forwarding task:  ipnfw
+#  Custodian daemon: ipnadminep
+a scheme ipn 'ipnfw' 'ipnadminep'
+#
+#  ENDPOINT
+#  IPN Endpoint ID:             ipn:22.0
+#  Action if no receiver open:  x  [Discard]
+a endpoint ipn:22.0 x
+#
+#  ENDPOINT
+#  IPN Endpoint ID:             ipn:22.1
+#  Action if no receiver open:  x  [Discard]
+a endpoint ipn:22.1 x
+#
+#  ENDPOINT
+#  IPN Endpoint ID:             ipn:22.2
+#  Action if no receiver open:  x  [Discard]
+a endpoint ipn:22.2 x
+#
+#  PROTOCOL
+#  Protocol:  tcp
+#  Payload bytes per frame:           1400         [(KB/sec): 1  with K=1000]
+#  Overhead bytes per frame:          100
+#  Nominal data rate (bytes per sec): 1250000     [(KB/sec): 1250  (MB/sec): 1  with K=1000]
+a protocol tcp 1400 100 1250000
+#
+#  INDUCT
+#  Protocol:      tcp
+#  Duct name:     10.10.30.11      [From Node:  MO  with IP Name: 10.10.30.4]
+#  CLI task name: tcpcli
+a induct tcp 10.10.30.11 tcpcli
+#
+#  OUTDUCT
+#  Protocol:      tcp
+#  Duct name:     10.10.10.1      [To Node:   SC  with IP Name: 10.10.10.1]
+#  CLO task name: tcpclo
+a outduct tcp 10.10.10.1 tcpclo
+#
+#  OUTDUCT
+#  Protocol:      tcp
+#  Duct name:     10.10.30.4      [To Node:   MO  with IP Name: 10.10.30.4]
+#  CLO task name: tcpclo
+a outduct tcp 10.10.30.4 tcpclo
+#
+#  PROTOCOL
+#  Protocol:  udp
+#  Payload bytes per frame:           1400         [(KB/sec): 1  with K=1000]
+#  Overhead bytes per frame:          100
+#  Nominal data rate (bytes per sec): 1250000     [(KB/sec): 1250  (MB/sec): 1  with K=1000]
+a protocol udp 1400 100 1250000
+#
+#  INDUCT
+#  Protocol:      tcp
+#  Duct name:     localhost      [From Node:  GS1b  with IP Name: localhost]
+#  CLI task name: udpcli
+a induct tcp localhost udpcli
+#
+#  OUTDUCT
+#  Protocol:      tcp
+#  Duct name:     localhost      [To Node:   GS1b  with IP Name: localhost]
+#  CLO task name: udpclo
+a outduct tcp localhost udpclo
+#
+#  RUN
+#  Program:                 ipnadmin
+#  Configuration file name: GS1b.ipnrc
+r 'ipnadmin GS1b.ipnrc'
+#
+#  START DAEMONS
+s

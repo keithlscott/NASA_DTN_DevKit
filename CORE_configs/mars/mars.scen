@@ -1,0 +1,14 @@
+# Mars Orbiter / Rover / DSN simulation
+# 120 seconds total
+
+$node_(5) set X_ 430.0
+$node_(5) set Y_ 160.0
+$node_(5) set Z_ 0.00
+$ns_ at 00.00 "$node_(5) setdest 690.0 350.0 18.0"
+$ns_ at 20.00 "$node_(5) setdest 430.0 160.0 18.0"
+$ns_ at 40.00 "$node_(5) setdest 430.0 410.0 18.0"
+$ns_ at 60.00 "$node_(5) setdest 430.0 160.0 18.0"
+$ns_ at 80.00 "$node_(5) setdest 180.0 350.0 18.0"
+$ns_ at 100.00 "$node_(5) setdest 430.0 160.0 18.0"
+$ns_ at 119.50 "$node_(5) set X_ 430.0"
+$ns_ at 119.50 "$node_(5) set Y_ 160.0"

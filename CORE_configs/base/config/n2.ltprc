@@ -1,0 +1,24 @@
+#Initialization command (command 1).
+#Establish the LTP retransmission window.
+#A maximum of 64 sessions. 1 session ~ 1 second of transmission
+#Set a block size limit of 1000000 bytes. (approx data sent per session)
+####1 64 1000000
+1 100
+
+#-----------------------------------------------------------------
+#Add a span (a connection)
+#       peer_engine_nbr
+#       max_export_sessions
+#       max_import_sessions
+#       max_segment_size
+#       aggregation_size_limit
+#       aggregation_time_limit
+#       LSO_command
+#      [queuing_latency]
+
+#-----------------------------------------------------------------
+# LTP Spans
+
+#-----------------------------------------------------------------
+# Listener on 0.0.0.0
+s 'udplsi 0.0.0.0:1113'

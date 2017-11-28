@@ -1,0 +1,54 @@
+BPI README
+version 1.3
+8/18/2015
+
+Author: Alex Handley <ahandley@mitre.org>
+**This package is a modified version of bpsource and bpsink by Scott Burleigh**
+This program was tested on ION open source 3.3.1
+
+*** NOTE ***
+For the makefile to work, you need to update it with the path to your ION install
+
+---------------------------------------------------------
+Dependencies:
+SDL v1.2.0 	-	receiver only
+	(on debian/ubuntu, "apt-get install libsdl1.2-dev")
+	
+LodePNG 	-	sender only
+	(included)
+
+---------------------------------------------------------
+Installation:
+
+1) install lib SDL on the machine running the receiver
+2) take the "bpi" directory and put it somewhere on all machines
+3) run "make" and "sudo make install"
+
+---------------------------------------------------------
+Removal:
+1) go to the bpi directory
+2) run "sudo make uninstall"
+
+---------------------------------------------------------
+Source Files:
+bpisend.c	-	Image stream sending program
+	Usage: bpisend <src EID> <dest EID> <filename> [-flags]
+	Flags:
+		-c 	Disable custody
+		-v 	Verbose mode, will print line numbers
+		-t <ttl>	Sets TTL for bundles 
+
+bpirecv.c	-	Image stream receiver and display program
+	Usage: bpirecv <own EID>
+	
+lodepng.c	- 	Library used by bpisend.c
+	
+lodepng.h	- 	Header for lodepng.c
+	
+---------------------------------------------------------
+Known Issues:
+
+- If you turn on the critical forwarding bit or a bundle is duplicated
+ for any reason and delivered, this will mess up bpirecv's count.  
+ This will force bpirecv to close before it has all scanlines present 
+ because it will have received the total amount of bundles.

@@ -1,0 +1,353 @@
+node n1 {
+    type router
+    model router
+    network-config {
+	hostname n1
+	!
+	interface eth1
+	 ip address 10.0.2.1/24
+	 ipv6 address 2001:2::1/64
+	!
+	interface eth0
+	 ip address 10.0.0.1/24
+	 ipv6 address 2001:0::1/64
+	!
+    }
+    canvas c1
+    iconcoords {194.0 266.0}
+    labelcoords {194.0 298.0}
+    interface-peer {eth0 n2}
+    custom-config {
+	custom-config-id service:UserDefined
+	custom-command UserDefined
+	config {
+	dirs=('/var/ion', )
+	files=('setup.sh', )
+	cmdup=('sh ./setup.sh', )
+	}
+    }
+    custom-config {
+	custom-config-id service:UserDefined:setup.sh
+	custom-command setup.sh
+	config {
+	foo=`dirname $SESSION_FILENAME`
+	sh $foo/generalSetup.sh
+	}
+    }
+    services {zebra OSPFv2 OSPFv3 vtysh IPForward SSH UserDefined}
+    interface-peer {eth1 n3}
+}
+
+node n2 {
+    type router
+    model router
+    network-config {
+	hostname n2
+	!
+	interface eth0
+	 ip address 10.0.0.2/24
+	 ipv6 address 2001:0::2/64
+	!
+    }
+    canvas c1
+    iconcoords {74.0 105.0}
+    labelcoords {74.0 137.0}
+    interface-peer {eth0 n1}
+    custom-config {
+	custom-config-id service:UserDefined
+	custom-command UserDefined
+	config {
+	dirs=('/var/ion', )
+	files=('setup.sh', )
+	cmdup=('sh ./setup.sh', )
+	}
+    }
+    custom-config {
+	custom-config-id service:UserDefined:setup.sh
+	custom-command setup.sh
+	config {
+	foo=`dirname $SESSION_FILENAME`
+	sh $foo/generalSetup.sh
+	}
+    }
+    services {zebra OSPFv2 OSPFv3 vtysh IPForward SSH UserDefined}
+}
+
+node n3 {
+    type router
+    model mdr
+    network-config {
+	hostname n3
+	!
+	interface eth2
+	 ipv6 address 2001:3::2/128
+	 ip address 10.3.3.2/24
+	!
+	interface eth1
+	 ip address 10.0.2.2/24
+	 ipv6 address 2001:2::2/64
+	!
+    }
+    canvas c1
+    iconcoords {360.0 162.0}
+    labelcoords {360.0 194.0}
+    interface-peer {eth1 n1}
+    interface-peer {eth2 n5}
+    services {zebra OSPFv3MDR vtysh IPForward UserDefined}
+    custom-config {
+	custom-config-id service:UserDefined
+	custom-command UserDefined
+	config {
+	dirs=('/var/ion', )
+	files=('setup.sh', )
+	cmdup=('sh ./setup.sh', )
+	}
+    }
+    custom-config {
+	custom-config-id service:UserDefined:setup.sh
+	custom-command setup.sh
+	config {
+	foo=`dirname $SESSION_FILENAME`
+	sh $foo/generalSetup.sh
+	}
+    }
+}
+
+node n4 {
+    type router
+    model mdr
+    network-config {
+	hostname n4
+	!
+	interface eth0
+	 ipv6 address 2001:3::1/128
+	 ip address 10.3.3.1/24
+	!
+    }
+    canvas c1
+    iconcoords {541.0 130.0}
+    labelcoords {541.0 162.0}
+    interface-peer {eth0 n5}
+    custom-config {
+	custom-config-id service:UserDefined
+	custom-command UserDefined
+	config {
+	dirs=('/var/ion', )
+	files=('setup.sh', )
+	cmdup=('sh ./setup.sh', )
+	}
+    }
+    custom-config {
+	custom-config-id service:UserDefined:setup.sh
+	custom-command setup.sh
+	config {
+	foo=`dirname $SESSION_FILENAME`
+	sh $foo/generalSetup.sh
+	}
+    }
+    services {zebra OSPFv3MDR vtysh IPForward SSH UserDefined}
+}
+
+node n5 {
+    type wlan
+    network-config {
+	hostname wlan5
+	!
+	interface wireless
+	 ipv6 address 2001:3::0/128
+	 ip address 10.3.3.0/24
+	!
+	mobmodel
+	coreapi
+	basic_range
+	ns2script
+	!
+    }
+    custom-config {
+	custom-config-id basic_range
+	custom-command {3 3 9 9 9}
+	config {
+	range=250
+	bandwidth=100000
+	jitter=0
+	delay=20000
+	error=3
+	}
+    }
+    custom-config {
+	custom-config-id ns2script
+	custom-command {10 3 11 10 10 10 10 10}
+	config {
+	file=/home/core/.core/configs/NASADTNDevKit/base/30-30.scen
+	#file=~/.core/configs/NASADTNDevKit/base/30-30.scen
+	refresh_ms=50
+	loop=1
+	autostart=0.0
+	map=
+	script_start=/home/core/.core/configs/NASADTNDevKit/common/mobility.sh
+	#script_start=~/.core/configs/common/NASADTNDEVKit/mobility.sh
+	script_pause=
+	script_stop=
+	}
+    }
+    canvas c1
+    iconcoords {546.0 279.0}
+    labelcoords {546.0 311.0}
+    interface-peer {e0 n4}
+    interface-peer {e1 n3}
+}
+
+link l1 {
+    nodes {n1 n2}
+    bandwidth 0
+}
+
+link l3 {
+    nodes {n1 n3}
+    bandwidth 0
+}
+
+link l4 {
+    nodes {n5 n4}
+}
+
+link l5 {
+    nodes {n5 n3}
+}
+
+annotation a1 {
+    iconcoords {27.0 70.0}
+    type text
+    label {Ground Station}
+    labelcolor black
+    fontfamily {Arial}
+    fontsize {12}
+    canvas c1
+}
+
+annotation a2 {
+    iconcoords {643.0 130.0}
+    type text
+    label {Satellite}
+    labelcolor black
+    fontfamily {Arial}
+    fontsize {12}
+    canvas c1
+}
+
+annotation a3 {
+    iconcoords {126.0 328.0}
+    type text
+    label {BPI / LTP testing}
+    labelcolor black
+    fontfamily {Arial}
+    fontsize {12}
+    canvas c1
+}
+
+annotation a4 {
+    type text
+    iconcoords {315.0 87.0}
+    label {}
+    canvas c1
+}
+
+annotation a5 {
+    iconcoords {199.0 36.0}
+    type text
+    label {Bping is set to run from node 4->2 automatically.}
+    labelcolor black
+    fontfamily {Arial}
+    fontsize {12}
+    canvas c1
+}
+
+annotation a6 {
+    iconcoords {199.0 60.0}
+    type text
+    label {An Xterm will pop up after 15 seconds, and the ping will start just before the satellite goes out of range.}
+    labelcolor black
+    fontfamily {Arial}
+    fontsize {12}
+    canvas c1
+}
+
+annotation a7 {
+    iconcoords {199.0 84.0}
+    type text
+    label {When it comes back, the ping will continue.}
+    labelcolor black
+    fontfamily {Arial}
+    fontsize {12}
+    canvas c1
+}
+
+canvas c1 {
+    name {Canvas1}
+}
+
+hook 3:instantiation_hook.sh {
+#!/bin/sh
+# session hook script; write commands here to execute on the host at the
+# specified state
+rm -f /tmp/ionrcdate
+
+
+
+
+
+
+
+
+
+
+}
+
+hook 4:runtime_hook.sh {
+#!/bin/bash
+# session hook script; write commands here to execute on the host at the
+# specified state
+
+pycore=`ls /tmp | grep pycore`
+sleep 15 && xterm -e "/usr/local/sbin/vcmd -c /tmp/$pycore/n2 -- bping ipn:2.2 ipn:4.1" &
+
+}
+
+hook 6:shutdown_hook.sh {
+#!/bin/sh
+# session hook script; write commands here to execute on the host at the
+# specified state
+
+killall -9 vcmd
+
+
+
+
+
+
+
+
+}
+
+option global {
+    interface_names yes
+    ip_addresses yes
+    ipv6_addresses no
+    node_labels yes
+    link_labels yes
+    show_api no
+    background_images no
+    annotations yes
+    grid yes
+    traffic_start 0
+}
+
+option session {
+    controlnet=192.168.0.0/24
+    controlnet_updown_script=
+    enablerj45=1
+    enablesdt=0
+    preservedir=0
+    sdturl=tcp://127.0.0.1:50000/
+}
+

@@ -1,0 +1,14 @@
+#----------------------------------------------------
+# Add an egress plan. (to neighboring nodes/hosts)
+#----------------------------------------------------
+#a plan <node> <protocol>/<num/address> 
+#a plan 1 ltp/1
+#a plan 2 tcp/10.0.0.2
+
+#loopback
+a plan 8 udp/127.0.0.1
+
+#others
+a plan 5 tcp/10.0.0.5
+a plan 7 tcp/10.0.0.7
+a plan 9 tcp/10.0.0.9

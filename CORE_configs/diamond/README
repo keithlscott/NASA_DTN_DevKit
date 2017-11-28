@@ -1,0 +1,13 @@
+s3 - Satellite file transfer test, 4 nodes:
+	- bping running on ipn:x.1 for all nodes
+	- bprecvfile running on ipn:x.2 for all nodes
+	- made a directory 'recv' on all nodes (for endpoint.sh)
+	- endpoint.sh running in bg on startup for all nodes
+		- takes all testfiles and moves them to the recv directory
+		- eliminates clutter and puts all files in one place
+		- runs on a faster interval than report.sh
+	- report.sh running in bg on startup for node 4 (satellite)
+		- sends the current date to $dest after an interval
+		- logs to send.log
+		- files will appear as testfileX on the dest machine
+

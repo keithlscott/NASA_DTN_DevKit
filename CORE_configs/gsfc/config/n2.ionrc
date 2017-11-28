@@ -1,0 +1,36 @@
+# Initialization command (command 1). 
+# the second '1' below is my CBHE node number
+#1 <node #>
+1 2
+
+# start ion node
+s
+@ +0
+
+#-----------------------------------------------------------------
+# Add contacts and ranges.
+#-----------------------------------------------------------------
+# Node 1 to 2
+a range    +0   +4000000      2     1   1
+a range    +0   +4000000      1     2   1
+a contact  +0   +4000000      2     1   10000000
+a contact  +0   +4000000      1     2   10000000
+
+# Node 1 to 3
+a range    +0   +4000000      3     1   1
+a range    +0   +4000000      1     3   1
+a contact  +0   +4000000      3     1   300000
+a contact  +0   +4000000      1     3   300000
+
+# Node 3 to 4
+a range    +0   +4000000      4     3   1
+a range    +0   +4000000      3     4   1
+a contact  +0   +4000000      4     3   10000000
+a contact  +0   +4000000      3     4   10000000
+
+# loopback
+a range    +0   +4000000      2     2   1
+a contact  +0   +4000000      2     2   10000000
+
+# Disable congestion forecasting
+m horizon  +0

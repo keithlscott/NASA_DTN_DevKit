@@ -1,0 +1,26 @@
+# Initialize
+1
+
+# Echo control (all output from cfdpadmin to be logged)
+e 1
+
+# Discard partially received files upon cancellation of a file reception
+m discard 1
+
+# Require CRCs on PDUs
+m requirecrc 1
+
+m ckperiod 1
+m maxtimeouts 2
+m inactivity 300
+
+# Set max segment size
+# (Number of bytes of file data in each file data PDU transmitted
+#  by the local CFDP entity)
+m segsize 64000
+
+# CFDP watch activity
+w 0
+
+#Start
+s 'bputa'

@@ -1,0 +1,96 @@
+#  FILE:    n1.bprc
+#  CONTENT: configuration commands
+#  FOR:     bpadmin
+#  BUILDER: ION Configuration Editor
+#  NETWORK: 4Node
+#  NODE:    n1
+#  IP NAME: 10.0.1.1
+#  DATE:    Wed Dec 31 23:31:32 EST 1969
+#
+#  INITIALIZE
+1
+#
+#  SCHEME
+#  Scheme type:      ipn
+#  Forwarding task:  ipnfw
+#  Custodian daemon: ipnadminep
+a scheme ipn 'ipnfw' 'ipnadminep'
+#
+#  ENDPOINT
+#  IPN Endpoint ID:             ipn:1.0
+#  Action if no receiver open:  x  [Discard]
+a endpoint ipn:1.0 x
+#
+#  ENDPOINT
+#  IPN Endpoint ID:             ipn:1.1
+#  Action if no receiver open:  x  [Discard]
+a endpoint ipn:1.1 x
+#
+#  ENDPOINT
+#  IPN Endpoint ID:             ipn:1.2
+#  Action if no receiver open:  x  [Discard]
+a endpoint ipn:1.2 x
+#
+#  ENDPOINT
+#  IPN Endpoint ID:             ipn:1.3
+#  Action if no receiver open:  x  [Discard]
+a endpoint ipn:1.3 x
+#
+#  ENDPOINT
+#  IPN Endpoint ID:             ipn:1.4
+#  Action if no receiver open:  x  [Discard]
+a endpoint ipn:1.4 x
+a endpoint ipn:1.5 x
+a endpoint ipn:1.6 x
+a endpoint ipn:1.10 x
+a endpoint ipn:1.64 x
+a endpoint ipn:1.65 x
+#
+#  PROTOCOL
+#  Protocol:  tcp
+#  Payload bytes per frame:           1400         [(KB/sec): 1  with K=1000]
+#  Overhead bytes per frame:          100
+#  Nominal data rate (bytes per sec): 1250000     [(KB/sec): 1250  (MB/sec): 1  with K=1000]
+a protocol tcp 1400 100 1250000
+#
+#  PROTOCOL
+#  Protocol:  udp
+#  Payload bytes per frame:           1400         [(KB/sec): 1  with K=1000]
+#  Overhead bytes per frame:          100
+#  Nominal data rate (bytes per sec): 1250000     [(KB/sec): 1250  (MB/sec): 1  with K=1000]
+a protocol udp 1400 100 1250000
+#
+#  INDUCT
+#  Protocol:      tcp
+#  Duct name:     10.0.1.1      [From Node:  n2  with IP Name: 10.0.0.2]
+#  CLI task name: tcpcli
+a induct tcp 0.0.0.0 tcpcli
+#
+#  INDUCT
+#  Protocol:      tcp
+#  Duct name:     10.0.1.1      [From Node:  n2  with IP Name: 10.0.0.2]
+#  CLI task name: tcpcli
+a induct udp 0.0.0.0 udpcli
+#
+#  OUTDUCT
+#  Protocol:      tcp
+#  Duct name:     localhost      [To Node:   n1  with IP Name: localhost]
+#  CLO task name: tcpclo
+a outduct udp 127.0.0.1 udpclo
+#
+#  OUTDUCT
+#  Protocol:      tcp
+#  Duct name:     10.0.0.2      [To Node:   n2  with IP Name: 10.0.0.2]
+#  CLO task name: tcpclo
+a outduct tcp 10.0.0.2:4556 tcpclo
+# a outduct tcp 10.0.1.2 tcpclo
+a outduct tcp 10.0.2.2:4556 tcpclo
+#
+#
+#  RUN
+#  Program:                 ipnadmin
+#  Configuration file name: n1.ipnrc
+r 'ipnadmin n1.ipnrc'
+#
+#  START DAEMONS
+s

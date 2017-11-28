@@ -1,0 +1,562 @@
+node n1 {
+    type router
+    model router
+    network-config {
+	hostname n1
+	!
+	interface eth2
+	 ip address 10.0.2.1/24
+	 ipv6 address 2001:2::1/64
+	!
+	interface eth1
+	 ip address 10.0.1.1/24
+	 ipv6 address 2001:1::1/64
+	!
+	interface eth0
+	 ip address 10.0.0.1/24
+	 ipv6 address 2001:0::1/64
+	!
+    }
+    canvas c1
+    iconcoords {428.0 608.0}
+    labelcoords {428.0 640.0}
+    custom-config {
+	custom-config-id service:UserDefined
+	custom-command UserDefined
+	config {
+	dirs=('/var/ion', )
+	files=('setup.sh', )
+	cmdup=('sh ./setup.sh', )
+	}
+    }
+    custom-config {
+	custom-config-id service:UserDefined:setup.sh
+	custom-command setup.sh
+	config {
+	foo=`dirname $SESSION_FILENAME`
+	sh $foo/generalSetup.sh
+	}
+    }
+    services {zebra OSPFv2 OSPFv3 vtysh IPForward SSH UserDefined}
+    interface-peer {eth0 n2}
+    interface-peer {eth1 n3}
+    interface-peer {eth2 n4}
+}
+
+node n2 {
+    type router
+    model mdr
+    network-config {
+	hostname n2
+	!
+	interface eth1
+	 ipv6 address 2001:3::1/128
+	 ip address 10.0.3.1/24
+	!
+	interface eth0
+	 ip address 10.0.0.2/24
+	 ipv6 address 2001:0::2/64
+	!
+    }
+    canvas c1
+    iconcoords {745.0 410.0}
+    labelcoords {745.0 442.0}
+    custom-config {
+	custom-config-id service:zebra
+	custom-command zebra
+	config {
+	files=('/usr/local/etc/quagga/Quagga.conf', 'quaggaboot.sh', '/usr/local/etc/quagga/vtysh.conf', )
+	}
+    }
+    custom-config {
+	custom-config-id service:zebra:/usr/local/etc/quagga/Quagga.conf
+	custom-command /usr/local/etc/quagga/Quagga.conf
+	config {
+	interface eth0
+	  ip address 10.0.1.1/24
+	  ipv6 address 2001:1::1/64
+	  ipv6 ospf6 instance-id 65
+	!
+	router ospf6
+	  router-id 10.0.1.1
+	  interface eth0 area 0.0.0.0
+	!
+	
+	}
+    }
+    custom-config {
+	custom-config-id service:UserDefined
+	custom-command UserDefined
+	config {
+	dirs=('/var/ion', )
+	files=('setup.sh', )
+	cmdup=('sh ./setup.sh', )
+	}
+    }
+    custom-config {
+	custom-config-id service:UserDefined:setup.sh
+	custom-command setup.sh
+	config {
+	foo=`dirname $SESSION_FILENAME`
+	sh $foo/generalSetup.sh
+	}
+    }
+    services {zebra OSPFv3MDR vtysh IPForward UserDefined}
+    interface-peer {eth0 n1}
+    interface-peer {eth1 n7}
+}
+
+node n3 {
+    type router
+    model mdr
+    network-config {
+	hostname n3
+	!
+	interface eth1
+	 ipv6 address 2001:3::2/128
+	 ip address 10.0.3.2/24
+	!
+	interface eth0
+	 ip address 10.0.1.2/24
+	 ipv6 address 2001:1::2/64
+	!
+    }
+    canvas c1
+    iconcoords {427.0 503.0}
+    labelcoords {427.0 535.0}
+    custom-config {
+	custom-config-id service:zebra
+	custom-command zebra
+	config {
+	files=('/usr/local/etc/quagga/Quagga.conf', 'quaggaboot.sh', '/usr/local/etc/quagga/vtysh.conf', )
+	}
+    }
+    custom-config {
+	custom-config-id service:zebra:/usr/local/etc/quagga/Quagga.conf
+	custom-command /usr/local/etc/quagga/Quagga.conf
+	config {
+	interface eth0
+	  ip address 10.0.2.1/24
+	  ipv6 address 2001:2::1/64
+	  ipv6 ospf6 instance-id 65
+	!
+	router ospf6
+	  router-id 10.0.2.1
+	  interface eth0 area 0.0.0.0
+	!
+	
+	}
+    }
+    custom-config {
+	custom-config-id service:UserDefined
+	custom-command UserDefined
+	config {
+	dirs=('/var/ion', )
+	files=('setup.sh', )
+	cmdup=('sh ./setup.sh', )
+	}
+    }
+    custom-config {
+	custom-config-id service:UserDefined:setup.sh
+	custom-command setup.sh
+	config {
+	foo=`dirname $SESSION_FILENAME`
+	sh $foo/generalSetup.sh
+	}
+    }
+    services {zebra OSPFv3MDR vtysh IPForward UserDefined}
+    interface-peer {eth0 n1}
+    interface-peer {eth1 n7}
+}
+
+node n4 {
+    type router
+    model mdr
+    network-config {
+	hostname n4
+	!
+	interface eth1
+	 ipv6 address 2001:3::3/128
+	 ip address 10.0.3.3/24
+	!
+	interface eth0
+	 ip address 10.0.2.2/24
+	 ipv6 address 2001:2::2/64
+	!
+    }
+    canvas c1
+    iconcoords {121.0 407.0}
+    labelcoords {121.0 439.0}
+    custom-config {
+	custom-config-id service:UserDefined
+	custom-command UserDefined
+	config {
+	dirs=('/var/tmp/ion', )
+	files=('setup.sh', )
+	cmdup=('sh ./setup.sh', )
+	}
+    }
+    custom-config {
+	custom-config-id service:UserDefined:setup.sh
+	custom-command setup.sh
+	config {
+	foo=`dirname $SESSION_FILENAME`
+	sh $foo/generalSetup.sh
+	}
+    }
+    custom-config {
+	custom-config-id service:zebra
+	custom-command zebra
+	config {
+	files=('/usr/local/etc/quagga/Quagga.conf', 'quaggaboot.sh', '/usr/local/etc/quagga/vtysh.conf', )
+	}
+    }
+    custom-config {
+	custom-config-id service:zebra:/usr/local/etc/quagga/Quagga.conf
+	custom-command /usr/local/etc/quagga/Quagga.conf
+	config {
+	interface eth0
+	  ip address 10.0.3.1/24
+	  ipv6 address 2001:3::1/64
+	  ipv6 ospf6 instance-id 65
+	!
+	router ospf6
+	  router-id 10.0.3.1
+	  interface eth0 area 0.0.0.0
+	!
+	
+	}
+    }
+    services {zebra OSPFv3MDR vtysh IPForward UserDefined}
+    interface-peer {eth0 n1}
+    interface-peer {eth1 n7}
+}
+
+node n5 {
+    type router
+    model mdr
+    network-config {
+	hostname n5
+	!
+	interface eth0
+	 ipv6 address 2001:3::4/128
+	 ip address 10.0.3.4/24
+	!
+    }
+    canvas c1
+    iconcoords {430.0 410.0}
+    labelcoords {430.0 442.0}
+    custom-config {
+	custom-config-id service:zebra
+	custom-command zebra
+	config {
+	files=('/usr/local/etc/quagga/Quagga.conf', 'quaggaboot.sh', '/usr/local/etc/quagga/vtysh.conf', )
+	}
+    }
+    custom-config {
+	custom-config-id service:zebra:/usr/local/etc/quagga/Quagga.conf
+	custom-command /usr/local/etc/quagga/Quagga.conf
+	config {
+	interface eth0
+	  ip address 10.0.4.1/24
+	  ipv6 address 2001:4::1/64
+	  ipv6 ospf6 instance-id 65
+	!
+	router ospf6
+	  router-id 10.0.4.1
+	  interface eth0 area 0.0.0.0
+	!
+	
+	}
+    }
+    custom-config {
+	custom-config-id service:UserDefined
+	custom-command UserDefined
+	config {
+	dirs=('/var/ion', )
+	files=('setup.sh', )
+	cmdup=('sh ./setup.sh', )
+	}
+    }
+    custom-config {
+	custom-config-id service:UserDefined:setup.sh
+	custom-command setup.sh
+	config {
+	foo=`dirname $SESSION_FILENAME`
+	sh $foo/generalSetup.sh
+	}
+    }
+    services {zebra OSPFv3MDR vtysh IPForward UserDefined}
+    interface-peer {eth0 n7}
+}
+
+node n6 {
+    type router
+    model mdr
+    network-config {
+	hostname n6
+	!
+	interface eth0
+	 ipv6 address 2001:3::5/128
+	 ip address 10.0.3.5/24
+	!
+    }
+    canvas c1
+    iconcoords {430.0 71.0}
+    labelcoords {430.0 103.0}
+    custom-config {
+	custom-config-id service:zebra
+	custom-command zebra
+	config {
+	files=('/usr/local/etc/quagga/Quagga.conf', 'quaggaboot.sh', '/usr/local/etc/quagga/vtysh.conf', )
+	}
+    }
+    custom-config {
+	custom-config-id service:zebra:/usr/local/etc/quagga/Quagga.conf
+	custom-command /usr/local/etc/quagga/Quagga.conf
+	config {
+	interface eth0
+	  ip address 10.0.0.1/24
+	  ipv6 address 2001::1/64
+	  ipv6 ospf6 instance-id 65
+	!
+	router ospf6
+	  router-id 10.0.0.1
+	  interface eth0 area 0.0.0.0
+	!
+	
+	}
+    }
+    custom-config {
+	custom-config-id service:UserDefined
+	custom-command UserDefined
+	config {
+	dirs=('/var/ion', )
+	files=('setup.sh', )
+	cmdup=('sh ./setup.sh', )
+	}
+    }
+    custom-config {
+	custom-config-id service:UserDefined:setup.sh
+	custom-command setup.sh
+	config {
+	foo=`dirname $SESSION_FILENAME`
+	sh $foo/generalSetup.sh
+	}
+    }
+    services {zebra OSPFv3MDR vtysh IPForward UserDefined}
+    interface-peer {eth0 n7}
+}
+
+node n7 {
+    type wlan
+    network-config {
+	hostname wlan7
+	!
+	interface wireless
+	 ipv6 address 2001:3::0/128
+	 ip address 10.0.3.0/24
+	!
+	mobmodel
+	coreapi
+	basic_range
+	ns2script
+	!
+    }
+    custom-config {
+	custom-config-id basic_range
+	custom-command {3 3 9 9 9}
+	config {
+	range=200
+	bandwidth=54000000
+	jitter=0
+	delay=20000
+	error=0
+	}
+    }
+    custom-config {
+	custom-config-id ns2script
+	custom-command {10 3 11 10 10 10 10 10}
+	config {
+	file=/home/core/.core/configs/NASADTNDevKit/mars/mars.scen
+	refresh_ms=50
+	loop=1
+	autostart=0.0
+	map=
+	script_start=/home/core/.core/configs/NASADTNDevKit/common/mobility.sh
+	script_pause=
+	script_stop=
+	}
+    }
+    canvas c1
+    iconcoords {261.0 71.0}
+    labelcoords {261.0 103.0}
+    interface-peer {e0 n2}
+    interface-peer {e1 n3}
+    interface-peer {e2 n4}
+    interface-peer {e3 n5}
+    interface-peer {e4 n6}
+}
+
+link l1 {
+    nodes {n1 n2}
+    bandwidth 0
+}
+
+link l2 {
+    nodes {n1 n3}
+    bandwidth 0
+}
+
+link l3 {
+    nodes {n1 n4}
+    bandwidth 0
+}
+
+link l4 {
+    nodes {n7 n2}
+}
+
+link l5 {
+    nodes {n7 n3}
+}
+
+link l6 {
+    nodes {n7 n4}
+}
+
+link l7 {
+    nodes {n7 n5}
+}
+
+link l8 {
+    nodes {n7 n6}
+}
+
+annotation a1 {
+    iconcoords {45.0 573.0}
+    type text
+    label {Mars to Earth Communication Demo}
+    labelcolor black
+    fontfamily {Arial}
+    fontsize {12}
+    canvas c1
+}
+
+annotation a2 {
+    iconcoords {389.0 27.0}
+    type text
+    label {Mars Rover}
+    labelcolor black
+    fontfamily {Arial}
+    fontsize {12}
+    canvas c1
+}
+
+annotation a3 {
+    iconcoords {382.0 255.0}
+    type text
+    label {Mars Orbiter}
+    labelcolor black
+    fontfamily {Arial}
+    fontsize {12}
+    canvas c1
+}
+
+annotation a4 {
+    iconcoords {81.0 450.0}
+    type text
+    label {California}
+    labelcolor black
+    fontfamily {Arial}
+    fontsize {12}
+    canvas c1
+}
+
+annotation a5 {
+    iconcoords {460.0 508.0}
+    type text
+    label {Spain}
+    labelcolor black
+    fontfamily {Arial}
+    fontsize {12}
+    canvas c1
+}
+
+annotation a6 {
+    iconcoords {777.0 413.0}
+    type text
+    label {Australia}
+    labelcolor black
+    fontfamily {Arial}
+    fontsize {12}
+    canvas c1
+}
+
+annotation a7 {
+    iconcoords {470.0 621.0}
+    type text
+    label {Mission Control}
+    labelcolor black
+    fontfamily {Arial}
+    fontsize {12}
+    canvas c1
+}
+
+canvas c1 {
+    name {Canvas1}
+}
+
+hook 3:instantiation_hook.sh {
+#!/bin/sh
+# session hook script; write commands here to execute on the host at the
+# specified state
+
+rm -f /tmp/ionrcdate
+
+
+
+
+
+}
+
+hook 4:runtime_hook.sh {
+#!/bin/sh
+# session hook script; write commands here to execute on the host at the
+# specified state
+
+pycore=`ls /tmp | grep pycore`
+sleep 15 && xterm -e "/usr/local/sbin/vcmd -c /tmp/$pycore/n1 -- bping ipn:1.2 ipn:6.1" &
+}
+
+hook 6:shutdown_hook.sh {
+#!/bin/sh
+# session hook script; write commands here to execute on the host at the
+# specified state
+rm -f /tmp/ionrcdate
+
+
+}
+
+option global {
+    interface_names yes
+    ip_addresses yes
+    ipv6_addresses no
+    node_labels yes
+    link_labels yes
+    show_api no
+    background_images no
+    annotations yes
+    grid yes
+    traffic_start 0
+}
+
+option session {
+    controlnet=192.168.240.0/24
+    controlnet_updown_script=
+    enablerj45=1
+    enablesdt=0
+    preservedir=0
+    sdturl=tcp://127.0.0.1:50000/
+}
+

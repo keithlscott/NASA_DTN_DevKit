@@ -1,0 +1,11 @@
+#----------------------------------------------------
+# Add an egress plan. (to neighboring nodes/hosts)
+#----------------------------------------------------
+# ISS DTN GW 2 to Ground Node
+#a plan <node> <protocol>/<num/address> 
+#a plan 1 ltp/1
+#a plan 2 tcp/10.0.0.2
+
+a plan 1 tcp/10.0.1.2
+a plan 2 udp/127.0.0.1
+a plan 8 ltp/8

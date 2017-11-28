@@ -1,0 +1,25 @@
+#  FILE:    GS1b.ipnrc
+#  CONTENT: configuration commands
+#  FOR:     ipnadmin
+#  BUILDER: ION Configuration Editor
+#  NETWORK: GSFCDemo3
+#  NODE:    GS1b
+#  IP NAME: 10.10.30.11
+#  DATE:    Wed Dec 31 22:21:37 EST 1969
+#
+#  PLAN
+#  Destination node:   22         [To Node: GS1b  with IP Name: 10.10.30.11]
+#  Duct Expression:    udp/*
+a plan 22 udp/10.10.30.11
+
+#
+#  PLAN
+#  Destination node:   1         [To Node: SC  with IP Name: 10.10.10.1]
+#  Duct Expression:    tcp/10.10.10.1
+a plan 1 tcp/10.10.10.1
+#
+#  PLAN
+#  Destination node:   5         [To Node: MO  with IP Name: 10.10.30.4]
+#  Duct Expression:    tcp/10.10.30.4
+a plan 5 tcp/10.10.30.4
+

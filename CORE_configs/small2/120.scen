@@ -1,0 +1,10 @@
+# Five-node Planet sim
+# 120 seconds total
+
+$node_(8) set X_ 406.0
+$node_(8) set Y_ 215.0
+$node_(8) set Z_ 0.00
+$ns_ at 000.00 "$node_(8) setdest 550.0 215.0 10.0"
+$ns_ at 015.00 "$node_(8) setdest 250.0 215.0 10.0"
+$ns_ at 045.00 "$node_(8) setdest 400.0 215.0 10.0"
+$ns_ at 060.00 "$node_(8) setdest 400.0 215.0 10.0"

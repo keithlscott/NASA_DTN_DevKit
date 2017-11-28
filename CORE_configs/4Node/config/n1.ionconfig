@@ -1,0 +1,8 @@
+#  FILE:    n1.ionconfig
+#  CONTENT: configuration parameters
+#  FOR:     ionadmin
+#  BUILDER: ION Configuration Editor
+#  NETWORK: 4Node
+#  NODE:    n1
+#  IP NAME: 10.0.1.1
+#  DATE:    Wed Dec 31 23:31:32 EST 1969

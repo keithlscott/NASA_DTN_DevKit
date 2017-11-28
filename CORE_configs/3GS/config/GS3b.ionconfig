@@ -1,0 +1,16 @@
+#  FILE:    GS3b.ionconfig
+#  CONTENT: configuration parameters
+#  FOR:     ionadmin
+#  BUILDER: ION Configuration Editor
+#  NETWORK: GSFCDemo3
+#  NODE:    GS3b
+#  IP NAME: 10.10.30.33
+#  DATE:    Wed Dec 31 22:21:37 EST 1969
+#
+#  PATHNAME
+#  Full path name to log  & sdr:  /var/tmp/ion
+pathName /var/tmp/ion
+#
+#  WMKEY
+#  Working memory key:  65281
+wmKey 65281
